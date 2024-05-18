@@ -1,5 +1,6 @@
 Itnetwork přednáškové odkazy
 ----------------------------
+[Web na github](https://github.com/bedjan/itpoznamky/blob/main/itnetwork.md)
 
 [Osnova IT network](https://docs.google.com/spreadsheets/d/1d5wQRV8CgZAq5DwNVWny5UGvSOvb54ADlsRKIix4MEg/edit?pli=1#gid=0)    
 [1. Webové stránky krok za krokem](https://www.itnetwork.cz/html-css/webove-stranky)

@@ -4,6 +4,7 @@ copy("https://github.com/bedjan/itpoznamky/raw/main/itnetwork.md", "itnetwork.md
 copy("https://github.com/bedjan/itpoznamky/raw/main/bootstrap.css", "bootstrap.css");
 
 echo "<base target='_blank'>";
+echo "<meta name='viewport' content='width=device-width, initial-scale=1' />";
 /*
 echo "<link rel='stylesheet' href='https://unpkg.com/simpledotcss/simple.css'>";
 */

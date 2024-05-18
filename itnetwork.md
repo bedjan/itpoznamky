@@ -3,7 +3,8 @@ Itnetwork přednáškové odkazy
 
 [Osnova IT network](https://docs.google.com/spreadsheets/d/1d5wQRV8CgZAq5DwNVWny5UGvSOvb54ADlsRKIix4MEg/edit?pli=1#gid=0)    
 [1. Webové stránky krok za krokem](https://www.itnetwork.cz/html-css/webove-stranky)
-[2. Základní konstrukce jazyka Java](https://www.itnetwork.cz/java/zaklady)    [3. Objektově orientované programování v Javě](https://www.itnetwork.cz/java/oop)    
+[2. Základní konstrukce jazyka Java](https://www.itnetwork.cz/java/zaklady)    
+[3. Objektově orientované programování v Javě](https://www.itnetwork.cz/java/oop)    
 [4. Kolekce a proudy v Javě](https://www.itnetwork.cz/java/kolekce-a-proudy)    
 [5. MySQL/MariaDB databáze krok za krokem](https://www.itnetwork.cz/mysql)    
 [6. Základní konstrukce jazyka JavaScript](https://www.itnetwork.cz/javascript/zaklady)    

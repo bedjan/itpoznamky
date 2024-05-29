@@ -1,29 +1,3 @@
-Itnetwork přednáškové odkazy
-----------------------------
-[Web na github](https://github.com/bedjan/itpoznamky/blob/main/itnetwork.md)
-
-[Osnova IT network](https://docs.google.com/spreadsheets/d/1d5wQRV8CgZAq5DwNVWny5UGvSOvb54ADlsRKIix4MEg/edit?pli=1#gid=0)    
-[1. Webové stránky krok za krokem](https://www.itnetwork.cz/html-css/webove-stranky)
-[2. Základní konstrukce jazyka Java](https://www.itnetwork.cz/java/zaklady)
-[3. Objektově orientované programování v Javě](https://www.itnetwork.cz/java/oop)    
-[4. Kolekce a proudy v Javě](https://www.itnetwork.cz/java/kolekce-a-proudy)    
-[5. MySQL/MariaDB databáze krok za krokem](https://www.itnetwork.cz/mysql)    
-[6. Základní konstrukce jazyka JavaScript](https://www.itnetwork.cz/javascript/zaklady)    
-[7. Základy Spring Boot frameworku pro Javu](https://www.itnetwork.cz/java/spring-boot/zaklady)    
-[8. Databáze a Hibernate ve Spring Boot](https://www.itnetwork.cz/java/spring-boot/blog)    
-[9. Základy React](https://www.itnetwork.cz/javascript/react/zaklady)    
-[10. Kompletní kurz CSS frameworku Bootstrap](https://www.itnetwork.cz/html-css/bootstrap/kurz)
-
-* * *
-[Web to markdown](https://urltomarkdown.com/)
-* * *
-
-# Obsah Přednášek: 
-
-
-
-
-
 # 1.  Webové stránky krok za krokem
 
 * * *

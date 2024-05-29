@@ -1,6 +1,6 @@
 # It poznámky
 
-[Itnetwork](https://www.itnetwork.cz/)
+[Itnetwork postup](https://www.itnetwork.cz/postup)
 
 [Html to markdown](https://urltomarkdown.com/)
 

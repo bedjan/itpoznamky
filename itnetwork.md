@@ -4,10 +4,8 @@
 
 <details close>
 <summary>Přednášky</summary>
-  
-[1. Html](https://github.com/bedjan/itpoznamky/blob/main/html.md)
-
-[2. Java](https://github.com/bedjan/itpoznamky/blob/main/java.md)
+<a href="https://github.com/bedjan/itpoznamky/blob/main/html.md"  target="_blank">1. Html</a>&nbsp;&nbsp;<br />
+<a href="https://github.com/bedjan/itpoznamky/blob/main/java.md"  target="_blank">2. Java</a>&nbsp;&nbsp;<br />
 </details>
 
 <details close>

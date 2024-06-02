@@ -10,7 +10,8 @@
 <details close>
 <summary>Pomůcky</summary>
 </br>
-<a href="https://fastshare.cz](https://urltomarkdown.com/"  target="_blank">Html to markdown</a>&nbsp;&nbsp;<br />
+<a href="https://urltomarkdown.com/"  target="_blank">Html to markdown</a>&nbsp;&nbsp;<br />
+<a href="https://markdowntohtml.com/"  target="_blank">Markdown to html</a>&nbsp;&nbsp;<br />
 
 </details>
 
@@ -19,10 +20,12 @@
 <details close>
 <summary>Úložiště</summary>
 </br>
+<a href="https://uschovna.cz/"  target="_blank">Úschovna</a>&nbsp;&nbsp;<br />
+  <a href="https://zalohuj.si"  target="_blank">Zalohuj.si</a>&nbsp;&nbsp;<br />
 <a href="https://fastshare.cz"  target="_blank">Fastshare</a>&nbsp;&nbsp;<br />
 <a href="https://datoid.cz"  target="_blank">Datoid</a>&nbsp;&nbsp;<br />
 <a href="https://prehrajto.cz"  target="_blank">Prehrajto</a>&nbsp;&nbsp;<br />
-<a href="https://zalohuj.si"  target="_blank">Zalohuj.si</a>&nbsp;&nbsp;<br />
+
 <a href="https://sdilej.cz"  target="_blank">Sdílej</a>&nbsp;&nbsp;<br />
 <a href="https://edisk.cz"  target="_blank">Edisk</a>&nbsp;&nbsp;<br />
 <a href="https://kukaj.to"  target="_blank">Kukaj</a>&nbsp;&nbsp;<br />

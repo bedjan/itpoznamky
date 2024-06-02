@@ -9,17 +9,17 @@
 
 <details close>
 <summary>Pomůcky</summary>
-</br>
+
 <a href="https://urltomarkdown.com/"  target="_blank">Html to markdown</a>&nbsp;&nbsp;<br />
 <a href="https://markdowntohtml.com/"  target="_blank">Markdown to html</a>&nbsp;&nbsp;<br />
 
 </details>
 
-</br>
+
 
 <details close>
 <summary>Úložiště</summary>
-</br>
+
 <a href="https://uschovna.cz/"  target="_blank">Úschovna</a>&nbsp;&nbsp;<br />
   <a href="https://zalohuj.si"  target="_blank">Zalohuj.si</a>&nbsp;&nbsp;<br />
 <a href="https://fastshare.cz"  target="_blank">Fastshare</a>&nbsp;&nbsp;<br />

@@ -43,6 +43,6 @@
 <summary>Ostatní</summary>
 
 <a href="https://www.aha-music.com/"  target="_blank">Zjisteni hudby online</a>&nbsp;&nbsp;<br />
-
+<a href="https://github.com/bedjan/mm/raw/master/radia_online.m3u"  target="_blank">Radia playlist</a>&nbsp;&nbsp;<br />
 
 </details>

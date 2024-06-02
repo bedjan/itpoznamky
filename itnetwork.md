@@ -54,4 +54,5 @@
 <a href="https://stream.rcs.revma.com/asn0cmvb938uv" target="_blank">Radio Kiss</a>  
 <a href="http://mpc1.mediacp.eu:8342/stream" target="_blank">Radio 4U</a>  
 <a href="http://ice.actve.net/fm-evropa2-128" target="_blank">Radio Evropa2r</a>  
+<a href="https://github.com/bedjan/mm/raw/master/radia_online.m3u" target="_blank">Radio cely playlist</a>  
 </details>

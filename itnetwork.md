@@ -2,11 +2,19 @@
 
 [Itnetwork postup](https://www.itnetwork.cz/postup)
 
-[Html to markdown](https://urltomarkdown.com/)
-
 [1. Html](https://github.com/bedjan/itpoznamky/blob/main/html.md)
 
 [2. Java](https://github.com/bedjan/itpoznamky/blob/main/java.md)
+
+
+<details close>
+<summary>Pomůcky</summary>
+</br>
+<a href="https://fastshare.cz](https://urltomarkdown.com/"  target="_blank">Html to markdown</a>&nbsp;&nbsp;<br />
+
+</details>
+
+</br>
 
 <details close>
 <summary>Úložiště</summary>

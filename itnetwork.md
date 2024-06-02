@@ -47,8 +47,19 @@
 
 </details>
 
+<details close>
+<summary>Radia Kiss,4U, Evropa2 </summary>
+  
 <audio controls>
-    <source src="https://github.com/bedjan/mm/raw/master/radia_online.m3u" type="audio/mpegURL" />
+    <source src="https://stream.rcs.revma.com/asn0cmvb938uv" type="audio/mpegURL" />
 </audio>
 
+<audio controls>
+    <source src="http://mpc1.mediacp.eu:8342/stream" type="audio/mpegURL" />
+</audio>
 
+<audio controls>
+    <source src="http://ice.actve.net/fm-evropa2-128" type="audio/mpegURL" />
+</audio>
+
+</details>

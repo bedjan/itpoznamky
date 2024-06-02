@@ -47,4 +47,8 @@
 
 </details>
 
-<audio src="https://github.com/bedjan/mm/raw/master/radia_online.m3u" controls>
+<audio controls>
+    <source src="https://github.com/bedjan/mm/raw/master/radia_online.m3u" type="audio/mpegURL" />
+</audio>
+
+

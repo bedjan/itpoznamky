@@ -46,3 +46,5 @@
 <a href="https://github.com/bedjan/mm/raw/master/radia_online.m3u"  target="_blank">Radia playlist</a>&nbsp;&nbsp;<br />
 
 </details>
+
+<audio src="https://github.com/bedjan/mm/raw/master/radia_online.m3u" controls>

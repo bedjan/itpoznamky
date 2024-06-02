@@ -48,18 +48,9 @@
 </details>
 
 <details close>
-<summary>Radia Kiss,4U, Evropa2 </summary>
-  
-<audio controls>
-    <source src="https://stream.rcs.revma.com/asn0cmvb938uv" type="audio/mpegURL" />
-</audio>
+<summary>Radia</summary>
 
-<audio controls>
-    <source src="http://mpc1.mediacp.eu:8342/stream" type="audio/mpegURL" />
-</audio>
-
-<audio controls>
-    <source src="http://ice.actve.net/fm-evropa2-128" type="audio/mpegURL" />
-</audio>
-
+<a href="https://stream.rcs.revma.com/asn0cmvb938uv" target="_blank">Radio Kiss</a>  
+<a href="http://mpc1.mediacp.eu:8342/stream" target="_blank">Radio 4U</a>  
+<a href="http://ice.actve.net/fm-evropa2-128" target="_blank">Radio Evropa2r</a>  
 </details>

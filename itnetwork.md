@@ -38,3 +38,11 @@
 <a href="https://onecloud.com"  target="_blank">Onecloud</a>&nbsp;&nbsp;<br />
 
 </details>
+
+<details close>
+<summary>Ostatní</summary>
+
+<a href="https://www.aha-music.com/"  target="_blank">Zjisteni hudby online</a>&nbsp;&nbsp;<br />
+
+
+</details>

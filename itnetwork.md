@@ -13,6 +13,7 @@
 
 <a href="http://ctp.mkprog.eu/cz/java/" target="_blank">Programování v jazyce Java</a>  
 <a href="https://java.vse.cz/Main/HomePage" target="_blank">Java VŠE</a>  
+<a href="https://www.algoritmy.net/article/21340/Uvod-1" target="_blank">Java pro začátečníky</a>  
 
 </details>
 

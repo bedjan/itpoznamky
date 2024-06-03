@@ -9,6 +9,15 @@
 </details>
 
 <details close>
+<summary>Dokumentace</summary>
+
+<a href="http://ctp.mkprog.eu/cz/java/" target="_blank">Programování v jazyce Java</a>  
+<a href="https://java.vse.cz/Main/HomePage" target="_blank">Java VŠE</a>  
+
+</details>
+
+
+<details close>
 <summary>Pomůcky</summary>
 
 <a href="https://urltomarkdown.com/"  target="_blank">Html to markdown</a>&nbsp;&nbsp;<br />

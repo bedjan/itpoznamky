@@ -19,6 +19,8 @@
 <a href="https://www.fi.muni.cz/~tomp/slides/pb162/printable.html" target="_blank">Programování v jazyce Java 2</a> 
 <a href="https://ivt.mzf.cz/algoritmizace-a-programovani/java/" target="_blank">Programování v jazyce Java 3</a> 
 <a href="https://www.builder.cz/rubriky/java/" target="_blank">Programování v jazyce Java 4</a> 
+<a href="https://www.cadforum.cz/cz/Vyvojove-prostredky-AutoCADu/Pasmo/Casti/Java/jzakladyprog.htm" target="_blank">Programování v jazyce Java 5</a> 
+
 
 </details>
 

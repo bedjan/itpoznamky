@@ -10,6 +10,7 @@
 
 <details close>
 <summary>Dokumentace</summary>
+<a href="https://freecomputerbooks.com/top-java-books.html" target="_blank">Java knihy zdarma</a> 
 <a href="https://docs-oracle-com.translate.goog/javase/tutorial/index.html?_x_tr_sl=auto&_x_tr_tl=cs&_x_tr_hl=cs&_x_tr_pto=wapp" target="_blank">Java oficiální dokumentace</a> 
 <a href="http://ctp.mkprog.eu/cz/java/" target="_blank">Programování v jazyce Java</a>  
 <a href="https://java.vse.cz/Main/HomePage" target="_blank">Java VŠE</a>  

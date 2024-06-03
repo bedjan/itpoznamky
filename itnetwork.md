@@ -10,7 +10,7 @@
 
 <details close>
 <summary>Dokumentace</summary>
-
+<a href="https://docs-oracle-com.translate.goog/javase/tutorial/index.html?_x_tr_sl=auto&_x_tr_tl=cs&_x_tr_hl=cs&_x_tr_pto=wapp" target="_blank">Java oficiální dokumentace</a> 
 <a href="http://ctp.mkprog.eu/cz/java/" target="_blank">Programování v jazyce Java</a>  
 <a href="https://java.vse.cz/Main/HomePage" target="_blank">Java VŠE</a>  
 <a href="https://www.algoritmy.net/article/21340/Uvod-1" target="_blank">Java pro začátečníky</a>  

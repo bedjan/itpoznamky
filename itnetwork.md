@@ -2,7 +2,15 @@
 
 [Itnetwork postup](https://www.itnetwork.cz/postup)
 
-[Web whatsapp](https://web.whatsapp.com/)
+
+<details close>
+<summary>Weby</summary>
+<a href="https://web.whatsapp.com/"  target="_blank">Web whatsapp</a>&nbsp;&nbsp;<br />
+<a href="https://mail.google.com/mail/u/0/#inbox"  target="_blank">Gmail</a>&nbsp;&nbsp;<br />
+<a href="https://mail.google.com/mail/u/0/#inbox"  target="_blank">1. Html</a>&nbsp;&nbsp;<br />
+<a href="https://github.com/"  target="_blank">Github</a>&nbsp;&nbsp;<br />
+<a href="https://github.com/bedjan/itpoznamky/edit/main/itnetwork.md"  target="_blank">Github itpoznamky</a>&nbsp;&nbsp;<br />
+</details>
 
 <details close>
 <summary>Přednášky</summary>

@@ -25,6 +25,13 @@
 
 </details>
 
+<details close>
+<summary>Programy návody</summary>
+
+<a href="https://netbeans-apache-org.translate.goog/tutorial/main/kb/?_x_tr_sl=auto&_x_tr_tl=cs&_x_tr_hl=cs&_x_tr_pto=wapp)"  target="_blank">Netbeans tutorial</a>&nbsp;&nbsp;<br />
+
+
+</details>
 
 <details close>
 <summary>Pomůcky</summary>

@@ -9,7 +9,7 @@
 </details>
 
 <details close>
-<summary>Dokumentace</summary>
+<summary>Java dokumentace</summary>
 <a href="https://freecomputerbooks.com/top-java-books.html" target="_blank">Java knihy zdarma</a> 
 <a href="https://docs-oracle-com.translate.goog/javase/tutorial/index.html?_x_tr_sl=auto&_x_tr_tl=cs&_x_tr_hl=cs&_x_tr_pto=wapp" target="_blank">Java oficiální dokumentace</a> 
 <a href="http://ctp.mkprog.eu/cz/java/" target="_blank">Programování v jazyce Java</a>  
@@ -28,8 +28,17 @@
 <details close>
 <summary>Programy návody</summary>
 
+<a href="https://zdrojak.cz/clanky/pouzivame-netbeans-hodi-se-i-pro-tvorbu-webu/" target="_blank">Používáme Netbeans</a> 
+<a href="https://kb.isn.cz/doku.php/netbeans" target="_blank">Používáme Netbeans 2</a> 
 <a href="https://netbeans-apache-org.translate.goog/tutorial/main/kb/?_x_tr_sl=auto&_x_tr_tl=cs&_x_tr_hl=cs&_x_tr_pto=wapp)"  target="_blank">Netbeans tutorial</a>&nbsp;&nbsp;<br />
+<a href="https://cw.fel.cvut.cz/wiki/courses/b0b36pjv/tutorials/01/netbeans" target="_blank">Netbeans IDE</a> 
+<a href="https://msgprogramator.sk/java-ide-apache-netbeans/" target="_blank">Netbeans IDE instalace</a> 
+<a href="https://tomas.dankovi.info/content/netbeans-ide" target="_blank">Netbeans IDE užívání</a> 
+<a href="https://app.assembla.com/wiki/show/dionysos/N%C3%A1vod_-_p%C5%99ipojen%C3%AD_k_MySQL_z_NetBeans" target="_blank">Připojení MySQL Netbeans</a> 
 
+<a href="https://www.youtube.com/watch?v=rBQ96up-O5Y&list=PLCC47AEAE0BCC4C0C" target="_blank">Youtube - programovani v jave 1</a> 
+<a href="https://www.youtube.com/watch?v=AYKEMGn2wCQ&list=PL5BK0yFsxNKSEtVGY2RlEc1mN6LnV8M_n" target="_blank">Youtube - programovani v jave 2</a> 
+<a href="https://www.youtube.com/watch?v=ExpEtdAP_QE" target="_blank">Youtube - úvod do jazyka Java</a> 
 
 </details>
 

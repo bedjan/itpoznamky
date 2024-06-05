@@ -21,9 +21,11 @@
 <a href="https://ivt.mzf.cz/algoritmizace-a-programovani/java/" target="_blank">Programování v jazyce Java 3</a> 
 <a href="https://www.builder.cz/rubriky/java/" target="_blank">Programování v jazyce Java 4</a> 
 <a href="https://www.cadforum.cz/cz/Vyvojove-prostredky-AutoCADu/Pasmo/Casti/Java/jzakladyprog.htm" target="_blank">Programování v jazyce Java 5</a> 
-<a href="https://www.youtube.com/watch?v=BGTx91t8q50" target="_blank">Programování v jazyce Java pro začátečníky</a> 
-<a href="https://www.youtube.com/watch?v=HzVmefjJ3v4" target="_blank">Programování v jazyce Java - OOP ( objektově orientované programování ) </a> 
-<a href="https://www.youtube.com/watch?v=ntLJmHOJ0ME&list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" target="_blank">Tutoriál java pro začátečníky </a> 
+  <a href="https://www.youtube.com/watch?v=mu6Sf-Ywe7A&list=PLRMeV6-hdQJwGydlXRUsvwX-DR_77kSsV" target="_blank">Youtube - Java tutoriál CZ</a> 
+<a href="https://www.youtube.com/watch?v=BGTx91t8q50" target="_blank">Youtube - Programování v jazyce Java pro začátečníky</a> 
+<a href="https://www.youtube.com/watch?v=HzVmefjJ3v4" target="_blank">Youtube - Programování v jazyce Java - OOP ( objektově orientované programování ) </a> 
+<a href="https://www.youtube.com/watch?v=ntLJmHOJ0ME&list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" target="_blank">Youtube - Tutoriál java pro začátečníky </a> 
+
 
 
 </details>

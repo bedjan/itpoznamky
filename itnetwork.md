@@ -2,6 +2,8 @@
 
 [Itnetwork postup](https://www.itnetwork.cz/postup)
 
+[Web whatsapp](https://web.whatsapp.com/)
+
 <details close>
 <summary>Přednášky</summary>
 <a href="https://github.com/bedjan/itpoznamky/blob/main/html.md"  target="_blank">1. Html</a>&nbsp;&nbsp;<br />

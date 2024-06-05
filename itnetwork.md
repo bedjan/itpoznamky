@@ -31,6 +31,12 @@
 <a href="https://www.youtube.com/watch?v=Jl9OKQ92SJU" target="_blank">Youtube - Spring Framework and Microservices Full Course</a> 
 <a href="https://www.youtube.com/watch?v=uYCvFTDWSnw&list=PLQfmUKk1yg0XTcNmu58DMbYFB_bcrCUQ1" target="_blank">Youtube - Java programovani začátečníci CZ</a> 
 
+<a href="https://www.youtube.com/watch?v=nFtoxFcxQwo" target="_blank">Youtube - Java Programovani</a> 
+<a href="https://www.youtube.com/watch?v=GpLs4ZzpurA" target="_blank">Youtube - Java OOP programovani</a> 
+<a href="https://www.youtube.com/watch?v=LMpfiZJV8Lw" target="_blank">Youtube - Java OOP1</a> 
+<a href="https://www.youtube.com/watch?v=Hz-K6NTCNps" target="_blank">Youtube - Java OOP2</a> 
+
+
 </details>
 
 <details close>

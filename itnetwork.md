@@ -39,6 +39,7 @@
 <a href="https://www.youtube.com/watch?v=rBQ96up-O5Y&list=PLCC47AEAE0BCC4C0C" target="_blank">Youtube - programovani v jave 1</a> 
 <a href="https://www.youtube.com/watch?v=AYKEMGn2wCQ&list=PL5BK0yFsxNKSEtVGY2RlEc1mN6LnV8M_n" target="_blank">Youtube - programovani v jave 2</a> 
 <a href="https://www.youtube.com/watch?v=ExpEtdAP_QE" target="_blank">Youtube - úvod do jazyka Java</a> 
+<a href="https://www.youtube.com/watch?v=Xc2wwpONvvw" target="_blank">Youtube - nauč se HTML5</a> 
 
 </details>
 

@@ -10,6 +10,7 @@
 <a href="https://app.simplenote.com/"  target="_blank">Simplenote</a>&nbsp;&nbsp;<br />
 <a href="https://github.com/"  target="_blank">Github</a>&nbsp;&nbsp;<br />
 <a href="https://github.com/bedjan/itpoznamky/edit/main/itnetwork.md"  target="_blank">Github itpoznamky</a>&nbsp;&nbsp;<br />
+<a href="https://it-slovnik.cz/"  target="_blank">IT slovník</a>&nbsp;&nbsp;<br />
 </details>
 
 <details close>

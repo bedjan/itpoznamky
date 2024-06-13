@@ -17,6 +17,7 @@
 <summary>Přednášky</summary>
 <a href="https://github.com/bedjan/itpoznamky/blob/main/html.md"  target="_blank">1. Html</a>&nbsp;&nbsp;<br />
 <a href="https://github.com/bedjan/itpoznamky/blob/main/java.md"  target="_blank">2. Java</a>&nbsp;&nbsp;<br />
+<a href="https://github.com/bedjan/itpoznamky/blob/main/java_oop.md"  target="_blank">3. Java - OOP</a>&nbsp;&nbsp;<br />
 </details>
 
 <details close>

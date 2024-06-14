@@ -74,6 +74,8 @@
 
 <a href="https://urltomarkdown.com/"  target="_blank">Html to markdown</a>&nbsp;&nbsp;<br />
 <a href="https://markdowntohtml.com/"  target="_blank">Markdown to html</a>&nbsp;&nbsp;<br />
+<a href="https://ttsreader.com/player/"  target="_blank">Čteni textu online</a>&nbsp;&nbsp;<br />
+<a href="https://www.naturalreaders.com/online/"  target="_blank">Čteni textu online 2</a>&nbsp;&nbsp;<br />
 
 </details>
 

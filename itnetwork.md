@@ -6,7 +6,7 @@
 
 
 <details close>
-<summary>Termíny</summary>
+<summary>Termíny Praha</summary>
 <p>Moderní webdesign od A do Z v termínu 23.6.2024 8:30:00 - 23.6.2024 18:30:00</p>
 <p>Základy programování v Javě v termínu 13.7.2024 8:30:00 - 13.7.2024 18:30:00</p>
 <p>Objektové programování - OOP v Javě v termínu 21.7.2024 8:30:00 - 21.7.2024 18:30:00</p>
@@ -18,6 +18,20 @@
 <p>Best practices pro vývoj softwaru - doplnit termín</p>
 <p>Závěrečná zkouška - doplnit termín</p>
 </details>
+
+<details close>
+<summary>Spoje Praha</summary>
+<h3>Odjezd</h3>
+<p>U51 (Sp 1943)  - 5:08 Duchcov - 5:38 Ústí n.L.hl.n. </p>
+<p>R20 (R 673 Labe) - 5:42 Ústí n.L.hl.n. - 7:12 Praha hl.n.</p>
+<a href="https://maps.app.goo.gl/WAjMqKT4TP1DNz1Z6"  target="_blank">Praha hl. – Budejovicka</a>&nbsp;&nbsp;<br />
+
+<h3>Příjezd</h3>
+<p>R20 (R 672 Labe) - 20:45 Praha hl.n. - 22:15 Ústí n.L.hl.n. </p>
+<p>U1 (Os 6846) - 22:20 Ústí n.L.hl.n. -22:48 Duchcov </p>
+<a href="https://maps.app.goo.gl/12d2YviCUiuLMmyw6"  target="_blank">Budejovicka - Praha hl.n.</a>&nbsp;&nbsp;<br />
+</details>
+
 
 
 <details close>

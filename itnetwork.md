@@ -7,17 +7,16 @@
 
 <details close>
 <summary>Termíny</summary>
-<p>Moderní webdesign od A do Z v termínu 23.6.2024 8:30:00 - 23.6.2024 18:30:00</p><br />
-<p>Základy programování v Javě v termínu 13.7.2024 8:30:00 - 13.7.2024 18:30:00</p><br />
-<p>Objektové programování - OOP v Javě v termínu 21.7.2024 8:30:00 - 21.7.2024 18:30:00</p><br />
-<p>Databáze - SQL a datové algoritmy v termínu 3.8.2024 8:30:00 - 3.8.2024 18:30:00</p><br />
-<p>Základy programování v JavaScriptu v termínu 10.8.2024 8:30:00 - 10.8.2024 18:30:00.</p><br />
+<p>Moderní webdesign od A do Z v termínu 23.6.2024 8:30:00 - 23.6.2024 18:30:00</p>
+<p>Základy programování v Javě v termínu 13.7.2024 8:30:00 - 13.7.2024 18:30:00</p>
+<p>Objektové programování - OOP v Javě v termínu 21.7.2024 8:30:00 - 21.7.2024 18:30:00</p>
+<p>Databáze - SQL a datové algoritmy v termínu 3.8.2024 8:30:00 - 3.8.2024 18:30:00</p>
+<p>Základy programování v JavaScriptu v termínu 10.8.2024 8:30:00 - 10.8.2024 18:30:00.</p>
 <p>Spring Boot v Javě v termínu 25.8.2024 8:30:00 - 25.8.2024 18:30:00</p>
-<p>React - doplnit termín</p><br />
-<p>Firemní vývoj softwaru, Testování a verzování  - doplnit termín</p><br />
-<p>Best practices pro vývoj softwaru - doplnit termín</p><br />
-<p>Závěrečná zkouška - doplnit termín</p><br />
-  
+<p>React - doplnit termín</p>
+<p>Firemní vývoj softwaru, Testování a verzování  - doplnit termín</p>
+<p>Best practices pro vývoj softwaru - doplnit termín</p>
+<p>Závěrečná zkouška - doplnit termín</p>
 </details>
 
 

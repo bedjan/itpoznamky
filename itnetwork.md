@@ -2,6 +2,8 @@
 
 [Itnetwork postup](https://www.itnetwork.cz/postup)
 
+[Itnetwork osnova](https://docs.google.com/spreadsheets/d/1d5wQRV8CgZAq5DwNVWny5UGvSOvb54ADlsRKIix4MEg/edit?pli=1&gid=0#gid=0)
+
 
 <details close>
 <summary>Weby</summary>

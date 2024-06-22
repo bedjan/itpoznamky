@@ -25,6 +25,7 @@
 <p>U51 (Sp 1943)  - 5:08 Duchcov - 5:38 Ústí n.L.hl.n. </p>
 <p>R20 (R 673 Labe) - 5:42 Ústí n.L.hl.n. - 7:12 Praha hl.n.</p>
 <a href="https://maps.app.goo.gl/WAjMqKT4TP1DNz1Z6"  target="_blank">Praha hl. – Budejovicka</a>&nbsp;&nbsp;<br />
+<a href="https://www.google.com/maps/dir/Bud%C4%9Bjovick%C3%A1,+Praha+4/A.+Sta%C5%A1ka+1859,+140+00+Praha+4-Kr%C4%8D/@50.0417528,14.4411055,949m/data=!3m1!1e3!4m14!4m13!1m5!1m1!1s0x470b93f295d3bd09:0x379b85482936a43e!2m2!1d14.4501543!2d50.0442485!1m5!1m1!1s0x470b93f6bfd82d89:0x851182516339a9b!2m2!1d14.4408824!2d50.0408126!3e2?entry=ttu"  target="_blank">Budejovicka - A. Staška 1859, 140 00 Praha 4-Krč ( 12 min )</a>&nbsp;&nbsp;<br />
 
 <h3>Příjezd</h3>
 <p>R20 (R 672 Labe) - 20:45 Praha hl.n. - 22:15 Ústí n.L.hl.n. </p>

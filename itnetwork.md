@@ -45,6 +45,7 @@
 <a href="https://it-slovnik.cz/"  target="_blank">IT slovník</a>&nbsp;&nbsp;<br />
 <a href="https://stackoverflow.com"  target="_blank">Stackoverflow</a>&nbsp;&nbsp;<br />
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"  target="_blank">Mozilla dev dokumentace</a>&nbsp;&nbsp;<br />
+<a href="https://docs.google.com/document/d/1iA0e_FcqB6Dwj3fULfedrd_PJavByYYXoIDY_yOupFs/edit"  target="_blank">Git a github nastaveni</a>&nbsp;&nbsp;<br />
 </details>
 
 <details close>

@@ -44,6 +44,7 @@
 <a href="https://github.com/bedjan/itpoznamky/edit/main/itnetwork.md"  target="_blank">Github itpoznamky</a>&nbsp;&nbsp;<br />
 <a href="https://it-slovnik.cz/"  target="_blank">IT slovník</a>&nbsp;&nbsp;<br />
 <a href="https://stackoverflow.com"  target="_blank">Stackoverflow</a>&nbsp;&nbsp;<br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"  target="_blank">Mozilla dev dokumentace</a>&nbsp;&nbsp;<br />
 </details>
 
 <details close>

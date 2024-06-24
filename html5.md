@@ -40,7 +40,7 @@
     <meta charset="utf-8" />
 <!-- nastaveni pro responzivni web - velikost webu se prizpusobi spravne na kazdem zarizeni - tzn. pocitac, tablet, mobil -->
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Titulek stránky, je videt v horni casti      
     <title>My page title</title>
 <!-- pro zjednoduseni zapisu obrazku, audia a videi -> pak muzeme psat  <img src="obrazek.jpg" alt="Obrázek" />, misto dlouheho <img src="http://www.mujweb.cz/obrazky/obrazek.jpg" alt="Obrázek" />  -->
@@ -78,7 +78,7 @@ margin: 2px;padding: 2px;
     </header>
 <!-- navigace na strance -->
     <nav>
-<!-- ul je zeznam bez cisel, polozky se pisi do znacek li, jsou to parove značky, takze zacinaji <ul><li> a konci </ul></li>-->
+<!-- ul je seznam bez cisel, polozky se pisi do znacek li, jsou to parove značky, takze zacinaji <ul><li> a konci </ul></li>-->
 
 <!-- u class="d-flex flex-row" se udela flex a da jej do prava na konec ;  style="list-style-type: none;" a tecky u seznamu se timto odeberou -->
       <ul class="d-flex justify-content-end"  style="list-style-type: none;margin: 2px;padding: 2px;";>

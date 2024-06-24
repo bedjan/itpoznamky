@@ -1,5 +1,25 @@
+#HTML5 dokument:
+
 [Manual HTML5 itnetwork](https://www.itnetwork.cz/html-css/html5/html-manual)
 [Manual github markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+
+> [!NOTE]
+> Information the user should notice even if skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Essential information required for user success.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+> [!WARNING]
+> Dangerous certain consequences of an action.
+
+#HTML5 struktura dokumentu:
 
 ```
   

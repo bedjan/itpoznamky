@@ -19,6 +19,7 @@
 <p>Závěrečná zkouška - doplnit termín</p>
 </details>
 
+
 <details close>
 <summary>Spoje Praha</summary>
 <h3>Odjezd</h3>
@@ -54,6 +55,12 @@
 <a href="https://github.com/bedjan/itpoznamky/blob/main/java.md"  target="_blank">2. Java</a>&nbsp;&nbsp;<br />
 <a href="https://github.com/bedjan/itpoznamky/blob/main/java_oop.md"  target="_blank">3. Java - OOP</a>&nbsp;&nbsp;<br />
 </details>
+
+<details close>
+<summary>Html dokumentace</summary>
+<a href="https://www.itnetwork.cz/html-css/html5/html-manual"  target="_blank">Html 5 manual</a>&nbsp;&nbsp;<br />
+</details>
+
 
 <details close>
 <summary>Java dokumentace</summary>

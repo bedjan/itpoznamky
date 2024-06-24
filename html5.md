@@ -15,7 +15,7 @@
 
 
 
-#HTML5 struktura dokumentu:
+# HTML5 struktura dokumentu:
 
 ```
 <!-- *****v tomto html dokumentu popisuji pomoci html komentaru strukturu html kodu, pokud si chcete vyzkouset jak to funguje vytvorte si soubor nejvice index.html, podeji bude jestě probran css styl na zmenu vzhledu html souboru vestinou nazvany style.css ***** -->

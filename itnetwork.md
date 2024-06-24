@@ -4,6 +4,7 @@
 
 [Itnetwork osnova](https://docs.google.com/spreadsheets/d/1d5wQRV8CgZAq5DwNVWny5UGvSOvb54ADlsRKIix4MEg/edit?pli=1&gid=0#gid=0)
 
+[Google poznamky](https://github.com/bedjan/itpoznamky/blob/main/google.md)
 
 <details close>
 <summary>Termíny Praha</summary>

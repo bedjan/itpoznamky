@@ -4,27 +4,22 @@
 [Manual github markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
-> [!Poznámka]
-> Information the user should notice even if skimming.
 
-> [!TIP]
-> Optional information to help a user be more successful.
-
-> [!IMPORTANT]
-> Essential information required for user success.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
-> [!WARNING]
-> Dangerous certain consequences of an action.
 
 #HTML5 struktura dokumentu:
 
 ```
-  
+<!-- typ dokumentu -->  
 <!doctype html>
-<html lang="en-US">
+<!-- html musi byt vzdy na zacatku a na konci -->
+<!-- lang="cs" nam nastavi ceske stranky -->
+<!-- manifest="cache.appchache" nam vytvori vyrovnavaci pamet na stranky s vetsim obsahem pro jejich rychlejsi nacitani -->
+<!-- v html kodu můžete cachovat obrazky, JS, CSS soubor. -->
+<!-- vyhodou je ze zustane i offline obsah, pokud nam vypadne internet -->
+<!-- u xml a xhtml dokumentu se nahrazuje timto kodem <?xml version="1.0" encoding="UTF-8"?> <html xmlns="http://www.w3.org/1999/xhtml"> -->
+
+
+<html lang="en-US" manifest="cache.appchache">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />

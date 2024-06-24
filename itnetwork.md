@@ -58,6 +58,7 @@
 
 <details close>
 <summary>Html dokumentace</summary>
+<a href="https://github.com/bedjan/itpoznamky/blob/main/html5.md"  target="_blank">Html 5 - nase poznamky</a>&nbsp;&nbsp;<br />
 <a href="https://www.itnetwork.cz/html-css/html5/html-manual"  target="_blank">Html 5 manual</a>&nbsp;&nbsp;<br />
 </details>
 

@@ -18,24 +18,24 @@
 
 10) neco * - * zastoupi napr. slovo
 
-10)define:neco  - vyhleda definici neco
+11) define:neco  - vyhleda definici neco
 
-11) cache :seznam.cz neco - Google ukládá verze webových stránek ve vyrovnávací paměti, to zjisti zda Google uložil nějakou stránku do vyrovnávací paměti na seznam.cz s pjmem neco
+12) cache :seznam.cz neco - Google ukládá verze webových stránek ve vyrovnávací paměti, to zjisti zda Google uložil nějakou stránku do vyrovnávací paměti na seznam.cz s pjmem neco
 
-12) translate:neco - preklad neco
+13) translate:neco - preklad neco
 
-13)  intitle:neco - hleda titulek stranky
+14)  intitle:neco - hleda titulek stranky
 
-14) allintile:neco neco - podobny jako intitle, ale muze obsahovat vice slov
+15) allintile:neco neco - podobny jako intitle, ale muze obsahovat vice slov
 
-15) inurl:neco - prohledava neco v url adrese stranek
+16) inurl:neco - prohledava neco v url adrese stranek
 
-16) intext:neco1 neco2 - najde stránky, které obsahují námi vyhledávané fráze. Může to být kdekoliv na stránce. Najdou se ovšem i stránky, kde se nachází pouze jeden ze zadaných výrazů, nikoliv všechny.
+17) intext:neco1 neco2 - najde stránky, které obsahují námi vyhledávané fráze. Může to být kdekoliv na stránce. Najdou se ovšem i stránky, kde se nachází pouze jeden ze zadaných výrazů, nikoliv všechny.
 
-17) allintext:neco1 neco2 - jako intext, ale v tomto případě se na hledané stránce musí nacházet všechna zadaná slova
+18) allintext:neco1 neco2 - jako intext, ale v tomto případě se na hledané stránce musí nacházet všechna zadaná slova
 
-18) (neco1 AND neco2) neco3 - závorky umožňují vložit více výrazů či operátorů najednou
+19) (neco1 AND neco2) neco3 - závorky umožňují vložit více výrazů či operátorů najednou
 
-19) related:seznam.cz - najde podobné stránky v souvislosti námi zadané stránky za operátorem related
+20) related:seznam.cz - najde podobné stránky v souvislosti námi zadané stránky za operátorem related
 
 

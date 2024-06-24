@@ -4,7 +4,7 @@
 [Manual github markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
-> [!NOTE]
+> [!Poznámka]
 > Information the user should notice even if skimming.
 
 > [!TIP]

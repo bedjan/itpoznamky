@@ -5,6 +5,31 @@
   <title>Markdown prevadec</title>
   <base target="_blank">
   <style>
+	* {
+  cursor: crosshair;
+  } 
+  
+a[href^="/"]:before {
+  content: "";
+  color: black;
+}
+a[href^="."]:before {
+  content: "";
+  color: black;
+}
+
+a.[href^="http://"]:before {
+  content: "⸰ ";
+  color: black;
+}
+a[href^="https://"]:before {
+  content: "⸰ ";
+  color: black;
+}
+
+
+
+	  
   body {
   max-width: 100%;
   margin: 0 auto;

@@ -1,6 +1,6 @@
 [Znaky na klávesnici](https://znakynaklavesnici.cz/)
 
-
+<pre>
 () Kulaté uvozovky na klávesnici 	Shift + klávesa s uvozovkou
 [ ] Hranaté uvozovky na klávesnici 	Alt Gr (pravý Alt) + písmeno F nebo písmeno G
 @ Zavináč na klávesnici 	Alt Gr (pravý Alt) + písmeno V, nebo levý Alt + 64
@@ -26,3 +26,4 @@ $ Znak dolaru na klávesnici 	Alt Gr (pravý Alt) + písmeno Ů nebo levý Alt +
 ° Stupně na klávesnici 	Shift + klávesa se stupni
 - Spojovník na klávesnici 	Levý Alt + 45 nebo klávesa s označením spojovníku (vedle Shift)
 Pomlčka na klávesnici 	Levý Alt + 0150
+</pre>

@@ -5,6 +5,10 @@
 
 [Itnetwork](https://github.com/bedjan/itpoznamky/blob/main/itnetwork.md)
 
+[Google hledání](https://github.com/bedjan/itpoznamky/blob/main/google.md)
+
+---
+
 [Html](https://github.com/bedjan/itpoznamky/blob/main/html.md)
 
 [Java](https://github.com/bedjan/itpoznamky/blob/main/java.md)

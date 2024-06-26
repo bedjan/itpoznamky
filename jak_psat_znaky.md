@@ -1,4 +1,6 @@
 [Znaky na klávesnici](https://znakynaklavesnici.cz/)
+[Uvozovky na klávesnici](https://cs.wikipedia.org/wiki/Uvozovky)
+[Závorky na klávesnici](https://cs.wikipedia.org/wiki/Z%C3%A1vorky)
 
 <pre>
 () Kulaté uvozovky na klávesnici 	Shift + klávesa s uvozovkou

@@ -19,3 +19,12 @@
 
 [Index.html mustr](https://github.com/bedjan/itpoznamky/blob/main/index_example.html)
 
+
+
+----------------
+
+# Tento web lze upravit na:
+
+[Index.php](https://github.com/bedjan/itpoznamky/blob/main/index.php)
+
+[Index.html](https://github.com/bedjan/itpoznamky/blob/main/index_itpoznamky.html)

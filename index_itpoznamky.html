@@ -51,6 +51,7 @@
             width: 100%;
             margin-left: 0;
             padding-top: 70px; /* Add padding to prevent content from being hidden behind the fixed header */
+            padding-bottom: 70px; /* Add padding to prevent content from being hidden behind the fixed footer */
         }
         #content.active {
             margin-left: 250px;
@@ -105,6 +106,7 @@
                 margin-left: 0;
                 padding: 10px;
                 padding-top: 130px; /* Adjust padding to prevent content from being hidden behind the fixed header */
+                padding-bottom: 70px; /* Add padding to prevent content from being hidden behind the fixed footer */
             }
             #content.active {
                 margin-left: 0;
@@ -112,6 +114,13 @@
             .nav-item {
                 margin-top: 20px;
             }
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #d6d8db;
+            z-index: 1020;
         }
     </style>
 </head>
@@ -149,7 +158,7 @@
         </div>
     </main>
 
-    <footer class="bg-light py-3 mt-4">
+    <footer class="bg-light py-3">
         <div class="container-fluid text-center">
             <p>&copy; <span id="currentYear"></span> Všechna práva vyhrazena. | 
                <a href="#" id="editOnGithub" target="_blank">Upravit na GitHubu</a>

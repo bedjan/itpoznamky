@@ -1,18 +1,11 @@
 <?php
-copy("https://github.com/bedjan/itpoznamky/raw/main/Parsedown.php", "Parsedown.php");
-copy("https://github.com/bedjan/itpoznamky/raw/main/itnetwork.md", "itnetwork.md");
-copy("https://github.com/bedjan/itpoznamky/raw/main/bootstrap.css", "bootstrap.css");
+$filename = 'index.html';
 
-echo "<base target='_blank'>";
-echo "<meta name='viewport' content='width=device-width, initial-scale=1' />";
-/*
-echo "<link rel='stylesheet' href='https://unpkg.com/simpledotcss/simple.css'>";
-*/
-
-echo "<link rel='stylesheet' href='bootstrap.css'>";
-include('Parsedown.php');
-$html = file_get_contents('https://github.com/bedjan/itpoznamky/raw/main/itnetwork.md');
-$Parsedown = new Parsedown();
-echo $Parsedown->text($html);
-
+if (file_exists($filename)) {
+copy("https://raw.githubusercontent.com/bedjan/itpoznamky/main/index_itpoznamky.html", "index.html");
+include('index.html');
+} else {
+copy("https://raw.githubusercontent.com/bedjan/itpoznamky/main/index_itpoznamky.html", "index.html");
+include('index.html');
+}
 ?>

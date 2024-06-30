@@ -134,7 +134,7 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
-                const htmlContent = marked.parse(text, { renderer });
+                const htmlContent = marked(text, { renderer });
                 document.getElementById('markdownContent').innerHTML = htmlContent;
                 
                 const editLink = document.getElementById('editOnGithub');
@@ -155,9 +155,16 @@
 
             const sidebar = document.getElementById('sidebar');
             const sidebarCollapse = document.getElementById('sidebarCollapse');
+            const content = document.getElementById('content');
 
             sidebarCollapse.addEventListener('click', () => {
                 sidebar.classList.toggle('active');
+            });
+
+            content.addEventListener('click', () => {
+                if (sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
             });
 
             scanForMarkdownFiles().then(files => {
@@ -180,6 +187,9 @@
                     a.onclick = (e) => {
                         e.preventDefault();
                         loadMarkdown(file);
+                        if (sidebar.classList.contains('active')) {
+                            sidebar.classList.remove('active');
+                        }
                     };
                     li.appendChild(a);
                     fileList.appendChild(li);

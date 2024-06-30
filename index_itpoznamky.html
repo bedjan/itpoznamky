@@ -6,6 +6,7 @@
     <title>Markdown Prohlížeč s GitHub Integrací</title>
     <script src="https://cdn.jsdelivr.net/npm/marked@4.0.10/marked.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css">
     <style>
         body, html {
             width: 100%;
@@ -82,10 +83,10 @@
                     <input type="text" name="q" class="form-input px-4 py-2 border rounded-l" placeholder="Hledat na DuckDuckGo">
                     <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
                 </form>
-                <button id="sidebarCollapse" class="text-gray-700 focus:outline-none md:hidden">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                <button id="sidebarCollapse" class="hamburger hamburger--collapse text-gray-700 focus:outline-none md:hidden" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
                 </button>
             </div>
         </div>
@@ -179,11 +180,13 @@
 
             sidebarCollapse.addEventListener('click', () => {
                 sidebar.classList.toggle('active');
+                sidebarCollapse.classList.toggle('is-active');
             });
 
             content.addEventListener('click', () => {
                 if (sidebar.classList.contains('active')) {
                     sidebar.classList.remove('active');
+                    sidebarCollapse.classList.remove('is-active');
                 }
             });
 
@@ -209,6 +212,7 @@
                         loadMarkdown(file);
                         if (sidebar.classList.contains('active')) {
                             sidebar.classList.remove('active');
+                            sidebarCollapse.classList.remove('is-active');
                         }
                     };
                     li.appendChild(a);

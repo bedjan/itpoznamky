@@ -14,111 +14,47 @@
             padding: 0;
             background-color: #f2f2f2;
         }
-        #header-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            background-color: #d6d8db;
-            z-index: 1020;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 10px;
-        }
         #sidebar {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            height: calc(100vh - 60px);
-            width: 250px;
-            background-color: #d6d8db;
-            z-index: 1010;
-            overflow-y: auto;
-            transform: translateX(-250px);
+            transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
-            padding-top: 10px;
         }
         #sidebar.active {
             transform: translateX(0);
         }
-        #content {
-            transition: margin-left 0.3s ease-in-out;
-            width: calc(100% - 250px);
-            margin-left: 0;
-            padding-top: 70px;
-            padding-bottom: 70px;
-            word-wrap: break-word;
-        }
-        #content.active {
-            margin-left: 250px;
-        }
-        #content img {
-            max-width: 100%;
-            height: auto;
-        }
-        @media (max-width: 768px) {
-            #header-row {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 10px;
-            }
+        @media (min-width: 768px) {
             #sidebar {
-                width: 100%;
-                height: auto;
-                position: fixed;
-                top: 60px;
-                left: 0;
-                transform: translateX(-100%);
-                padding-top: 0;
-            }
-            #sidebar.active {
                 transform: translateX(0);
             }
-            #content {
-                margin-left: 0;
-                padding: 10px;
-                padding-top: 130px;
-                padding-bottom: 70px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-            #content.active {
-                margin-left: 0;
-            }
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #d6d8db;
-            z-index: 1020;
         }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
-    <header id="header-row" class="py-3 sticky-top flex items-center justify-between bg-gray-300">
-        <div class="container mx-auto flex items-center justify-between">
+    <header id="header-row" class="py-3 bg-gray-300 fixed w-full z-20">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
             <div class="flex items-center">
                 <button id="sidebarCollapse" class="bg-blue-500 text-white px-3 py-1 rounded">Menu</button>
                 <h1 class="ml-4 mb-0">Osobní stránky</h1>
             </div>
-            <form action="https://duckduckgo.com/" method="get" class="flex" target="_blank">
-                <input type="text" name="q" class="form-input px-4 py-2 border rounded-l" placeholder="Hledat na DuckDuckGo">
+            <form action="https://duckduckgo.com/" method="get" class="flex mt-2 w-full sm:w-auto sm:mt-0" target="_blank">
+                <input type="text" name="q" class="form-input px-4 py-2 border rounded-l flex-grow sm:flex-grow-0" placeholder="Hledat na DuckDuckGo">
                 <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
             </form>
         </div>
     </header>
 
-    <div id="sidebar" class="bg-gray-300 p-3">
+    <div id="sidebar" class="bg-gray-300 fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 p-3 z-10 overflow-y-auto md:relative md:h-auto md:top-0 md:w-64">
         <nav>
             <ul class="flex flex-col" id="fileList"></ul>
         </nav>
     </div>
 
-    <main id="content" class="flex-grow mt-4 container mx-auto"></main>
+    <main id="content" class="flex-grow mt-16 md:ml-64 p-4 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto">
+            <div id="markdownContent"></div>
+        </div>
+    </main>
 
-    <footer class="bg-light py-3">
+    <footer class="bg-light py-3 bg-gray-300 mt-auto">
         <div class="container text-center">
             <p>&copy; <span id="currentYear"></span> Všechna práva vyhrazena. | 
                <a href="#" id="editOnGithub" target="_blank">Upravit na GitHubu</a>
@@ -151,7 +87,7 @@
                     .map(file => file.name);
             } catch (error) {
                 console.error('Error scanning files:', error);
-                document.getElementById('content').innerHTML = `<p class="text-danger">Error loading files: ${error.message}</p>`;
+                document.getElementById('markdownContent').innerHTML = `<p class="text-danger">Error loading files: ${error.message}</p>`;
                 return [];
             }
         }
@@ -163,13 +99,13 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
-                document.getElementById('content').innerHTML = marked.parse(text);
+                document.getElementById('markdownContent').innerHTML = marked.parse(text);
                 
                 const editLink = document.getElementById('editOnGithub');
                 editLink.href = `https://github.com/${githubRepo}/edit/${githubBranch}/${file}`;
             } catch (error) {
                 console.error('Error loading Markdown:', error);
-                document.getElementById('content').innerHTML = `<p class="text-danger">Error loading file ${file}: ${error.message}</p>`;
+                document.getElementById('markdownContent').innerHTML = `<p class="text-danger">Error loading file ${file}: ${error.message}</p>`;
             }
         }
 
@@ -187,12 +123,10 @@
 
             sidebarCollapse.addEventListener('click', () => {
                 sidebar.classList.toggle('active');
-                content.classList.toggle('active');
             });
 
             function closeSidebar() {
                 sidebar.classList.remove('active');
-                content.classList.remove('active');
             }
 
             scanForMarkdownFiles().then(files => {

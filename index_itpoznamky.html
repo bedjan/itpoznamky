@@ -7,96 +7,33 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@4.0.10/marked.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body, html {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-            display: flex;
-            flex-direction: column;
-        }
-        #header-row {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        #sidebar {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            bottom: 0;
-            width: 240px;
-            background-color: #f2f2f2;
-            overflow-y: auto;
-            transition: transform 0.3s ease-in-out;
-        }
-        #content {
-            margin-left: 240px;
-            margin-top: 60px;
-            padding: 20px;
-            flex-grow: 1;
-        }
-        @media (max-width: 768px) {
-            #sidebar {
-                transform: translateX(-100%);
+        @media (max-width: 640px) {
+            #fileList {
+                flex-direction: column;
             }
-            #content {
-                margin-left: 0;
-            }
-            #sidebar.active {
-                transform: translateX(0);
-            }
-        }
-        #menu-toggle {
-            display: none;
-        }
-        @media (max-width: 768px) {
-            #menu-toggle {
-                display: block;
-            }
-        }
-        .nav-item {
-            padding: 10px 15px;
-            cursor: pointer;
-        }
-        .nav-item:hover {
-            background-color: #e0e0e0;
         }
     </style>
 </head>
-<body>
-    <header id="header-row" class="bg-white shadow-md">
-        <div class="container mx-auto flex items-center justify-between p-4">
-            <div class="flex items-center">
-                <button id="menu-toggle" class="mr-4 text-gray-600 focus:outline-none">
-                    ☰
-                </button>
-                <h1 class="text-xl font-bold">Osobní stránky</h1>
-            </div>
-            <form action="https://duckduckgo.com/" method="get" class="flex" target="_blank">
-                <input type="text" name="q" class="form-input px-4 py-2 border rounded-l" placeholder="Hledat na DuckDuckGo">
-                <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
-            </form>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <details class="relative">
+                <summary class="list-none cursor-pointer font-bold text-xl">Menu</summary>
+                <nav class="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-b-lg shadow-lg">
+                    <ul id="fileList" class="flex flex-wrap p-2"></ul>
+                </nav>
+            </details>
         </div>
     </header>
 
-    <div id="sidebar" class="bg-white shadow-md">
-        <nav>
-            <ul class="flex flex-col" id="fileList"></ul>
-        </nav>
-    </div>
-
-    <main id="content">
-        <div id="markdownContent"></div>
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <div id="markdownContent" class="bg-white shadow-lg rounded-lg p-6 prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto"></div>
     </main>
 
-    <footer class="bg-white py-3 mt-auto">
-        <div class="container mx-auto text-center">
+    <footer class="bg-white shadow-md mt-8">
+        <div class="container mx-auto text-center py-4">
             <p>&copy; <span id="currentYear"></span> Všechna práva vyhrazena. | 
-               <a href="#" id="editOnGithub" target="_blank">Upravit na GitHubu</a>
+               <a href="#" id="editOnGithub" target="_blank" class="text-blue-600 hover:text-blue-800">Upravit na GitHubu</a>
             </p>
         </div>
     </footer>
@@ -107,7 +44,11 @@
 
         const renderer = new marked.Renderer();
         renderer.link = (href, title, text) => {
-            return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+            return `<span class="inline-flex items-center"><span class="mr-1">&#9679;</span><a href="${href}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">${text}</a></span>`;
+        };
+        renderer.heading = (text, level) => {
+            const className = `text-${['4xl', '3xl', '2xl', 'xl', 'lg', 'base'][level - 1]} font-bold mb-4`;
+            return `<h${level} class="${className}">${text}</h${level}>`;
         };
 
         function formatFileName(fileName) {
@@ -131,7 +72,7 @@
                     .map(file => file.name);
             } catch (error) {
                 console.error('Error scanning files:', error);
-                document.getElementById('markdownContent').innerHTML = `<p class="text-danger">Error loading files: ${error.message}</p>`;
+                document.getElementById('markdownContent').innerHTML = `<p class="text-red-600">Error loading files: ${error.message}</p>`;
                 return [];
             }
         }
@@ -150,7 +91,7 @@
                 editLink.href = `https://github.com/${githubRepo}/edit/${githubBranch}/${file}`;
             } catch (error) {
                 console.error('Error loading Markdown:', error);
-                document.getElementById('markdownContent').innerHTML = `<p class="text-danger">Error loading file ${file}: ${error.message}</p>`;
+                document.getElementById('markdownContent').innerHTML = `<p class="text-red-600">Error loading file ${file}: ${error.message}</p>`;
             }
         }
 
@@ -162,12 +103,7 @@
         window.onload = () => {
             updateYear();
 
-            const sidebar = document.getElementById('sidebar');
-            const menuToggle = document.getElementById('menu-toggle');
-
-            menuToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
-            });
+            const details = document.querySelector('details');
 
             scanForMarkdownFiles().then(files => {
                 const fileList = document.getElementById('fileList');
@@ -181,17 +117,15 @@
 
                 files.forEach(file => {
                     const li = document.createElement('li');
-                    li.className = 'nav-item';
+                    li.className = 'px-2 py-1';
                     const a = document.createElement('a');
-                    a.className = 'text-gray-700 hover:text-blue-500';
+                    a.className = 'text-gray-700 hover:text-blue-500 inline-flex items-center';
                     a.href = '#';
-                    a.textContent = formatFileName(file);
+                    a.innerHTML = `<span class="mr-1">&#9679;</span>${formatFileName(file)}`;
                     a.onclick = (e) => {
                         e.preventDefault();
                         loadMarkdown(file);
-                        if (window.innerWidth <= 768) {
-                            sidebar.classList.remove('active');
-                        }
+                        details.removeAttribute('open');
                     };
                     li.appendChild(a);
                     fileList.appendChild(li);

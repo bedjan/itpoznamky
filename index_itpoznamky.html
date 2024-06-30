@@ -15,7 +15,7 @@
             background-color: #f2f2f2;
         }
         #sidebar {
-            transform: translateX(-100%);
+            transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
         }
         #sidebar.active {
@@ -46,13 +46,13 @@
         </div>
     </header>
 
-    <div id="sidebar" class="bg-gray-300 fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 p-3 z-10 overflow-y-auto md:relative md:h-auto md:top-0 md:w-64">
+    <div id="sidebar" class="bg-gray-300 fixed top-0 right-0 h-full w-64 p-3 z-10 overflow-y-auto md:relative md:h-auto md:top-0 md:w-64">
         <nav>
             <ul class="flex flex-col" id="fileList"></ul>
         </nav>
     </div>
 
-    <main id="content" class="flex-grow mt-16 md:ml-64 p-4 transition-all duration-300 ease-in-out">
+    <main id="content" class="flex-grow mt-16 p-4 transition-all duration-300 ease-in-out">
         <div class="container mx-auto">
             <div id="markdownContent"></div>
         </div>

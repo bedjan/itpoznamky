@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown Prohlížeč s GitHub Integrací</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.0.10/marked.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body, html {
@@ -134,7 +134,7 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
-                const htmlContent = marked(text, { renderer });
+                const htmlContent = marked.parse(text, { renderer });
                 document.getElementById('markdownContent').innerHTML = htmlContent;
                 
                 const editLink = document.getElementById('editOnGithub');

@@ -30,15 +30,19 @@
 </head>
 <body class="flex flex-col min-h-screen">
     <header id="header-row" class="py-3 bg-gray-300 fixed w-full z-20">
-        <div class="container mx-auto flex flex-wrap items-center justify-between">
+        <div class="container mx-auto flex items-center justify-between">
+            <h1 class="mb-0">Osobní stránky</h1>
             <div class="flex items-center">
-                <button id="sidebarCollapse" class="bg-blue-500 text-white px-3 py-1 rounded">Menu</button>
-                <h1 class="ml-4 mb-0">Osobní stránky</h1>
+                <form action="https://duckduckgo.com/" method="get" class="flex mr-4" target="_blank">
+                    <input type="text" name="q" class="form-input px-4 py-2 border rounded-l" placeholder="Hledat na DuckDuckGo">
+                    <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
+                </form>
+                <button id="sidebarCollapse" class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
-            <form action="https://duckduckgo.com/" method="get" class="flex mt-2 w-full sm:w-auto sm:mt-0" target="_blank">
-                <input type="text" name="q" class="form-input px-4 py-2 border rounded-l flex-grow sm:flex-grow-0" placeholder="Hledat na DuckDuckGo">
-                <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
-            </form>
         </div>
     </header>
 
@@ -118,16 +122,11 @@
             updateYear();
 
             const sidebar = document.getElementById('sidebar');
-            const content = document.getElementById('content');
             const sidebarCollapse = document.getElementById('sidebarCollapse');
 
             sidebarCollapse.addEventListener('click', () => {
                 sidebar.classList.toggle('active');
             });
-
-            function closeSidebar() {
-                sidebar.classList.remove('active');
-            }
 
             scanForMarkdownFiles().then(files => {
                 const fileList = document.getElementById('fileList');
@@ -145,7 +144,6 @@
                     a.onclick = (e) => {
                         e.preventDefault();
                         loadMarkdown(file);
-                        closeSidebar();
                     };
                     li.appendChild(a);
                     fileList.appendChild(li);

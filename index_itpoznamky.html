@@ -22,6 +22,34 @@
         #sidebar.active {
             transform: translateX(0);
         }
+        @media (min-width: 768px) {
+            #sidebar {
+                transform: translateX(0);
+            }
+        }
+        #markdownContent h1 {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        #markdownContent h2 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        #markdownContent p {
+            margin-bottom: 1rem;
+        }
+        #markdownContent a {
+            color: #1a202c;
+            text-decoration: underline;
+        }
+        #markdownContent ul, #markdownContent ol {
+            margin-bottom: 1rem;
+            padding-left: 1.25rem;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -66,6 +94,12 @@
         const githubRepo = 'bedjan/itpoznamky';
         const githubBranch = 'main';
 
+        // Custom renderer to open links in a new tab
+        const renderer = new marked.Renderer();
+        renderer.link = (href, title, text) => {
+            return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+        };
+
         function formatFileName(fileName) {
             return fileName
                 .replace('.md', '')
@@ -99,7 +133,7 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
-                document.getElementById('markdownContent').innerHTML = marked.parse(text);
+                document.getElementById('markdownContent').innerHTML = marked(text, { renderer });
                 
                 const editLink = document.getElementById('editOnGithub');
                 editLink.href = `https://github.com/${githubRepo}/edit/${githubBranch}/${file}`;
@@ -129,6 +163,10 @@
                 fileList.innerHTML = '';
 
                 files.sort((a, b) => formatFileName(a).localeCompare(formatFileName(b)));
+
+                if (!files.includes('index.md')) {
+                    files.unshift('index.md');
+                }
 
                 files.forEach(file => {
                     const li = document.createElement('li');

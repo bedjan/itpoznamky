@@ -19,14 +19,16 @@
             transition: transform 0.3s ease-in-out;
             right: 0;
             position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 300px;
+            z-index: 50;
+            background-color: #d6d8db;
+            overflow-y: auto;
         }
         #sidebar.active {
             transform: translateX(0);
-        }
-        @media (min-width: 768px) {
-            #sidebar {
-                transform: translateX(0);
-            }
         }
         #markdownContent h1 {
             font-size: 1.875rem;
@@ -51,6 +53,19 @@
             margin-bottom: 1rem;
             padding-left: 1.25rem;
         }
+        @media (min-width: 768px) {
+            #sidebar {
+                transform: translateX(0);
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 250px;
+            }
+            #sidebarCollapse {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -71,7 +86,7 @@
         </div>
     </header>
 
-    <div id="sidebar" class="bg-gray-300 fixed top-0 right-0 h-full w-64 p-3 z-10 overflow-y-auto">
+    <div id="sidebar" class="bg-gray-300 p-3 z-10 overflow-y-auto">
         <nav>
             <ul class="flex flex-col space-y-2" id="fileList"></ul>
         </nav>
@@ -134,7 +149,7 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
-                const htmlContent = marked(text, { renderer });
+                const htmlContent = marked.parse(text, { renderer });
                 document.getElementById('markdownContent').innerHTML = htmlContent;
                 
                 const editLink = document.getElementById('editOnGithub');

@@ -32,6 +32,19 @@
         #sidebar.active {
             transform: translateX(0);
         }
+        @media (min-width: 768px) {
+            #sidebar {
+                transform: translateX(0);
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 250px;
+            }
+            #sidebarCollapse {
+                display: none;
+            }
+        }
         #markdownContent h1 {
             font-size: 1.875rem;
             line-height: 2.25rem;
@@ -54,19 +67,6 @@
         #markdownContent ul, #markdownContent ol {
             margin-bottom: 1rem;
             padding-left: 1.25rem;
-        }
-        @media (min-width: 768px) {
-            #sidebar {
-                transform: translateX(0);
-                position: fixed;
-                right: 0;
-                top: 0;
-                height: 100%;
-                width: 250px;
-            }
-            #sidebarCollapse {
-                display: none;
-            }
         }
         .flex-grow {
             flex-grow: 1;

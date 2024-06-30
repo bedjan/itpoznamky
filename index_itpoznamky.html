@@ -13,6 +13,8 @@
             margin: 0;
             padding: 0;
             background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
         }
         #sidebar {
             transform: translateX(100%);
@@ -66,10 +68,13 @@
                 display: none;
             }
         }
+        .flex-grow {
+            flex-grow: 1;
+        }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
-    <header id="header-row" class="py-3 bg-gray-300 fixed w-full z-20">
+<body>
+    <header id="header-row" class="py-3 bg-gray-300 w-full z-20">
         <div class="container mx-auto flex items-center justify-between">
             <h1 class="mb-0">Osobní stránky</h1>
             <div class="flex items-center">
@@ -77,7 +82,7 @@
                     <input type="text" name="q" class="form-input px-4 py-2 border rounded-l" placeholder="Hledat na DuckDuckGo">
                     <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
                 </form>
-                <button id="sidebarCollapse" class="text-gray-700 focus:outline-none">
+                <button id="sidebarCollapse" class="text-gray-700 focus:outline-none md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -98,7 +103,7 @@
         </div>
     </main>
 
-    <footer class="bg-light py-3 bg-gray-300 mt-auto">
+    <footer class="bg-light py-3 bg-gray-300 w-full">
         <div class="container text-center">
             <p>&copy; <span id="currentYear"></span> Všechna práva vyhrazena. | 
                <a href="#" id="editOnGithub" target="_blank">Upravit na GitHubu</a>

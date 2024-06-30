@@ -9,7 +9,14 @@
     <style>
         @media (max-width: 640px) {
             #fileList {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
+                max-height: 50vh;
+                overflow-y: auto;
+                width: 100%;
+            }
+            #fileList li {
+                flex: 1 0 100%; /* Ensures items take full width on small screens */
             }
         }
         /* Styles for full-width content */
@@ -20,12 +27,60 @@
         header, footer {
             width: 100%; /* Make header and footer full-width */
         }
+        
+        /* Styles for details and summary */
+        details {
+            margin-bottom: 1em;
+            width: 100%;
+        }
+        
+        summary {
+            font-weight: bold;
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 0.5em;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        summary:hover {
+            background-color: #e0e0e0;
+        }
+        
+        details[open] > summary {
+            background-color: #d0d0d0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        details > nav {
+            padding: 0.5em;
+            border: 1px solid #d0d0d0;
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            width: 100%;
+        }
+
+        #fileList {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #fileList li {
+            flex: 1 0 21%; /* Four items per row */
+            margin: 0.5%;
+            list-style: none;
+        }
+
+        main {
+            width: 100%;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <div class="container mx-auto px-4 py-3">
-            <details class="relative">
+            <details class="relative w-full">
                 <summary class="list-none cursor-pointer font-bold text-xl">Menu</summary>
                 <nav class="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-b-lg shadow-lg">
                     <ul id="fileList" class="flex flex-wrap p-2"></ul>
@@ -117,11 +172,10 @@
                 const fileList = document.getElementById('fileList');
                 fileList.innerHTML = '';
 
-                if (!files.includes('index.md')) {
-                    files.unshift('index.md');
-                }
-
+                // Ensure index.md is always first
+                files = files.filter(file => file !== 'index.md');
                 files.sort((a, b) => formatFileName(a).localeCompare(formatFileName(b)));
+                files.unshift('index.md');
 
                 files.forEach(file => {
                     const li = document.createElement('li');

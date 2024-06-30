@@ -8,6 +8,8 @@
 
 [Znaky na klavesnici](https://github.com/bedjan/itpoznamky/blob/main/jak_psat_znaky.md)
 
+[VS Code online](https://vscode.dev/)
+
 <details close>
 <summary>Termíny Praha</summary>
 <p>Moderní webdesign od A do Z v termínu * 23.6.2024 8:30:00 - 23.6.2024 18:30:00</p>

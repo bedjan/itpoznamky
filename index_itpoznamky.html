@@ -16,166 +16,85 @@
             display: flex;
             flex-direction: column;
         }
-        #sidebar {
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-            right: 0;
+        #header-row {
             position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        #sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
             bottom: 0;
-            width: 100%;
-            max-width: 300px;
-            z-index: 50;
-            background-color: #d6d8db;
+            width: 240px;
+            background-color: #f2f2f2;
             overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
         }
-        #sidebar.active {
-            transform: translateX(0);
-        }
-        @media (min-width: 768px) {
-            #sidebar {
-                transform: translateX(0);
-                position: fixed;
-                right: 0;
-                top: 0;
-                height: 100%;
-                width: 250px;
-            }
-            #sidebarCollapse {
-                display: none;
-            }
-        }
-        #markdownContent h1 {
-            font-size: 1.875rem;
-            line-height: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        #markdownContent h2 {
-            font-size: 1.5rem;
-            line-height: 2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        #markdownContent p {
-            margin-bottom: 1rem;
-        }
-        #markdownContent a {
-            color: #1a202c;
-            text-decoration: underline;
-        }
-        #markdownContent ul, #markdownContent ol {
-            margin-bottom: 1rem;
-            padding-left: 1.25rem;
-        }
-        .flex-grow {
+        #content {
+            margin-left: 240px;
+            margin-top: 60px;
+            padding: 20px;
             flex-grow: 1;
         }
-        .hamburger {
-            padding: 15px;
-            display: inline-block;
+        @media (max-width: 768px) {
+            #sidebar {
+                transform: translateX(-100%);
+            }
+            #content {
+                margin-left: 0;
+            }
+            #sidebar.active {
+                transform: translateX(0);
+            }
+        }
+        #menu-toggle {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            #menu-toggle {
+                display: block;
+            }
+        }
+        .nav-item {
+            padding: 10px 15px;
             cursor: pointer;
-            transition-property: opacity, filter;
-            transition-duration: 0.15s;
-            transition-timing-function: linear;
-            font: inherit;
-            color: inherit;
-            text-transform: none;
-            background-color: transparent;
-            border: 0;
-            margin: 0;
-            overflow: visible;
         }
-        .hamburger-box {
-            width: 30px;
-            height: 24px;
-            display: inline-block;
-            position: relative;
-        }
-        .hamburger-inner {
-            display: block;
-            top: 50%;
-            margin-top: -2px;
-        }
-        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-            width: 30px;
-            height: 3px;
-            background-color: #333;
-            border-radius: 4px;
-            position: absolute;
-            transition-property: transform;
-            transition-duration: 0.15s;
-            transition-timing-function: ease;
-        }
-        .hamburger-inner::before, .hamburger-inner::after {
-            content: "";
-            display: block;
-        }
-        .hamburger-inner::before {
-            top: -10px;
-        }
-        .hamburger-inner::after {
-            bottom: -10px;
-        }
-        .hamburger--spin .hamburger-inner {
-            transition-duration: 0.22s;
-            transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        }
-        .hamburger--spin .hamburger-inner::before {
-            transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-        }
-        .hamburger--spin .hamburger-inner::after {
-            transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        }
-        .hamburger--spin.is-active .hamburger-inner {
-            transform: rotate(225deg);
-            transition-delay: 0.12s;
-            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-        }
-        .hamburger--spin.is-active .hamburger-inner::before {
-            top: 0;
-            opacity: 0;
-            transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-        }
-        .hamburger--spin.is-active .hamburger-inner::after {
-            bottom: 0;
-            transform: rotate(-90deg);
-            transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        .nav-item:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <header id="header-row" class="py-3 bg-gray-300 w-full z-20">
-        <div class="container mx-auto flex items-center justify-between">
-            <h1 class="mb-0">Osobní stránky</h1>
+    <header id="header-row" class="bg-white shadow-md">
+        <div class="container mx-auto flex items-center justify-between p-4">
             <div class="flex items-center">
-                <form action="https://duckduckgo.com/" method="get" class="flex mr-4" target="_blank">
-                    <input type="text" name="q" class="form-input px-4 py-2 border rounded-l" placeholder="Hledat na DuckDuckGo">
-                    <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
-                </form>
-                <button id="sidebarCollapse" class="hamburger hamburger--spin text-gray-700 focus:outline-none md:hidden" type="button">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
+                <button id="menu-toggle" class="mr-4 text-gray-600 focus:outline-none">
+                    ☰
                 </button>
+                <h1 class="text-xl font-bold">Osobní stránky</h1>
             </div>
+            <form action="https://duckduckgo.com/" method="get" class="flex" target="_blank">
+                <input type="text" name="q" class="form-input px-4 py-2 border rounded-l" placeholder="Hledat na DuckDuckGo">
+                <button type="submit" class="bg-gray-200 text-gray-700 px-4 py-2 border rounded-r">Hledat</button>
+            </form>
         </div>
     </header>
 
-    <div id="sidebar" class="bg-gray-300 p-3 z-10 overflow-y-auto">
+    <div id="sidebar" class="bg-white shadow-md">
         <nav>
-            <ul class="flex flex-col space-y-2" id="fileList"></ul>
+            <ul class="flex flex-col" id="fileList"></ul>
         </nav>
     </div>
 
-    <main id="content" class="flex-grow mt-16 p-4 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto">
-            <div id="markdownContent"></div>
-        </div>
+    <main id="content">
+        <div id="markdownContent"></div>
     </main>
 
-    <footer class="bg-light py-3 bg-gray-300 w-full">
-        <div class="container text-center">
+    <footer class="bg-white py-3 mt-auto">
+        <div class="container mx-auto text-center">
             <p>&copy; <span id="currentYear"></span> Všechna práva vyhrazena. | 
                <a href="#" id="editOnGithub" target="_blank">Upravit na GitHubu</a>
             </p>
@@ -186,7 +105,6 @@
         const githubRepo = 'bedjan/itpoznamky';
         const githubBranch = 'main';
 
-        // Custom renderer to open links in a new tab
         const renderer = new marked.Renderer();
         renderer.link = (href, title, text) => {
             return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
@@ -245,19 +163,10 @@
             updateYear();
 
             const sidebar = document.getElementById('sidebar');
-            const sidebarCollapse = document.getElementById('sidebarCollapse');
-            const content = document.getElementById('content');
+            const menuToggle = document.getElementById('menu-toggle');
 
-            sidebarCollapse.addEventListener('click', () => {
+            menuToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('active');
-                sidebarCollapse.classList.toggle('is-active');
-            });
-
-            content.addEventListener('click', () => {
-                if (sidebar.classList.contains('active')) {
-                    sidebar.classList.remove('active');
-                    sidebarCollapse.classList.remove('is-active');
-                }
             });
 
             scanForMarkdownFiles().then(files => {
@@ -274,22 +183,21 @@
                     const li = document.createElement('li');
                     li.className = 'nav-item';
                     const a = document.createElement('a');
-                    a.className = 'nav-link text-gray-700 hover:text-blue-500';
+                    a.className = 'text-gray-700 hover:text-blue-500';
                     a.href = '#';
                     a.textContent = formatFileName(file);
                     a.onclick = (e) => {
                         e.preventDefault();
                         loadMarkdown(file);
-                        if (sidebar.classList.contains('active')) {
+                        if (window.innerWidth <= 768) {
                             sidebar.classList.remove('active');
-                            sidebarCollapse.classList.remove('is-active');
                         }
                     };
                     li.appendChild(a);
                     fileList.appendChild(li);
                 });
 
-                loadMarkdown('index.md'); // Load initial file
+                loadMarkdown('index.md');
             });
         };
     </script>

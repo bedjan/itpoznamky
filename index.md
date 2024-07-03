@@ -4,6 +4,10 @@
 
 [Itnetwork osnova](https://docs.google.com/spreadsheets/d/1d5wQRV8CgZAq5DwNVWny5UGvSOvb54ADlsRKIix4MEg/edit?pli=1&gid=0#gid=0)
 
+[Discord channel Itnerwork](https://discord.com/channels/873147646917898271/956163210019487764)
+
+[Na co si dat pozor](https://www.itnetwork.cz/prubeh-zaverecne-zkousky-rekvalifikacnich-kurzu#_na-co-si-dat-pozor-v-pripade-ze-si-kurz-hradis-pres-urad-prace)
+
 [Google poznamky](https://github.com/bedjan/itpoznamky/blob/main/google.md)
 
 [Znaky na klavesnici](https://github.com/bedjan/itpoznamky/blob/main/jak_psat_znaky.md)

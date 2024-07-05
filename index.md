@@ -13,6 +13,61 @@
 [Znaky na klavesnici](https://github.com/bedjan/itpoznamky/blob/main/jak_psat_znaky.md)
 
 <details close>
+<summary>Zkouska 15 otazek </summary>
+<p>Okruh 1 - Základy</p>
+<p>Každý účastník dostane 3 otázky.</p>
+<pre><code>Základní konstrukce jazyka Java
+    Proměnné a datové typy
+    Parsová<span class="hljs-keyword">n</span>í
+    Podmínky
+    Operátory
+    Cykly
+    Pole
+    Metody <span class="hljs-keyword">pro</span> <span class="hljs-keyword">pr</span>á<span class="hljs-keyword">ci</span> s polem
+    Metody <span class="hljs-keyword">pro</span> <span class="hljs-keyword">pr</span>á<span class="hljs-keyword">ci</span> s řetězci
+    Matematické funkce
+</code></pre><p>Okruh 2 - OOP</p>
+<p>Každý účastník dostane 3 otázky.</p>
+<pre><code>Objektově-orientované programování v Javě
+    Třídy a<span class="hljs-built_in"> instance
+</span>    Atributy a metody
+    Zapouzdření
+    Základní metody objektů
+    Dědičnost a polymorfismus
+    Gettery/settery
+</code></pre><p>Okruh 3 - MySQL a Kolekce</p>
+<p>Každý účastník dostane 3 otázky.</p>
+<pre><code>MySQL
+    CRUD (<span class="hljs-keyword">INSERT</span>, <span class="hljs-keyword">SELECT</span>, <span class="hljs-keyword">UPDATE</span>, <span class="hljs-keyword">DELETE</span>)
+    Základní <span class="hljs-keyword">SQL</span> funkce
+    <span class="hljs-keyword">JOIN</span>
+    Databázové vazby (relace)
+    Databázové indexy
+Kolekce a proudy v Javě
+    Generické vs. obecné kolekce
+    Hashmapy
+    Základní principy StreamAPI
+</code></pre><p>Okruh 4 - Doplňkové okruhy</p>
+<p>Každý účastník dostane 6 otázek.</p>
+<pre><code><span class="hljs-symbol">Modern</span>í webdesign
+    <span class="hljs-keyword">Boxmodel
+</span>    Párové/nepárové elementy
+    <span class="hljs-keyword">Blokové/řádkové </span>elementy
+    Tabulky a seznamy
+Základní konstrukce jazyka JavaScript
+    DOM
+    Podmínky
+    Časovače
+<span class="hljs-keyword">Bootstrap
+</span>    Grid systém
+    <span class="hljs-keyword">Breakpointy
+</span>    Základní komponenty <span class="hljs-keyword">Bootstrapu </span>(reboot, typografie, obrázky, tabulky, tlačítka, formuláře)
+</code></pre><p>Frameworky</p>
+<p>Frameworky Spring Boot a JEE nejsou součástí zkoušky.</p>
+</details>
+
+
+<details close>
 <summary>Termíny Praha</summary>
 <p>Moderní webdesign od A do Z v termínu * 23.6.2024 8:30:00 - 23.6.2024 18:30:00</p>
 <p>Základy programování v Javě v termínu * 13.7.2024 8:30:00 - 13.7.2024 18:30:00</p>

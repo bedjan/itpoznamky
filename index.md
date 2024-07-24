@@ -12,6 +12,8 @@
 
 [Znaky na klavesnici](https://github.com/bedjan/itpoznamky/blob/main/jak_psat_znaky.md)
 
+[15 nejlepších zkratek IntelliJ IDEA](https://blog-jetbrains-com.translate.goog/idea/2020/03/top-15-intellij-idea-shortcuts/?_x_tr_sl=auto&_x_tr_tl=cs&_x_tr_hl=cs)
+
 <details close>
 <summary>Zkouska 15 otazek </summary>
 <p>Okruh 1 - Základy</p>

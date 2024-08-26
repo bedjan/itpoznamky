@@ -80,7 +80,7 @@ Základní konstrukce jazyka JavaScript
 <p>React - 8.9.2024</p>
 <p>Best practices pro vývoj softwaru - 21.9.2024</p>
 <p>Firemní vývoj softwaru, Testování a verzování  - 19.10.2024</p>
-<p>Závěrečná zkouška - doplnit termín</p>
+<p>Závěrečná zkouška - patek 25.10.2024</p>
 </details>
 
 

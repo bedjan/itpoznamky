@@ -77,9 +77,9 @@ Základní konstrukce jazyka JavaScript
 <p>Databáze - SQL a datové algoritmy v termínu * 3.8.2024 8:30:00 - 3.8.2024 18:30:00</p>
 <p>Základy programování v JavaScriptu v termínu * 10.8.2024 8:30:00 - 10.8.2024 18:30:00.</p>
 <p>Spring Boot v Javě v termínu * 25.8.2024 8:30:00 - 25.8.2024 18:30:00</p>
-<p>React - doplnit termín</p>
-<p>Firemní vývoj softwaru, Testování a verzování  - doplnit termín</p>
-<p>Best practices pro vývoj softwaru - doplnit termín</p>
+<p>React - 8.9.2024</p>
+<p>Best practices pro vývoj softwaru - 21.9.2024</p>
+<p>Firemní vývoj softwaru, Testování a verzování  - 19.10.2024</p>
 <p>Závěrečná zkouška - doplnit termín</p>
 </details>
 

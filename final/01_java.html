@@ -1,0 +1,2316 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<style>/*
+ * https://bitbucket.org/kevinburke/markdowncss
+ *
+ * Copyright 2011 Kevin Burke unless otherwise noted.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   Some content is copyrighted by Twitter, Inc., and also released under an
+ *   Apache License; these sections are noted in the source.
+ */
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 30px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 24px;
+    padding: 0;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 36px;
+    /* The bottom margin is small. It's designed to be used with gray meta text
+     * below a post title. */
+    margin: 24px 0 6px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 540px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+/*    font-size: 13px;*/
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+/* Code below this line is copyright Twitter Inc. */
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+</style>
+</head>
+<body>
+<h1 id=""></h1>
+
+<h3 id="Generace.jazyk..">Generace jazyků</h3>
+
+<ul>
+<li><strong>Strojový</strong> - nečitelné</li>
+<li><strong>Assembler</strong> - lépe čitelný</li>
+<li><strong>3 generace</strong> - dobře čitelné, čísla jako proměnné</li>
+<li><strong>virtuální stroj</strong> - odstranili nevýhody předchozích - jsou vidět chyby zdrojového kódu</li>
+</ul>
+
+
+<h3 id="Java.verze">Java verze</h3>
+
+<ul>
+<li><strong>SE</strong> - Standart edice - tuto používáme</li>
+<li><strong>EE</strong> - Enterprise - pro velké webové aplikace</li>
+<li><strong>ME</strong> - Micro - v simkartách, pračkách, udajně na 9 miliardách zařízení</li>
+</ul>
+
+
+<h3 id="Aplikace">Aplikace</h3>
+
+<ul>
+<li><strong>IntelliJ IDEA</strong> a Eclipse Temurin( verze Java )</li>
+<li><strong>Dropbox</strong> - úložiště s verzemi souborů</li>
+</ul>
+
+
+<h3 id="Metoda.MAIN...hlavn...">Metoda MAIN ( hlavní)</h3>
+
+<pre><code class=""> public static void main(String[] args) {
+
+}
+</code></pre>
+
+<ul>
+<li>v Intellij napsat main a zmáčknout Tab klavesů</li>
+</ul>
+
+
+<h3 id="V..pis.do.konzole">Výpis do konzole</h3>
+
+<pre><code>System.out.println("Text který se zobrazí");
+</code></pre>
+
+<ul>
+<li>v Intellij napsat sout a pak klávesu Tab</li>
+</ul>
+
+
+<p>( <code>System</code> je třída, <code>out</code> je výstup, println() vypisuje text )</p>
+
+<ul>
+<li>uvozovky se píší přes klávesu Shift a  ů</li>
+<li>znak <code>;</code> je pod Esc klávesou</li>
+</ul>
+
+
+<h3 id="Prom..nn..">Proměnné</h3>
+
+<ul>
+<li>místo v paměti počítače, kam si
+můžeme uložit nějaká data</li>
+<li>má vždy nějaký datový typ který se musí deklarovat  - tzn. číslo, znak, text,&hellip;</li>
+</ul>
+
+
+<h3 id="Typov...syst..m">Typový systém</h3>
+
+<ul>
+<li><strong>statický</strong> - striktně definovaný</li>
+<li><strong>dynamický</strong> - nemusí být striktně definovaný</li>
+</ul>
+
+
+<h3 id="Z..kladn...datov...typy">Základní datové typy</h3>
+
+<ul>
+<li><strong>int</strong> - celá čísla</li>
+<li><strong>double</strong> - desetinná čísla</li>
+<li><strong>String</strong> - textový řetězec</li>
+</ul>
+
+
+<h3 id="Program.vypisuj..c...prom..nnou">Program vypisující proměnnou</h3>
+
+<pre><code>
+package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int a;
+a = 56;
+System.out.println(a);
+    }
+}
+</code></pre>
+
+<h3 id="Deklarace.prom..nn..">Deklarace proměnné</h3>
+
+<ul>
+<li>nadeklaruje novou proměnnou a datového
+typu int</li>
+</ul>
+
+
+<h3 id="Inicializace.prom..nn..">Inicializace proměnné</h3>
+
+<ul>
+<li>provádí přiřazení do proměnné, k čemuž slouží
+operátor &ldquo;rovná se&rdquo;</li>
+</ul>
+
+
+<h3 id="Desetinn...prom..nn..">Desetinná proměnná</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+double a;
+a = 56.6;
+System.out.println(a);
+    }
+}
+</code></pre>
+
+<h3 id="Na....t..n...hodnot.z.konzole.a.parsov..n...v.Jav..">Načítání hodnot z konzole a parsování v Javě</h3>
+
+<ul>
+<li>Pokud budete potřebovat v kterémkoli ze svých
+programů načíst text z konzole, je nutné program takto upravit a přidat
+instanci třídy Scanner</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+public class Program {
+public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Ahoj, jsem virtuální papoušek Lóra, rád opakuji!");
+System.out.println("Napiš něco: ");
+String vstup;
+vstup = scanner.nextLine();
+String vystup;
+vystup = vstup + ", " + vstup + "!";
+System.out.println(vystup);
+
+}
+}
+</code></pre>
+
+<h3 id="Spojov..n.....et..zc..">Spojování řetězců</h3>
+
+<pre><code>String vstup;
+vstup = scanner.nextLine();
+String vstup = scanner.nextLine();
+</code></pre>
+
+<h3 id="Program.Zdvojn..sobova..">Program Zdvojnásobovač</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Zadejte číslo k zdvojnásobení:");
+String hodnota = scanner.nextLine();
+int cislo = Integer.parseInt(hodnota);
+cislo = cislo * 2;
+System.out.println(cislo);
+    }
+}
+</code></pre>
+
+<h3 id="Parsov..n..">Parsování</h3>
+
+<ul>
+<li>převod z textové podoby na nějaký specifický typ,
+např. číslo</li>
+</ul>
+
+
+<pre><code>String hodnota = "56";
+int cislo = Integer.parseInt(hodnota);
+</code></pre>
+
+<h3 id="pozor.nextInt.nepou....vat">pozor nextInt nepoužívat</h3>
+
+<blockquote><p>Na skeneru existuje i metoda <strong>nextInt()</strong>, u které
+by se mohlo na první pohled zdát, že nám vrátí již naparsované číslo,
+a tedy i ušetří práci. Ve skutečnosti tato metoda bohužel <strong>ponechá ve
+vstupu znak Enteru</strong>, kterým uživatel číslo potvrdil. Tento znak tam zůstane
+tak dlouho, dokud jej nenačtete z konzole spolu s dalším textem. To může
+způsobit neočekávané problémy ve vašich programech. <strong>Proto</strong> ke čtení z
+konzole <strong>vždy používejte metodu</strong>  <strong>nextLine()</strong>.</p></blockquote>
+
+<h3 id="Metoda.String.valueOf..">Metoda String.valueOf()</h3>
+
+<pre><code>zavoláme li metodu String.valueOf() a jako
+parametr jí dáme naši proměnnou. Java to v tomto případě udělala za
+nás, v podstatě vykoná:
+
+System.out.println("Součet: " + String.valueOf(soucet));
+</code></pre>
+
+<h3 id="Kalkula..ka">Kalkulačka</h3>
+
+<pre><code>
+package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Vítejte v kalkulačce");
+System.out.println("Zadejte první číslo:");
+double a = Double.parseDouble(scanner.nextLine());
+System.out.println("Zadejte druhé číslo:");
+double b = Double.parseDouble(scanner.nextLine());
+double soucet = a + b;
+double rozdil = a - b;
+double soucin = a * b;
+double podil = a / b;
+System.out.println("Součet: " + soucet);
+System.out.println("Rozdíl: " + rozdil);
+System.out.println("Součin: " + soucin);
+System.out.println("Podíl: " + podil);
+System.out.println("Děkuji za použití kalkulačky.");
+    }
+}
+</code></pre>
+
+<h3 id="Gates">Gates</h3>
+
+<pre><code>package cz.itnetwork.vlastnosti;
+
+import java.util.Scanner;
+
+public class Vlastnosti {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ahoj, jak se jmenuješ?");
+        String jmeno = scanner.nextLine();
+        System.out.println("Jaký jsi?");
+        String vlastnost = scanner.nextLine();
+        System.out.println(jmeno + " je " + vlastnost);
+    }
+}
+</code></pre>
+
+<h3 id="Druh...mocnina">Druhá mocnina</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+
+        // Zde dokonči úlohu svým kódem...
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadej číslo k umocnění: ");
+        String sc = scanner.nextLine();
+        int cislo = Integer.parseInt(sc);
+        cislo = cislo * cislo;
+        System.out.println("Výsledek: " + cislo);
+    }
+}
+</code></pre>
+
+<h3 id="Obvod.a.obsah.kruhu">Obvod a obsah kruhu</h3>
+
+<pre><code>
+package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadej poloměr kruhu (cm): ");
+        double r = Double.parseDouble(scanner.nextLine());
+        double o = 2 * 3.1415 * r;
+        double s = 3.1415 * r * r;
+        System.out.println("Obvod zadaného kruhu je: " + o + " cm");
+        System.out.println("Jeho obsah je: " + s + " cm^2");
+    }
+}
+</code></pre>
+
+<h3 id="Primitivn...datov...typy.v.Jav..">Primitivní datové typy v Javě</h3>
+
+<h4 id="Datov...typy">Datové typy</h4>
+
+<p>1) <strong>primitivní</strong> - např. číslo nebo znak. V paměti je jednoduše uložena
+přímo hodnota a my k této hodnotě můžeme z programu přímo přistupovat.</p>
+
+<ul>
+<li><p><em>celá čísla</em> - byte ( velikost 8 bitů ), short ( 16 bitů ), int ( 32 bitů ), long ( 64 bitů )</p></li>
+<li><p><em>desetinná čísla</em> různě přesná - float, double</p></li>
+</ul>
+
+
+<pre><code>float f = 3.14F;
+double d = 2.72;
+</code></pre>
+
+<h3 id="pozor.presnost.u.float.a.double">pozor presnost u float a double</h3>
+
+<blockquote><p>desetinná čísla jsou v
+počítači uložena ve dvojkové soustavě, dochází k určité ztrátě
+přesnosti. , proto  když budete
+programovat např. finanční systém, nepoužívejte tyto dat. typy pro
+uchování peněz, mohlo by dojít k malým odchylkám.</p></blockquote>
+
+<ul>
+<li><strong>char</strong> ( U+0000 až U+ffff ) - 16 bitů</li>
+</ul>
+
+
+<pre><code>char znak = 'A';
+</code></pre>
+
+<ul>
+<li><p>BigDecimal - řeší problém ukládání desetinných čísel
+v binární podobě, ukládá totiž číslo vnitřně jako pole, používá se tedy pro uchování peněžních hodnot</p></li>
+<li><p>další třídy k výpočtům s vysokou přesností - BigDecimal, BigInteger, AtomicInteger, AtomicLong</p></li>
+</ul>
+
+
+<p><code>
+</code></p>
+
+<ul>
+<li><strong>boolean</strong> ( pravda, nebo nepravda - tedy True vs. false ) - 8 bitů</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+boolean nepravda = false;
+boolean vyraz = (15 &gt; 5);
+System.out.println(nepravda);
+System.out.println(vyraz);
+    }
+}
+</code></pre>
+
+<p>2) <strong>referenční</strong> - Referenční typy
+začínají na rozdíl od typů primitivních velkým písmenem</p>
+
+<p><strong>String</strong> ( řetězec )</p>
+
+<p>String s metodami:</p>
+
+<p><strong>startsWith()</strong> - začíná řetězec textem?</p>
+
+<p><strong>endsWith()</strong> - končí řetězec textem?</p>
+
+<p><strong>contains()</strong> - obsahuje řetězec text?</p>
+
+<p><strong>isEmpty()</strong> - je řetězec prázdný?</p>
+
+<p><strong>toUpperCase()</strong> - vracejí řetězec ve velkých  písmenech</p>
+
+<p><strong>toLowerCase()</strong> - vracejí řetězec v malých písmenech</p>
+
+<p><strong>trim()</strong> - odstraňují se vždy bílé znaky kolem řetězce, ne
+uvnitř</p>
+
+<p><strong>replace()</strong> - nahrazení
+určité části retězce jiným textem</p>
+
+<p><strong>format()</strong> - umožňuje vkládat do samotného textového řetězce zástupné značky (</p>
+
+<p><em>zástupné značky jsou:</em>
+<strong>%d</strong> pro celá čísla,</p>
+
+<p><strong>%s</strong> pro String,</p>
+
+<p><strong>%f</strong> pro float nebo double (reálná
+    čísla).
+<strong>%.2f</strong> pro dvě desetinná místa</p>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int a = 10;
+int b = 20;
+int soucet = a + b;
+String veta = String.format("Když sečteme %d a %d, dostaneme %d", a, b, soucet);
+System.out.println(veta);
+    }
+}
+</code></pre>
+
+<h3 id="pozor.printf...a.desetinn.......rky">pozor printf() a desetinné čárky</h3>
+
+<blockquote><p>Metoda printf() bere v potaz lokalizaci systému
+a může namísto desetinné tečky vypsat desetinnou čárku. Dejte si tedy
+pozor na to, že očekávaný výstup desetinných čísel na různých
+platformách (v jazycích) nemusí být úplně totožný.</p></blockquote>
+
+<p><strong>lenght()</strong> - délka řetezce vrátí celé číslo</p>
+
+<h3 id="Kristus">Kristus</h3>
+
+<pre><code>import java.util.Scanner;
+
+public class Program
+{
+public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadej jméno: ");
+        String jmeno = scanner.nextLine();
+
+        System.out.println("Zadej příjmení: ");
+        String prijmeni = scanner.nextLine();
+
+        System.out.println("Zadej svůj věk: ");
+         int vek = Integer.parseInt(scanner.nextLine());
+        vek = vek + 1;
+        System.out.println(jmeno.toUpperCase() + " " + prijmeni.toUpperCase());
+
+
+        System.out.printf("Za rok ti bude %d let.", vek);
+
+    }
+}
+</code></pre>
+
+<h3 id="L2.slova">2 slova</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadejte delší slovo: ");
+        String delsiSlovo = scanner.nextLine().trim();
+        System.out.println("Zadejte kratší slovo: ");
+        String kratsiSlovo = scanner.nextLine().trim();
+        int rozdil = delsiSlovo.length() - kratsiSlovo.length();
+        System.out.printf("Slova se liší délkou o %d znaků", rozdil);
+    }
+}
+</code></pre>
+
+<h3 id="obsahuje.slovo.itnetwork">obsahuje slovo itnetwork</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadej řetězec: ");
+        String vstup = scanner.nextLine().toUpperCase();
+        boolean obsahuje = vstup.contains("ITNETWORK");
+        System.out.println(obsahuje);        
+    }
+}
+</code></pre>
+
+<h3 id="Podm..nky..v..tven....v.Jav..">Podmínky (větvení) v Javě</h3>
+
+<p><strong>if</strong> ( když ) -</p>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+if (15 &gt; 5) {
+    System.out.println("Pravda");
+}
+System.out.println("Program zde pokračuje dál");
+    }
+}
+</code></pre>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Zadej nějaké číslo");
+int cislo = Integer.parseInt(scanner.nextLine());
+if (cislo &gt; 5) {
+    System.out.println("Zadal jsi číslo větší než 5!");
+}
+System.out.println("Děkuji za zadání");
+    }
+}
+</code></pre>
+
+<h3 id="Rela..n...oper..tory">Relační operátory</h3>
+
+<p>rovnost ==
+ostře větší >
+ostře menší &lt;
+větší nebo rovno >=
+menší nebo rovno &lt;=
+nerovnost !=
+becná negace !</p>
+
+<h3 id="Blok.p....kaz..">Blok příkazů</h3>
+
+<ul>
+<li>vykonání více než jednoho příkazu</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Zadej nějaké číslo, ze kterého spočítám odmocninu:");
+int zaklad = Integer.parseInt(scanner.nextLine());
+if (zaklad &gt;= 0) {
+    System.out.println("Zadal jsi číslo větší nebo rovno 0, to znamená, že ho mohu odmocnit!");
+    double odmocnina = Math.sqrt(zaklad);
+    System.out.println("Odmocnina z čísla " + zaklad + " je " + odmocnina);
+}
+System.out.println("Děkuji za zadání");
+    }
+}
+</code></pre>
+
+<h3 id="else.-.neboli.jinak">else - neboli jinak</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Zadej nějaké číslo, ze kterého spočítám odmocninu:");
+int zaklad = Integer.parseInt(scanner.nextLine());
+if (zaklad &gt;= 0) {
+    System.out.println("Zadal jsi číslo větší nebo rovno 0, to znamená, že ho mohu odmocnit!");
+    double odmocnina = Math.sqrt(zaklad);
+    System.out.println("Odmocnina z čísla " + zaklad + " je " + odmocnina);
+}
+else {
+    System.out.println("Odmocnina ze záporného čísla neexistuje v oboru reálných čísel!");
+}
+System.out.println("Děkuji za zadání");
+    }
+}
+</code></pre>
+
+<h3 id="Prohozen...hodnot.prom..nn..">Prohození hodnot proměnné</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int cislo = 0; // do proměnné si přiřadíme na začátku 0
+
+if (cislo == 0) { // pokud je cislo 0, dáme do něj jedničku
+    cislo = 1;
+}
+else { // pokud je cislo 1, dáme do něj nulu
+    cislo = 0;
+}
+
+System.out.println(cislo);
+    }
+}
+</code></pre>
+
+<h3 id="Switch.-.p..ep..na..">Switch - přepínač</h3>
+
+<p><strong>Skládání podmínek</strong> &amp;&amp; - a zároveň, || - nebo</p>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Zadejte číslo v rozmezí 10-20 nebo 30-40:");
+int cislo = Integer.parseInt(scanner.nextLine());
+if (((cislo &gt;= 10) &amp;&amp; (cislo &lt;= 20)) || ((cislo &gt;= 30) &amp;&amp; (cislo &lt;= 40))) {
+    System.out.println("Zadal jsi správně");
+} else {
+    System.out.println("Zadal jsi špatně");
+}
+    }
+}
+</code></pre>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Vítejte v kalkulačce");
+System.out.println("Zadejte první číslo:");
+double a = Double.parseDouble(scanner.nextLine());
+System.out.println("Zadejte druhé číslo:");
+double b = Double.parseDouble(scanner.nextLine());
+System.out.println("Zvolte si operaci:");
+System.out.println("1 - sčítání");
+System.out.println("2 - odčítání");
+System.out.println("3 - násobení");
+System.out.println("4 - dělení");
+int volba = Integer.parseInt(scanner.nextLine());
+double vysledek = 0;
+switch (volba) {
+    case 1:
+        vysledek = a + b;
+        break;
+    case 2:
+        vysledek = a - b;
+        break;
+    case 3:
+        vysledek = a * b;
+        break;
+    case 4:
+        vysledek = a / b;
+        break;
+}
+if ((volba &gt; 0) &amp;&amp; (volba &lt; 5)) {
+    System.out.println("Výsledek: " + vysledek);
+} else {
+    System.out.println("Neplatná volba");
+}
+System.out.println();
+System.out.println("Děkuji za použití kalkulačky.");
+    }
+}
+</code></pre>
+
+<h3 id="D..lka.jm..na">Délka jména</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadej své jméno: ");
+        String jmeno = scanner.nextLine();
+        if ((jmeno.length() &gt;= 3) &amp;&amp; (jmeno.length() &lt;= 10)) {
+            System.out.println("Normální jméno.");
+        } else {
+            System.out.println("Máš moc krátké nebo moc dlouhé jméno!");
+        }
+    }
+}
+</code></pre>
+
+<h3 id="Smajl..k">Smajlík</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+   public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadej smajlíka: ");
+        String smajlik = scanner.nextLine();
+        //* Odstranění bílých znaků a převod na velká písmena
+        smajlik = smajlik.trim().toUpperCase();
+        //* Odstranění nosu, neboli pomlcky
+        smajlik = smajlik.replace("-", "");
+        System.out.print("Tvůj smajlík je ");
+        switch (smajlik) {
+            case ":)":
+                System.out.println("veselý");
+                break;
+            case ":(":
+                System.out.println("smutný");
+                break;
+            case ":*":
+                System.out.println("zamilovaný");
+                break;
+            case ":P":
+                System.out.println("s vyplazeným jazykem");
+                break;
+            default:
+                System.out.println("neznámý");
+                break;
+        }
+    }
+}
+</code></pre>
+
+<h3 id="Kvadratick...rovnice">Kvadratická rovnice</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadejte postupně koeficienty a,b,c kvadratické rovnice ax^2+bx+c=0 : ");
+        double a = Double.parseDouble(scanner.nextLine());
+        double b = Double.parseDouble(scanner.nextLine());
+        double c = Double.parseDouble(scanner.nextLine());
+
+        if (a != 0) {
+            // výpočet diskriminantu
+            double diskriminant = b * b - 4 * a * c;
+            if (diskriminant &lt; 0) {
+                System.out.println("Neexistuje řešení v oblasti reálných čísel");
+            } else if (diskriminant == 0) {
+                double koren = -b / (2 * a);
+                System.out.printf("Rovnice má jeden kořen x = %f", koren);
+            } else {
+                double x1 = (-b + Math.sqrt(diskriminant)) / (2 * a);
+                double x2 = (-b - Math.sqrt(diskriminant)) / (2 * a);
+                System.out.printf("Rovnice má 2 reálné kořeny x1 = %f, x2 = %f", x1, x2);
+            }
+        } else {
+            System.out.println("Není kvadratická rovnice"); // pro zjednodušení se komplexními kořeny nebudeme zabývat        
+        }
+    }
+}
+</code></pre>
+
+<h3 id="For.-.pevn...po..et...opakov..n..">For - pevný počet   opakování</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+for (int i = 0; i &lt; 3; i++) {
+    System.out.println("Knock");
+}
+System.out.println("Penny!");
+    }
+}
+</code></pre>
+
+<h3 id="L..ada">Řada</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+for (int i = 1; i &lt;= 10; i++) {
+    System.out.printf("%d ", i);
+
+for (int i = 1; i &lt;= 10; i++) {
+    System.out.print(i + " ");
+}
+    }
+}
+
+ # metoda printf()-  neodřádkuje, println - odřádkuje
+</code></pre>
+
+<h3 id="Mal...n..sobilka.pomoc...cykl..">Malá násobilka pomocí cyklů</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println("Malá násobilka pomocí dvou cyklů:");
+for (int j = 1; j &lt;= 10; j++) {
+    for (int i = 1; i &lt;= 10; i++) {
+        System.out.print((i * j) + " ");
+    }
+    System.out.println();
+}
+    }
+}
+</code></pre>
+
+<h3 id="Mocnina.....sla">Mocnina čísla</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+System.out.println("Mocninátor");
+System.out.println("==========");
+System.out.println("Zadejte základ mocniny: ");
+int zaklad = Integer.parseInt(scanner.nextLine());
+System.out.println("Zadejte exponent: ");
+int exponent = Integer.parseInt(scanner.nextLine());
+
+int vysledek = 1;
+for (int i = 0; i &lt; exponent; i++) {
+    vysledek = vysledek * zaklad;
+}
+
+System.out.println("Výsledek: " + vysledek);
+System.out.println("Děkuji za použití mocninátoru");
+    }
+}
+</code></pre>
+
+<h3 id="while.-.dokud.plat...podm..nka">while - dokud platí podmínka</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int i = 1;
+while (i &lt;= 10) {
+    System.out.print(i + " ");
+    i++;
+}
+    }
+}
+</code></pre>
+
+<h3 id="Kalkula..ka">Kalkulačka</h3>
+
+<pre><code>Scanner scanner = new Scanner(System.in);
+
+System.out.println("Vítejte v kalkulačce");
+String pokracovat = "ano";
+while (pokracovat.equals("ano")) {
+    System.out.println("Zadejte první číslo:");
+    double a = Double.parseDouble(scanner.nextLine());
+    System.out.println("Zadejte druhé číslo:");
+    double b = Double.parseDouble(scanner.nextLine());
+    System.out.println("Zvolte si operaci:");
+    System.out.println("1 - sčítání");
+    System.out.println("2 - odčítání");
+    System.out.println("3 - násobení");
+    System.out.println("4 - dělení");
+    int volba = Integer.parseInt(scanner.nextLine());
+    double vysledek = 0;
+    switch (volba) {
+        case 1:
+                vysledek = a + b;
+                break;
+        case 2:
+                vysledek = a - b;
+                break;
+        case 3:
+                vysledek = a * b;
+                break;
+        case 4:
+                vysledek = a / b;
+                break;
+    }
+    if ((volba &gt; 0) &amp;&amp; (volba &lt; 5)) {
+        System.out.println("Výsledek: " + vysledek);
+    } else {
+        System.out.println("Neplatná volba");
+    }
+    System.out.println("Přejete si zadat další příklad? [ano/ne]");
+    pokracovat = scanner.nextLine();
+}
+System.out.println("Děkuji za použití kalkulačky.");
+</code></pre>
+
+<h3 id="pozor.equals">pozor equals</h3>
+
+<ul>
+<li>proměnné datového typu String
+porovnáváme pomocí metody equals(), nikoli pomocí operátoru
+==! Je to dáno tím, že String je
+referenční datový typ. Metoda equals() tedy v
+našem případě zjistí, zda se proměnná pokracovat rovná
+textovému řetězci ano.píšeme tedy</li>
+</ul>
+
+
+<pre><code> ("Text".equals("Text")). V kapitole o objektově
+orientovaném programování pochopíme proč.
+</code></pre>
+
+<h3 id="Ryby">Ryby</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Kolik ryb si dáš k večeři?");
+        int pocet = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i &lt; pocet; i++) {
+            System.out.println("&lt;° )))-&lt;");
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+
+<h3 id="Lahve">Lahve</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+     public static void main(String[] args) {
+        for (int pocet = 10; pocet &gt; 0; pocet--) {
+            String tvar = "zelených láhví";
+            if ((pocet &gt; 1) &amp;&amp; (pocet &lt; 5)) {
+                tvar = "zelené láhve";
+            }
+            if (pocet == 1) {
+                tvar = "zelená láhev";
+            }
+            System.out.println(pocet + " " + tvar + " stojí na stole a jedna láhev spadne");
+        }
+    }
+}
+</code></pre>
+
+<h3 id="Hody.kostkou">Hody kostkou</h3>
+
+<pre><code>
+package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+        System.out.println("Kombinace hodů dvěma šestistěnnými kostkami:");
+
+        for (int i = 1; i &lt;= 6; i++) {
+            for (int j = 1; j &lt;= 6; j++) {
+                System.out.print("(" + i + ", " + j + ") ");
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3 id="Pole.-.datov...struktura.pro.prom..nn...stejn..ho.typu....p..ihr..dky.jsou.o....slovan...indexy..">Pole - datová struktura pro proměnné stejného typu  ( přihrádky jsou očíslované indexy )</h3>
+
+<p><strong>výhody</strong> - jednoduchost, rychlost, všechny prvky zabírají stejné místo</p>
+
+<p><strong>lengt</strong> - konstanta délky pole</p>
+
+<h3 id="Pole.uk..zka">Pole ukázka</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+
+int[] cisla = new int[10];
+for (int i = 0; i &lt; 10; i++) {
+    cisla[i] = i + 1;
+}
+
+for (int i = 0; i &lt; cisla.length; i++) {
+    System.out.print(cisla[i] + " ");
+}
+    }
+}
+</code></pre>
+
+<h3 id="Forearch..-.projede.v..echny.prvky.v.poli.a.jeho.d..lku.si">Forearch  - projede všechny prvky v poli a jeho délku si</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int[] cisla = new int[10];
+for (int i = 0; i &lt; 10; i++) {
+    cisla[i] = i + 1;
+}
+for (int cislo : cisla) {
+    System.out.print(cislo + " ");
+}
+    }
+}
+</code></pre>
+
+<h3 id="Napln..n...pole.ru..n..">Naplnění pole ručně</h3>
+
+<pre><code>String[] simpsonovi = {"Homer", "Marge", "Bart", "Lisa", "Maggie"};
+</code></pre>
+
+<h3 id="Metody.ve.t....d...arrays.-.pr..ce.s.poly.-.v..dy.naimportovat">Metody ve třídě arrays - práce s poly - vždy naimportovat</h3>
+
+<pre><code>import java.util.Arrays;
+</code></pre>
+
+<p><strong>sort()</strong> - seřazení</p>
+
+<pre><code>package onlineapp;
+
+import java.util.Arrays;
+
+public class Program {
+
+public static void main(String[] args) {
+
+String[] simpsonovi = {"Homer", "Marge", "Bart", "Lisa", "Maggie"};
+Arrays.sort(simpsonovi);
+for (String simpson : simpsonovi) {
+    System.out.print(simpson + " ");
+}
+
+}
+} 
+</code></pre>
+
+<h3 id="binarySearch...-.v..dy.mus...b..t.set....d..n...pole">binarySearch() - vždy musí být setříděné pole</h3>
+
+<ul>
+<li>vrátí index prvního nalezeného prvku. V
+případě nenalezení prvku vrátí metoda hodnotu -1. Metoda bere
+dva parametry, prvním je pole, druhým hledaný prvek.</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Program {
+
+public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+
+String[] simpsonovi = {"Homer", "Marge", "Bart", "Lisa", "Maggie"};
+System.out.println("Zadej Simpsona (z rodiny Simpsonů): ");
+String simpson = scanner.nextLine();
+
+Arrays.sort(simpsonovi);
+int pozice = Arrays.binarySearch(simpsonovi, simpson);
+if (pozice &gt;= 0) {
+        System.out.println("Jo, to je Simpson!");
+}
+else {
+        System.out.println("Hele, tohle není Simpson!");
+}
+
+}
+}
+</code></pre>
+
+<h3 id="copyOfRange...-.zkop..ruje.....st.pole.do.jin..ho.pole">copyOfRange() - zkopíruje část pole do jiného pole</h3>
+
+<ul>
+<li>Prvním parametrem je zdrojové pole, druhým startovní pozice a
+třetím konečná pozice. Metoda vrací nové pole, které je výsekem
+původního pole</li>
+</ul>
+
+
+<p><strong>proměnná délka pole</strong></p>
+
+<pre><code>Scanner scanner = new Scanner(System.in);
+
+System.out.println("Ahoj, spočítám ti průměr známek. Kolik známek zadáš?");
+int pocetZnamek = Integer.parseInt(scanner.nextLine());
+int[] znamky = new int[pocetZnamek];
+for (int i = 0; i &lt; pocetZnamek; i++) {
+        System.out.printf("Zadejte %d. číslo:%n", i + 1);
+        znamky[i] = Integer.parseInt(scanner.nextLine());
+}
+// spočítání průměru
+int soucet = 0;
+for (int znamka : znamky) {
+        soucet += znamka;
+}
+double prumer = soucet / (double)znamky.length;
+
+System.out.printf("Průměr tvých známek je: %.1f", prumer);
+</code></pre>
+
+<h3 id="pozor.u.copyOfRange..">pozor u copyOfRange()</h3>
+
+<ul>
+<li><p>Příkaz soucet += znamka je pouze zkrácený
+zápis pro soucet = soucet + znamka.</p></li>
+<li><p>Při výpisu jsme použili výraz %n. Tento výraz
+nám zajistí, ať máme nezávisle na platformě nový řádek. Na platformě
+MacOS to například automaticky nahradí za znaky \r.
+Alternativně můžeme využít například znaky \n, ale je
+možné, že to na nějaké platformě nový řádek nevytvoří.</p></li>
+</ul>
+
+
+<h3 id="pole.10-1">pole 10-1</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int[] cisla = new int[10];
+for (int i = 0; i &lt; 10; i++ ) {
+    cisla[i] = 10 - i;
+}
+for (int cislo : cisla) {
+    System.out.print(cislo + " \n");
+}
+    }
+}
+</code></pre>
+
+<h3 id="Ovoce.a.zelenina">Ovoce a zelenina</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+
+import java.util.Arrays;
+public class Program
+{
+ public static void main(String[] args) {
+        // Definování seznamů pro ovoce a zeleninu
+        List&lt;String&gt; ovoce = new ArrayList&lt;&gt;(Arrays.asList("jablko", "hruška", "pomeranč", "jahoda", "banán", "kiwi", "malina"));
+        List&lt;String&gt; zelenina = new ArrayList&lt;&gt;(Arrays.asList("zelí", "okurka", "rajče", "paprika", "ředkev", "mrkev", "brokolice"));
+
+        // Počítadlo dotazů
+        int pocetDotazu = 0;
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            // Zadání slova uživatelem
+            System.out.print("Zadej název libovolného ovoce nebo zeleniny:\n");
+            String slovo = scanner.nextLine().trim().toLowerCase();
+            pocetDotazu++;
+
+            // Určení, zda se jedná o ovoce nebo zeleninu
+            if (ovoce.contains(slovo)) {
+                System.out.println("Zadal jsi ovoce");
+            } else if (zelenina.contains(slovo)) {
+                System.out.println("Zadal jsi zeleninu");
+            } else {
+                System.out.println("Tvoje slovo nemám v seznamu");
+            }
+
+            // Dotaz na další slovo
+            System.out.print("Přeješ si zadat další slovo? (ano/ne)\n");
+            String dalsi = scanner.nextLine().trim().toLowerCase();
+            if (!dalsi.equals("ano")) {
+                break;
+            }
+        }
+
+        // Výpis počtu dotazů
+        System.out.println("Zadal jsi " + pocetDotazu + " slov");
+
+        scanner.close();
+    }
+}
+</code></pre>
+
+<h3 id="Medi..n">Medián</h3>
+
+<pre><code>
+package onlineapp;
+
+import java.util.Scanner;
+
+
+import java.util.Arrays;
+public class Program
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadej počet čísel: ");
+        int pocet = Integer.parseInt(scanner.nextLine());
+        int[] zadanaCisla = new int[pocet];
+        for (int i = 0; i &lt; pocet; i++) {
+            System.out.printf("Zadej %d. číslo:%n", i + 1);
+            zadanaCisla[i] = Integer.parseInt(scanner.nextLine());
+        }int[] serazenaCisla = new int[zadanaCisla.length];
+        for (int i = 0; i &lt; zadanaCisla.length; i++) {
+            serazenaCisla[i] = zadanaCisla[i];
+        }
+        Arrays.sort(serazenaCisla);
+
+        float median = serazenaCisla[serazenaCisla.length / 2];
+        for (int cislo : zadanaCisla) {
+            System.out.printf("%d se od mediánu odchyluje o %f %n", cislo, cislo - median);
+        }
+    }
+}
+</code></pre>
+
+<h3 id="pozor">pozor</h3>
+
+<ul>
+<li><p>Proměnné vždy pojmenováváme podle toho,
+co obsahují, nikoli podle toho, k čemu v
+programu slouží.</p></li>
+<li><p>Proměnné v jednom projektu pojmenováváme jedním
+jazykem. Pokud pojmenováváme česky, tak bez
+diakritiky!</p></li>
+<li><p>Takto dlouhý název má ovšem smysl jen ve složité
+aplikaci, kde je několik podobných proměnných, a proto musíme přidat
+další slovo. V Hello world aplikaci tedy nebudeme vytvářet proměnnou
+textSPozdravemHelloWorld, ale stačí nám jen
+pozdrav, pokud tam jiný není</p></li>
+<li><p>Pokud se na kód podívá někdo jiný než my, měl by
+přesně vědět, co v které proměnné je.</p></li>
+</ul>
+
+
+<h3 id="Textov.....et..zec">Textový řetězec</h3>
+
+<ul>
+<li><p>je v podstatě pole znaků
+(char)</p></li>
+<li><p>charAt(index) - přístup k
+jednotlivým znakům</p></li>
+<li><p>index je pořadí znaků v řetězci od 0</p></li>
+<li><p>indexOf(znak) - pro zjištění prvního výskytu zadaného znaku z indexu, pokud jej nenajde vrátí hodnotu -1</p></li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+String jazyk = "Java";
+System.out.println(jazyk);
+System.out.println(jazyk.charAt(2));
+    }
+}
+</code></pre>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+String jazyk = "Java";
+System.out.println(jazyk);
+System.out.println(jazyk.indexOf('v'));
+    }
+}
+</code></pre>
+
+<ul>
+<li><strong>scanner.nextLine()</strong> - řetězec budeme
+projíždět cyklem po jednom znaku</li>
+</ul>
+
+
+<pre><code>// řetězec, který chceme analyzovat
+String hora = "Mount Everest";
+System.out.println(hora);
+hora = hora.toLowerCase();
+
+// inicializace počítadel
+int pocetSamohlasek = 0;
+int pocetSouhlasek = 0;
+
+// definice typů znaků
+String samohlasky = "aeiouyáéěíóúůý";
+String souhlasky = "bcčdďfghjklmnpqrřsštťvwxzž";
+
+// hlavní cyklus
+for (char znak : hora.toCharArray()) {
+
+}
+</code></pre>
+
+<pre><code>// hlavní cyklus
+for (char znak : hora.toCharArray()) {
+    if (samohlasky.contains(String.valueOf(znak))) {
+        pocetSamohlasek++;
+    } else if (souhlasky.contains(String.valueOf(znak))) {
+        pocetSouhlasek++;
+    }
+}
+</code></pre>
+
+<ul>
+<li>V cyklu tedy na proměnnou hora zavoláme metodu <strong>toCharArray()</strong>, která vrátí plnohodnotné pole znaků z řetězce hora. V každé iteraci cyklu bude v proměnné znak aktuální znak řetězce hora.</li>
+</ul>
+
+
+<p>}</p>
+
+<ul>
+<li>Daný znak c naší věty tedy nejprve zkusíme vyhledat v řetězci samohlasky a případně zvýšíme jejich počítadlo. Pokud znak v samohláskách není, podíváme se do souhlásek a případně opětovně zvýšíme jejich počítadlo. Nyní nám chybí již jen výpis na konec. V textu použijeme speciální sekvenci znaků %n (nebo \n), která způsobí odřádkování. Použitím sekvence %n (namísto \n) zajistíme cross-platform kompatibilitu.</li>
+</ul>
+
+
+<pre><code>    }
+package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+
+// řetězec, který chceme analyzovat
+String hora = "Mount Everest";
+System.out.println(hora);
+hora = hora.toLowerCase();
+
+// inicializace počítadel
+int pocetSamohlasek = 0;
+int pocetSouhlasek = 0;
+
+// definice typů znaků
+String samohlasky = "aeiouyáéěíóúůý";
+String souhlasky = "bcčdďfghjklmnpqrřsštťvwxzž";
+
+// hlavní cyklus
+for (char znak : hora.toCharArray()) {
+    if (samohlasky.contains(String.valueOf(znak))) {
+        pocetSamohlasek++;
+    } else if (souhlasky.contains(String.valueOf(znak))) {
+        pocetSouhlasek++;
+    }
+}
+
+System.out.printf("Samohlásek: %d%n", pocetSamohlasek);
+System.out.printf("Souhlásek: %d%n", pocetSouhlasek);
+System.out.printf("Nepísmenných znaků: %d%n", hora.length() - (pocetSamohlasek + pocetSouhlasek));
+    }
+}
+</code></pre>
+
+<h3 id="ASCII.hodnota">ASCII hodnota</h3>
+
+<ul>
+<li><p><strong>Ascii tabulka</strong> - dříve čísla typu byte 0-255 znaků ( tedy 265 znaků ), dnes Unicode UTF8 ( 2 na 31 znaků )</p></li>
+<li><p>např. na pozici 97 je znak a</p></li>
+</ul>
+
+
+<pre><code>
+package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+
+ public static void main(String[] args) {
+        System.out.println("ASCII tabulka");
+        System.out.println("=============");
+        for (int hodnotaAscii = 33; hodnotaAscii &lt; 256; hodnotaAscii++) {
+            char znak = (char) hodnotaAscii;
+            System.out.println(hodnotaAscii + ":" + znak);
+        }
+    }
+}
+</code></pre>
+
+<h3 id="Metody.na...et..zci">Metody na řetězci</h3>
+
+<p><strong>substring()</strong> - vrátí část řetezce dle počáteční a koncové pozice</p>
+
+<pre><code>
+package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println("Wolfgang Amadeus Mozart".substring(9, 16));
+    }
+}
+</code></pre>
+
+<h3 id="compareTo..">compareTo()</h3>
+
+<ul>
+<li><p>porovnání řetězců</p></li>
+<li><p>Metoda vrací hodnotu
+-1, je-li první řetězec abecedně před řetězcem v parametru,
+hodnotu 0, jsou-li oba řetězce stejné, a hodnotu 1,
+je-li první řetězec abecedně za řetězcem v parametru</p></li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println("Argentina".compareTo("Barbados"));
+    }
+}
+</code></pre>
+
+<h3 id="split..">split()</h3>
+
+<ul>
+<li>která bere jako parametr separátor ( čárku, středník,&hellip; z CSV, XML ,.). Následně původní
+řetězec rozdělí podle separátorů na pole podřetězců, které vrátí. To
+nám velmi ulehčí práci při rozdělování hodnot v řetězci.</li>
+</ul>
+
+
+<pre><code>// rozbití řetězce na znaky morseovky
+String[] znaky = sifrovanaZprava.split(" ");
+
+// iterace znaky morseovky
+for (String morseuvZnak : znaky) {
+
+}
+</code></pre>
+
+<h3 id="join..">join()</h3>
+
+<ul>
+<li>volá přímo na typu String a
+umožňuje nám naopak pole podřetězců spojit oddělovačem do jediného
+řetězce. Parametry jsou oddělovač a pole. Výstupem metody je výsledný
+řetězec.</li>
+</ul>
+
+
+<h3 id="Vyhled..n.....et..zce.v.poli">Vyhledání řetězce v poli</h3>
+
+<ul>
+<li>Nejprve nastavíme index na -1, protože nevíme, zda pole daný
+String (Morseův znak) obsahuje. Následně pole projedeme cyklem a
+budeme kontrolovat jednotlivé řetězce s naším stringem (znakem). Již
+víme, že k porovnání dvou řetězců musíme použít metodu
+equals(). Pokud řetězce souhlasí, uložíme si aktuální
+index. Pokud jsme znak našli (index >= 0), dosadíme do proměnné
+abecedniZnak znak z abecedy pod tímto indexem. Nakonec znak
+připojíme ke zprávě. Operátor += nahrazuje
+zprava = zprava + abecedniZnak.</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+
+// řetězec, který chceme dekódovat
+String sifrovanaZprava = ".-.. . --- -. .- .-. -.. ---";
+System.out.printf("Původní zpráva: %s%n", sifrovanaZprava);
+// řetězec s dekódovanou zprávou
+String dekodovanaZprava = "";
+
+// vzorová pole
+String abeceda = "abcdefghijklmnopqrstuvwxyz";
+String[] morseovyZnaky = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....",
+"..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-",
+"...-", ".--", "-..-", "-.--", "--.."};
+
+// rozbití řetězce na znaky morseovky
+String[] znaky = sifrovanaZprava.split(" ");
+
+// iterace znaky morseovky
+for (String morseuvZnak : znaky) {
+    char abecedniZnak = '?';
+
+    int index = -1;
+    for (int i = 0; i &lt; morseovyZnaky.length; i++) {
+        if (morseovyZnaky[i].equals(morseuvZnak)) {
+            index = i;
+        }
+    }
+
+    // znak nalezen
+    if (index &gt;= 0) {
+        abecedniZnak = abeceda.charAt(index);
+    }
+    dekodovanaZprava += abecedniZnak;
+}
+
+System.out.printf("Dekódovaná zpráva: %s%n", dekodovanaZprava);
+    }
+}
+</code></pre>
+
+<h3 id="Speci..ln...znaky.a.escapov..n..">Speciální znaky a escapování</h3>
+
+<ul>
+<li>Textový řetězec může obsahovat speciální znaky, které jsou
+předsazené zpětným lomítkem . Je to zejména sekvence
+\n, která kdekoli v textu způsobí odřádkování, a poté
+\t, kdy se jedná o tabulátor. Sekvenci \n do kódu
+často nepíšeme a využijeme raději formátový specifikátor
+%n, který způsobí správné odřádkování na specifických
+platformách.</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println("První řádka\nDruhá řádka");
+    }
+}
+</code></pre>
+
+<h3 id="Tern..rn...v..raz...vznikl...ze.3.....st...a.v..ce..">Ternární výraz ( vzniklý ze 3 částí a více )</h3>
+
+<ul>
+<li><p><strong>Vnořování ternárních
+operátorů</strong> - ternární operátory lze teoreticky zanořovat do sebe a tím reagovat i na
+tři a více hodnot</p></li>
+<li><p>většinou kód znepřehlední</p></li>
+<li><p>2 různé hodnoty
+podle toho, zda platí nějaká podmínka ( boolean - true, false )</p></li>
+<li><p>Podmínku vložíme většinou do závorky (), poté následuje
+otazník ? a 2 hodnoty, které se mají vrátit. Hodnoty jsou
+oddělené dvojtečkou :, první hodnota plati se
+vrátí, když podmínka platí. Druhá hodnota neplati, když
+podmínka neplatí.
+Zdroj: <a href="https://www.itnetwork.cz/java/zaklady/podminky-v-jave-podruhe-ternarni-vyraz-propadavaci-switch">https://www.itnetwork.cz/java/zaklady/podminky-v-jave-podruhe-ternarni-vyraz-propadavaci-switch</a></p></li>
+<li><p>(podminka) ? plati : neplati</p></li>
+</ul>
+
+
+<pre><code>(vek &gt;= 18) ? "zletilý" : "nezletilý"
+</code></pre>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+String smajlik = ":)"; // nějaká proměnná udávající smajlíka
+String nalada = (smajlik.equals(":)")) ? "veselý" : (smajlik.equals(":(")) ? "smutný" : "neznámý";
+System.out.println(nalada);
+    }
+}
+</code></pre>
+
+<h3 id="Propad..vac...switch.-.dnes.se.v..ce.pou..ivaj...tern..ln...operator">Propadávací switch - dnes se více použivají ternální operator</h3>
+
+<ul>
+<li>pokud potřebujeme ve více blocích case provádět stejný kód,
+stačí tyto bloky vložit pod sebe a neukončovat každý blok pomocí
+příkazu break, ale celou skupinu bloku jedním příkazem
+break. Neukončené bloky tak propadnou a vykoná se kód
+společný pro více blok</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int mesic = 11;
+switch (mesic) {
+    case 1:
+    case 2:
+    case 3:
+        System.out.println("Je první čtvrtletí.");
+        break;
+    case 4:
+    case 5:
+    case 6:
+        System.out.println("Je druhé čtvrtletí.");
+        break;
+    case 7:
+    case 8:
+    case 9:
+        System.out.println("Je třetí čtvrtletí.");
+        break;
+    case 10:
+    case 11:
+    case 12:
+        System.out.println("Je čtvrté čtvrtletí.");
+        break;
+}
+    }
+}
+</code></pre>
+
+<blockquote><p>Pozor - Java podporuje propadávání jak prázdných
+case, tak na rozdíl od jiných jazyků i case s
+dalším kódem. To je častá příčina nechtěných chyb (zapomenutých
+break) a velmi těžko se hledají.</p></blockquote>
+
+<h3 id="Vylep..en...konstrukce.switch">Vylepšená konstrukce switch</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int mesic = 11;
+switch (mesic) {
+    case 1, 2, 3 -&gt; System.out.println("Je první čtvrtletí.");
+    case 4, 5, 6 -&gt; System.out.println("Je druhé čtvrtletí.");
+    case 7, 8, 9 -&gt; System.out.println("Je třetí čtvrtletí.");
+    case 10, 11, 12 -&gt; System.out.println("Je čtvrté čtvrtletí.");
+}
+    }
+}
+</code></pre>
+
+<h3 id="Cyklus.do-while">Cyklus do-while</h3>
+
+<ul>
+<li>Méně používaný,
+liší se od while pouze tím, že se vždy vykoná
+nejméně jednou. Jeho podmínka je totiž umístěna až za tělem
+cyklu</li>
+</ul>
+
+
+<pre><code>do {
+    // kód
+} while (podmínka);
+</code></pre>
+
+<pre><code>Scanner scanner = new Scanner(System.in);
+
+System.out.println("Vítejte v kalkulačce");
+String pokracovat;
+do {
+    System.out.println("Zadejte první číslo:");
+    double a = Double.parseDouble(scanner.nextLine());
+    System.out.println("Zadejte druhé číslo:");
+    double b = Double.parseDouble(scanner.nextLine());
+    System.out.println("Zvolte si operaci:");
+    System.out.println("1 - sčítání");
+    System.out.println("2 - odčítání");
+    System.out.println("3 - násobení");
+    System.out.println("4 - dělení");
+    int volba = Integer.parseInt(scanner.nextLine());
+    double vysledek = 0;
+    switch (volba) {
+        case 1:
+                vysledek = a + b;
+        break;
+        case 2:
+                vysledek = a - b;
+        break;
+        case 3:
+                vysledek = a * b;
+        break;
+        case 4:
+                vysledek = a / b;
+        break;
+    }
+    if ((volba &gt; 0) &amp;&amp; (volba &lt; 5)) {
+        System.out.println("Výsledek: " + vysledek);
+    } else {
+        System.out.println("Neplatná volba");
+    }
+    System.out.println("Přejete si zadat další příklad? [ano/ne]");
+    pokracovat = scanner.nextLine();
+} while (pokracovat.equals("ano"));
+System.out.println("Děkuji za použití kalkulačky.");
+</code></pre>
+
+<h3 id="Break...zlom.">Break ( zlom)</h3>
+
+<ul>
+<li>ukončuje aktuální cyklus.
+Používá se nejčastěji v situaci, kdy pomocí cyklu nalezneme nějakou
+položku v kolekci a dále již v jejím procházení nechceme pokračovat</li>
+</ul>
+
+
+<blockquote><p>pozor - Příkaz <strong>break</strong> se v praxi často nahrazuje
+příkazem <strong>return</strong> za předpokladu, že kód je v naší vlastní
+metodě. Poté už příkaz break doporučujeme spíše
+nepoužívat, správnější variantou je kód pro práci s kolekcí vyčlenit
+do samostatné funkce.</p></blockquote>
+
+<h3 id="Continue">Continue</h3>
+
+<ul>
+<li>používá se však k ukončení pouze aktuální iterace (průběhu) cyklu, a
+nikoli celého cyklu. Cyklus poté rovnou přechází na
+další iteraci. Příkaz continue často použijeme např.
+při validování položek při procházení nějaké
+kolekce</li>
+</ul>
+
+
+<h3 id="Zkr..cen...for.-.nepou....vat.">Zkrácený for - nepoužívat!</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+for (int i = 0; i &lt; 10; System.out.print(i++));
+    }
+}
+</code></pre>
+
+<h3 id="Nekone..n...cyklus.for.a.while.-.pozor">Nekonečný cyklus for a while - pozor</h3>
+
+<ul>
+<li>Oba deklarované cykly běží donekonečna a můžete se s nimi
+setkat ve špatně napsaných zdrojových kódech spolu s příkazy
+break, které z nich potom za nějakých podmínek vyskakují.
+Zdroj: <a href="https://www.itnetwork.cz/java/zaklady/cykly-v-jave-podruhe-do-while-break-a-continue">https://www.itnetwork.cz/java/zaklady/cykly-v-jave-podruhe-do-while-break-a-continue</a></li>
+</ul>
+
+
+<pre><code>
+for (;;) {
+    // nekonečný cyklus
+}
+
+while (true) {
+    // nekonečný cyklus
+}
+</code></pre>
+
+<h3 id="Matematick...metody.v.Jav...a.knihovna.Math">Matematické metody v Javě a knihovna Math</h3>
+
+<ul>
+<li>konstanty pí a eulerovu konstantu</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println("Pí: " + Math.PI);
+System.out.println("e: " + Math.E);
+    }
+}
+</code></pre>
+
+<h3 id="min....max...">min(), max ()</h3>
+
+<ul>
+<li>Obě metody berou jako parametr dvě čísla libovolného datového
+typu. Metoda min() vrátí to menší, metoda max() to
+větší z nich.</li>
+</ul>
+
+
+<h3 id="round....ceil....floor...-.zaokrouhlov..n.......sel">round(), ceil(), floor() - zaokrouhlování čísel</h3>
+
+<ul>
+<li><p><strong>round ()</strong> - parametr desetinné číslo a vrací
+zaokrouhlené číslo typu double</p></li>
+<li><p><strong>ceil ()</strong> - zaokrouhlí vždy nahoru</p></li>
+<li><p><strong>floor ()</strong> - zaokrouhlí vždy dolů</p></li>
+</ul>
+
+
+<h3 id="abs....signum..">abs(), signum()</h3>
+
+<ul>
+<li>obě metody berou jako parametr číslo libovolného typu.</li>
+<li>metoda
+abs() vrátí jeho absolutní hodnotu a signum()
+vrátí podle znaménka -1, 0 nebo 1 (pro
+záporné číslo, nulu a kladné číslo)</li>
+</ul>
+
+
+<h3 id="sin....cos...a">sin(), cos() a</h3>
+
+<p>tan()</p>
+
+<ul>
+<li><p>goniometrické funkce, používají úhel typu double v radianech</p></li>
+<li><p>pro konverzi stupňů na radiány stupně vynásobíme (Math.PI/180), výstupem je opět double</p></li>
+</ul>
+
+
+<h3 id="acos...asin...a.atan..">acos(),asin() a atan()</h3>
+
+<ul>
+<li>cyklometrické metody - vrací daný úhel v double</li>
+</ul>
+
+
+<h3 id="pow....sqrt..">pow(), sqrt()</h3>
+
+<ul>
+<li>mocnina a odmocnina v double</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println(Math.pow(2, 3));
+    }
+}
+</code></pre>
+
+<h3 id="exp....log....log10..">exp(), log(), log10()</h3>
+
+<ul>
+<li>exp() vrací Eulerovo číslo, umocněné na daný
+exponent. Dále metoda log() vrací přirozený logaritmus daného
+čísla. Metoda log10() vrací potom dekadický logaritmus daného
+čísla</li>
+</ul>
+
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println(Math.pow(8, (1.0/3.0)));
+    }
+}
+</code></pre>
+
+<h3 id="D..len..">Dělení</h3>
+
+<ul>
+<li>lomítko /</li>
+</ul>
+
+
+<blockquote><p>pozor - Přitom vůbec nezáleží na datovém typu proměnné, do které
+výsledek ukládáme, ale na datovém typu čísel, které dělíme</p></blockquote>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+int a = 5 / 2;
+double b = 5 / 2;
+double c = 5.0 / 2;
+double d = 5 / 2.0;
+double e = 5.0 / 2.0;
+// int f = 5 / 2.0;
+
+System.out.println(a);
+System.out.println(b);
+System.out.println(c);
+System.out.println(d);
+System.out.println(e);
+    }
+} 
+</code></pre>
+
+<h3 id="modulo.......-.zbytek.po.celo....seln..m.d..len..">modulo ( % ) - zbytek po celočíselném dělení</h3>
+
+<pre><code>package onlineapp;
+
+import java.util.Scanner;
+
+public class Program
+{
+    public static void main(String[] args) {
+
+System.out.println(5 % 2); // Vypíše 1
+    }
+}
+</code></pre>
+
+<h3 id="Nej..ast..j.....chyby.program..tor...a.jejich...e..en..">Nejčastější chyby programátorů a jejich řešení</h3>
+
+<ul>
+<li><p><strong>Kolekce</strong> vždy pojmenováváme v množném
+čísle.</p></li>
+<li><p><strong>DRY</strong> - Nikde v programu by se ideálně
+neměla vyskytovat tatáž nebo podobná posloupnost
+řádků kódu vícekrát než jednou!</p></li>
+<li><p><strong>Refaktoring</strong> - úpravám kódu, které zachovají funkčnost,
+ale zkvalitní návrh programu</p></li>
+</ul>
+
+</body>
+</html>

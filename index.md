@@ -78,7 +78,8 @@ Základní konstrukce jazyka JavaScript
 <p>Základy programování v JavaScriptu v termínu * 10.8.2024 8:30:00 - 10.8.2024 18:30:00.</p>
 <p>Spring Boot v Javě v termínu * 25.8.2024 8:30:00 - 25.8.2024 18:30:00</p>
 <p>React - 8.9.2024</p>
-<p>Best practices pro vývoj softwaru - 21.9.2024</p>
+<p>Best practices pro vývoj softwaru - procházení projektu - 21.9.2024</p>
+<p>9.10. 18-20 hodin discord priprava ke zkousce, pošlou odkaz na email</p>
 <p>Firemní vývoj softwaru, Testování a verzování  - 19.10.2024</p>
 <p>Závěrečná zkouška - patek 25.10.2024</p>
 </details>

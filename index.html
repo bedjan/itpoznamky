@@ -1,0 +1,559 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<style>/*
+ * https://bitbucket.org/kevinburke/markdowncss
+ *
+ * Copyright 2011 Kevin Burke unless otherwise noted.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   Some content is copyrighted by Twitter, Inc., and also released under an
+ *   Apache License; these sections are noted in the source.
+ */
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 30px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 24px;
+    padding: 0;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 36px;
+    /* The bottom margin is small. It's designed to be used with gray meta text
+     * below a post title. */
+    margin: 24px 0 6px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 540px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+/*    font-size: 13px;*/
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+/* Code below this line is copyright Twitter Inc. */
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+</style>
+</head>
+<body>
+<h1 id="HTML5.dokument:">HTML5 dokument:</h1>
+
+<p><a href="https://www.itnetwork.cz/html-css/html5/html-manual">Manual HTML5 itnetwork</a></p>
+
+<p><a href="https://www.itnetwork.cz/html-css/html5/html-manual/html-5-abecedni-rejstrik-tagu">Struktura tagů itnetwork</a></p>
+
+<p><a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Manual github markdown</a></p>
+
+<p><a href="https://www.w3schools.com/cssref/playdemo.php?filename=playcss_accent-color">Zkouseni Css</a></p>
+
+<p><a href="https://getbootstrap.com/docs/4.0/utilities/flex/">Bootstrap flex</a></p>
+
+<p><a href="https://www.vzhurudolu.cz/prirucka/css-flexbox">Flex Css</a></p>
+
+<p><a href="https://www.itnetwork.cz/html-css/webove-stranky/jak-psat-moderni-web-html-tutorial-stylovani-hlavicky//palcovat/78763/-1">Flexbox itnetwork</a></p>
+
+<h1 id="HTML5.struktura.dokumentu:">HTML5 struktura dokumentu:</h1>
+
+<p>```</p>
+
+<!-- *****v tomto html dokumentu popisuji pomoci html komentaru strukturu html kodu, pokud si chcete vyzkouset jak to funguje vytvorte si soubor nejvice index.html, podeji bude jestě probran css styl na zmenu vzhledu html souboru vestinou nazvany style.css ***** -->
+
+
+
+
+<!-- typ dokumentu -->
+
+
+<p></p>
+
+<p>&lt;!doctype html></p>
+
+<!-- html musi byt vzdy na zacatku a na konci je parovy, takze zacina <html> a konci </html> -->
+
+
+
+
+<!-- lang="cs" nam nastavi ceske stranky -->
+
+
+<!-- manifest="cache.appcache" nam vytvori vyrovnavaci pamet na stranky s vetsim obsahem pro jejich rychlejsi nacitani, mel by byt s priponou appcache -->
+
+
+<!-- v html kodu můžete cachovat obrazky, JS, CSS soubor. -->
+
+
+<!-- vyhodou je ze zustane i offline obsah, pokud nam vypadne internet -->
+
+
+<!-- u xml a xhtml dokumentu se nahrazuje timto kodem <?xml version="1.0" encoding="UTF-8"?> <html xmlns="http://www.w3.org/1999/xhtml"> -->
+
+
+<p><html lang="en-US" manifest="cache.appcache"></p>
+
+<!-- hlavicka dokumentu -->
+
+
+<p>  <head></p>
+
+<!--  <meta charset="utf-8" /> definuje kodovani ceskych znaku -->
+
+
+<pre><code>&lt;meta charset="utf-8" /&gt;
+</code></pre>
+
+<!-- nastaveni pro responzivni web - velikost webu se prizpusobi spravne na kazdem zarizeni - tzn. pocitac, tablet, mobil -->
+
+
+<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+</code></pre>
+
+<!-- Titulek stránky, je videt v horni casti      
+    <title>My page title</title>
+<!-- pro zjednoduseni zapisu obrazku, audia a videi -> pak muzeme psat  <img src="obrazek.jpg" alt="Obrázek" />, misto dlouheho <img src="http://www.mujweb.cz/obrazky/obrazek.jpg" alt="Obrázek" />  -->
+
+
+<p><base href="http://www.mujweb.cz/obrazky/" /></p>
+
+<!-- odkaz na pismo, ktere se nejprve stahne z odkazu a pote pouzije -->
+
+
+<pre><code>&lt;link
+  href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+  rel="stylesheet" /&gt;
+</code></pre>
+
+<!-- odkaz na css vzhled, pokud chceme zmenu vzhledu stranky, stači poupravovat tento css styl, vzdy musi mit priponu css -->
+
+
+<p>
+ <link rel="stylesheet" href="style.css" /></p>
+
+<p>  <!-- bootstrap styl, pro fungovani bootstrap, stahne se aktualni a nacte se, vice zde https://getbootstrap.com/ -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></p>
+
+<!-- pokud mame externi styl css, muzeme jej poupravit vlozit primo mez znacky <style> </style> a vlasnosti si zapsat, znacka * znaci pro vsechny prvky  -->
+
+
+
+
+<style>
+* {
+margin: 2px;padding: 2px;
+}
+
+</style>
+
+
+
+
+<!-- konec hlavicky -->
+
+
+<p>  </head></p>
+
+<!-- zacatek tela -->
+
+
+<p>  <body></p>
+
+<pre><code>&lt;header&gt;
+  &lt;h1&gt;Hlavni nadpis&lt;/h1&gt;
+&lt;/header&gt;
+</code></pre>
+
+<!-- navigace na strance -->
+
+
+<pre><code>&lt;nav&gt;
+</code></pre>
+
+<!-- ul je seznam bez cisel, polozky se pisi do znacek li, jsou to parove značky, takze zacinaji <ul><li> a konci </ul></li>-->
+
+
+
+
+<!-- u class="d-flex flex-row" se udela flex a da jej do prava na konec ;  style="list-style-type: none;" a tecky u seznamu se timto odeberou -->
+
+
+<pre><code>  &lt;ul class="d-flex justify-content-end"  style="list-style-type: none;margin: 2px;padding: 2px;";&gt;
+    &lt;li  class="p-2"&gt;&lt;a href="#"&gt;Domů&lt;/a&gt;&lt;/li&gt;
+    &lt;li  class="p-2"&gt;&lt;a href="#"&gt;Team&lt;/a&gt;&lt;/li&gt;
+    &lt;li  class="p-2"&gt;&lt;a href="#"&gt;Projekty&lt;/a&gt;&lt;/li&gt;
+    &lt;li  class="p-2"&gt;&lt;a href="#"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;!-- form - obsahující interaktivní ovládací prvky pro odesílání informací --&gt;
+</code></pre>
+
+<!-- u class="d-flex flex-row" se udela flex a da jej do prava na konec -->
+
+
+<pre><code>  &lt;form class="d-flex justify-content-end" style="margin: 2px;padding: 2px;";&gt;
+
+  &lt;!-- input -  k vytváření interaktivních ovládacích prvků pro webové formuláře, aby bylo možné přijímat data od uživatele; k dispozici je široká škála typů vstupních dat a ovládacích widget --&gt;
+    &lt;input type="search" name="q" placeholder="Co chces hledat" /&gt;
+    &lt;input type="submit" value="Hledej" /&gt;
+  &lt;/form&gt;
+&lt;/nav&gt;
+</code></pre>
+
+<!-- main - dominantní obsah dokumentu -->
+
+
+<pre><code>&lt;main&gt;
+  &lt;!-- article - samostatna kompozice, treba i prispevky --&gt;
+  &lt;article&gt;
+  &lt;!-- nadpis druheho radu --&gt;
+    &lt;h2&gt;Clanek 1&lt;/h2&gt;
+</code></pre>
+
+<!-- popis -->
+
+
+<pre><code>    &lt;p&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam
+      lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam
+      viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent
+      et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+      congue enim, ut porta lorem lacinia consectetur.
+    &lt;/p&gt;
+</code></pre>
+
+<!-- nadpis tretiho radu -->
+
+
+<pre><code>    &lt;h3&gt;Clanek 2&lt;/h3&gt;
+
+    &lt;p&gt;
+      Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum
+      dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem.
+      Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Pelientesque auctor nisi id magna consequat sagittis. Curabitur
+      dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet.
+      Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.
+    &lt;/p&gt;
+</code></pre>
+
+<!-- nadpis tretiho radu -->
+
+
+<pre><code>    &lt;h3&gt;Clanek 3&lt;/h3&gt;
+
+    &lt;p&gt;
+      Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum
+      soclis natoque penatibus et manis dis parturient montes, nascetur
+      ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem
+      facilisis semper ac in est.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Vivamus fermentum semper porta. Nunc diam velit, adipscing ut
+      tristique vitae sagittis vel odio. Maecenas convallis ullamcorper
+      ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi
+      diam iaculis velit, is fringille sem nunc vet mi.
+    &lt;/p&gt;
+  &lt;/article&gt;
+</code></pre>
+
+<!-- vetsinou postranni panel, s hlavním obsahem dokumentu pouze nepřímo -->
+
+
+<pre><code>  &lt;aside&gt;
+</code></pre>
+
+<!-- druhy nejvyznamnejsi nadpis z 6 -->
+
+
+<pre><code>    &lt;h2&gt;Related&lt;/h2&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Oh I do like to be beside the seaside&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Oh I do like to be beside the sea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Although in the North of England&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;It never stops raining&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Oh well…&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+</code></pre>
+
+<!-- zacatek paticka-->
+
+
+<pre><code>&lt;footer&gt;
+  &lt;p&gt;©Copyright 2024 od . All rights reversed.&lt;/p&gt;
+</code></pre>
+
+<!-- konec paticka-->
+
+
+<pre><code>&lt;/footer&gt;
+</code></pre>
+
+<!-- konec tela -->
+
+
+<p>  </body>
+  <!-- bootstrap javascript, pro fungovani bootstrap, lepe umistovat na konec dokumentu , pred </html> &ndash;>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></p>
+
+<!-- konec html dokumentu -->
+
+
+<p></html></p>
+
+<p>```</p>
+</body>
+</html>

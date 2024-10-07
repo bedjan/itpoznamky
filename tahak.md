@@ -8,47 +8,92 @@ Základní konstrukce jazyka Java
 
 ### Proměnné a datové typy
 
-V Javě jsou proměnné kontejnery pro ukládání hodnot, které jsou typu primitivního nebo referenčního.
+V Javě jsou proměnné kontejnery, které uchovávají různé hodnoty. Každá proměnná má svůj datový typ, který definuje, jaký typ dat v ní může být uložen.
 
-*   **Primitivní datové typy**:
-    *   `int` - celá čísla. Příklad: `int age = 25;`
-    *   `double` - desetinná čísla. Příklad: `double price = 19.99;`
-    *   `boolean` - logické hodnoty `true` nebo `false`. Příklad: `boolean isStudent = true;`
-    *   `char` - jeden znak. Příklad: `char grade = 'A';`
-*   **Referenční datové typy**: ukazují na objekty, například řetězce. Příklad: `String name = "John";`
+*   **Primitivní datové typy:**
+    *   `int`: Slouží pro ukládání celých čísel, např. 1, 2, -5. Rozsah je od -231 do 231\-1.
+        
+            int age = 25;
+        
+    *   `double`: Slouží pro ukládání desetinných čísel, např. 3.14, -0.001. Typ `double` zabírá 64 bitů.
+        
+            double price = 19.99;
+        
+    *   `boolean`: Uchovává logické hodnoty `true` (pravda) nebo `false` (nepravda).
+        
+            boolean isStudent = true;
+        
+    *   `char`: Slouží k uložení jednoho znaku, např. 'A', 'b'. Tento typ zabírá 16 bitů.
+        
+            char grade = 'A';
+        
+*   **Referenční datové typy:**
+    *   `String`: Používá se k uchování textových řetězců. Typ `String` je vlastně objektem, který má své metody.
+        
+            String name = "John Doe";
+        
+    *   `Array`: Pole je datová struktura, která uchovává více hodnot stejného typu. Příklad pole čísel:
+        
+            int[] numbers = {1, 2, 3, 4, 5};
+        
 
 ### Parsování
 
-Parsování je proces, při kterém se řetězec převádí na jiný datový typ.
+Parsování je proces převodu hodnoty z jednoho datového typu na jiný. V Javě se často používá pro převod řetězců (textů) na čísla nebo jiné datové typy.
 
-*   `Integer.parseInt("123")` převede řetězec na celé číslo. Příklad: `int num = Integer.parseInt("123");`
-*   `Double.parseDouble("123.45")` převede řetězec na desetinné číslo. Příklad: `double value = Double.parseDouble("123.45");`
+*   `Integer.parseInt(String)`: Převede řetězec na celé číslo.
+    
+        int number = Integer.parseInt("123");  // number = 123
+    
+*   `Double.parseDouble(String)`: Převede řetězec na desetinné číslo.
+    
+        double value = Double.parseDouble("123.45");  // value = 123.45
+    
+*   `Boolean.parseBoolean(String)`: Převede řetězec na logickou hodnotu `true` nebo `false`.
+    
+        boolean flag = Boolean.parseBoolean("true");  // flag = true
+    
 
 ### Podmínky
 
-Podmínky se používají pro řízení toku programu na základě logických výroků.
+Podmínky v Javě umožňují vykonání určité části kódu, pokud je splněna daná logická podmínka.
+
+*   `if`, `else if` a `else`: Tyto konstrukce kontrolují, zda je podmínka pravdivá, a na základě toho rozhodnou, která část kódu se vykoná.
 
     
-    if (age > 18) {
-        System.out.println("Dospělý");
+    int age = 20;
+    
+    if (age >= 18) {
+        System.out.println("Jste dospělý.");
     } else {
-        System.out.println("Nezletilý");
+        System.out.println("Jste nezletilý.");
     }
-    
+        
 
-Tento příklad vypíše _Dospělý_, pokud je `age` větší než 18, jinak _Nezletilý_.
+V tomto příkladu, pokud je věk větší nebo roven 18, vypíše se "Jste dospělý.", jinak "Jste nezletilý".
 
 ### Operátory
 
-*   **Aritmetické operátory**: `+`, `-`, `*`, `/`, `%`. Příklad: `int sum = 5 + 3;`
-*   **Relační operátory**: `==`, `!=`, `>`, `<`, `>=`, `<=`. Příklad: `boolean result = (a == b);`
-*   **Logické operátory**: `&&`, `||`, `!`. Příklad: `if (a > 5 && b < 10)`
+*   **Aritmetické operátory:** Používají se pro základní matematické operace.
+    *   `+`: Sčítání (např. `int result = 5 + 3;`)
+    *   `-`: Odčítání (např. `int result = 5 - 3;`)
+    *   `*`: Násobení (např. `int result = 5 * 3;`)
+    *   `/`: Dělení (např. `int result = 6 / 2;`)
+    *   `%`: Zbytek po dělení (např. `int result = 5 % 2;`, výsledek bude 1)
+*   **Relační operátory:** Slouží k porovnávání hodnot.
+    *   `==`: Testuje rovnost (např. `a == b` vrací `true`, pokud jsou hodnoty `a` a `b` stejné)
+    *   `!=`: Testuje nerovnost (např. `a != b`)
+    *   `>`, `<`, `>=`, `<=`: Porovnávají hodnoty.
+*   **Logické operátory:** Používají se pro práci s logickými výrazy.
+    *   `&&`: Logické A (vrátí `true` jen, pokud jsou oba výrazy pravdivé).
+    *   `||`: Logické NEBO (vrátí `true`, pokud je alespoň jeden výraz pravdivý).
+    *   `!`: Logická negace (převrací hodnotu výrazu).
 
 ### Cykly
 
-Cykly slouží k opakování bloků kódu.
+Cykly slouží k opakovanému vykonávání určité části kódu.
 
-*   **For cyklus**: Používá se k iteraci po pevném počtu kroků.
+*   **For cyklus:** Používá se, pokud předem víme, kolikrát chceme opakovat nějaký kód.
     
         
         for (int i = 0; i < 5; i++) {
@@ -56,8 +101,8 @@ Cykly slouží k opakování bloků kódu.
         }
                     
     
-    Tento cyklus vypíše čísla 0 až 4.
-*   **While cyklus**: Opakuje kód, dokud je splněna podmínka.
+    Tento cyklus vypíše čísla od 0 do 4.
+*   **While cyklus:** Opakuje blok kódu, dokud je podmínka splněna.
     
         
         int i = 0;
@@ -67,7 +112,7 @@ Cykly slouží k opakování bloků kódu.
         }
                     
     
-*   **Do-while cyklus**: Vykoná kód alespoň jednou, poté kontroluje podmínku.
+*   **Do-while cyklus:** Tento cyklus se provede alespoň jednou, poté kontroluje podmínku.
     
         
         int i = 0;
@@ -80,23 +125,61 @@ Cykly slouží k opakování bloků kódu.
 
 ### Pole
 
-Pole je struktura, která uchovává více hodnot stejného typu. Příklad deklarace: `int[] numbers = {1, 2, 3};`
+Pole je struktura, která uchovává více hodnot stejného typu. Může být deklarováno následovně:
+
+    int[] numbers = {1, 2, 3, 4, 5};
+
+Přístup k jednotlivým prvkům pole se provádí pomocí indexu, přičemž indexování začíná od nuly.
+
+    System.out.println(numbers[0]);  // Vypíše 1
 
 ### Metody pro práci s polem
 
-*   `Arrays.sort(numbers)` setřídí pole. Příklad: `Arrays.sort(numbers);`
-*   `Arrays.toString(numbers)` převádí pole na řetězec. Příklad: `System.out.println(Arrays.toString(numbers));`
+*   `Arrays.sort()`: Tato metoda třídí prvky v poli.
+    
+        
+        int[] numbers = {5, 3, 8, 1, 2};
+        Arrays.sort(numbers);  // Seřadí pole do pořadí {1, 2, 3, 5, 8}
+                    
+    
+*   `Arrays.toString()`: Převádí pole na textovou reprezentaci.
+    
+        System.out.println(Arrays.toString(numbers));  // Výstup: [1, 2, 3, 5, 8]
+    
 
 ### Metody pro práci s řetězci
 
-*   `length()` vrací délku řetězce. Příklad: `int len = name.length();`
-*   `substring()` vrací podřetězec. Příklad: `String sub = name.substring(0, 3);`
-*   `toUpperCase()` převádí znaky na velká písmena. Příklad: `String upper = name.toUpperCase();`
+Řetězce jsou objekty v Javě a mají mnoho užitečných metod.
+
+*   `length()`: Vrací délku řetězce.
+    
+        String name = "John"; System.out.println(name.length());  // Výstup: 4
+    
+*   `substring()`: Vrací podřetězec z řetězce.
+    
+        String name = "John"; System.out.println(name.substring(0, 2));  // Výstup: Jo
+    
+*   `toUpperCase()`: Převede všechny znaky na velká písmena.
+    
+        String name = "John"; System.out.println(name.toUpperCase());  // Výstup: JOHN
+    
 
 ### Matematické funkce
 
-*   `Math.sqrt()` vrací druhou odmocninu. Příklad: `double sqrt = Math.sqrt(16);`
-*   `Math.pow()` vrací mocninu. Příklad: `double pow = Math.pow(2, 3);`
+Java nabízí třídu `Math`, která obsahuje řadu užitečných matematických funkcí.
+
+*   `Math.sqrt()`: Vrací druhou odmocninu čísla.
+    
+        System.out.println(Math.sqrt(16));  // Výstup: 4.0
+    
+*   `Math.pow()`: Vrací mocninu čísla.
+    
+        System.out.println(Math.pow(2, 3));  // Výstup: 8.0
+    
+*   `Math.random()`: Vrací náhodné číslo mezi 0 a 1.
+    
+        System.out.println(Math.random());  // Náhodné číslo, např.: 0.3457
+    
 
 Okruh 2 - OOP
 =============
@@ -106,7 +189,7 @@ Objektově-orientované programování v Javě
 
 ### Třídy a instance
 
-Třída je šablona, podle které jsou vytvářeny objekty (instance).
+Třída je šablona, podle které jsou vytvářeny objekty (instance). Definuje, jaké vlastnosti (atributy) a metody bude objekt mít.
 
     
     class Car {
@@ -152,8 +235,38 @@ Zapouzdření znamená skrytí vnitřních detailů třídy a poskytnutí přís
 ### Základní metody objektů
 
 *   `toString()`: Vrací textovou reprezentaci objektu.
+    
+        
+        class Car {
+            String brand;
+            int speed;
+            
+            @Override
+            public String toString() {
+                return brand + " is going " + speed + " km/h";
+            }
+        }
+        
+        Car myCar = new Car();
+        myCar.brand = "Toyota";
+        myCar.speed = 100;
+        System.out.println(myCar.toString());  // Výstup: Toyota is going 100 km/h
+                    
+    
 *   `equals()`: Porovnává, zda jsou dva objekty stejné.
+    
+        
+        Car car1 = new Car();
+        Car car2 = new Car();
+        car1.brand = "Toyota";
+        car2.brand = "Toyota";
+        System.out.println(car1.equals(car2));  // Výstup: false, protože porovnává reference, ne obsah.
+                    
+    
 *   `hashCode()`: Vrací hash kód objektu.
+    
+        System.out.println(myCar.hashCode());
+    
 
 ### Dědičnost a polymorfismus
 
@@ -172,6 +285,9 @@ Dědičnost umožňuje jedné třídě zdědit vlastnosti a metody jiné třídy
             System.out.println("Bark");
         }
     }
+    
+    Animal animal = new Dog();
+    animal.makeSound();  // Výstup: Bark
         
 
 ### Gettery a settery
@@ -186,108 +302,3 @@ Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.
     public void setName(String name) {
         this.name = name;
     }
-        
-
-Okruh 3 - MySQL a Kolekce
-=========================
-
-MySQL
------
-
-### CRUD operace
-
-CRUD operace (Create, Read, Update, Delete) jsou základní operace pro práci s databázemi.
-
-*   `INSERT INTO`: Vkládání dat do databáze.
-*   `SELECT`: Výběr dat z databáze.
-*   `UPDATE`: Aktualizace dat v databázi.
-*   `DELETE`: Mazání dat z databáze.
-
-### SQL funkce
-
-SQL funkce jako `COUNT()`, `SUM()`, `AVG()` slouží k agregaci dat.
-
-### JOIN
-
-JOIN slouží ke spojování dat z více tabulek na základě společných hodnot (klíčů).
-
-### Databázové vazby
-
-Vazby mezi tabulkami určují vztahy mezi daty, například 1:N, M:N.
-
-### Databázové indexy
-
-Indexy zrychlují vyhledávání v databázi.
-
-Kolekce a proudy v Javě
------------------------
-
-### Generické vs. obecné kolekce
-
-Generické kolekce jako `ArrayList<T>` jsou typově bezpečné, což znamená, že předem určují, jaký typ dat budou uchovávat.
-
-### HashMapy
-
-HashMapy ukládají dvojice klíč-hodnota a umožňují rychlé vyhledávání na základě klíče.
-
-    
-    HashMap<String, Integer> map = new HashMap<>();
-    map.put("Apple", 1);
-    map.put("Banana", 2);
-        
-
-### Stream API
-
-Stream API umožňuje zpracování proudů dat pomocí metod jako `filter()`, `map()` a `reduce()`.
-
-Okruh 4 - Doplňkové okruhy
-==========================
-
-Moderní webdesign
------------------
-
-### Boxmodel
-
-Boxmodel definuje, jak jsou prvky na webové stránce rozvrženy, zahrnuje obsah, padding, border a margin.
-
-### Párové a nepárové elementy
-
-Párové elementy mají otevírací a zavírací tag (např. `<div></div>`), zatímco nepárové elementy mají pouze otevírací tag (např. `<img>`).
-
-### Blokové a řádkové elementy
-
-Blokové elementy jako `<div>` zabírají celou šířku stránky, zatímco řádkové elementy jako `<span>` pouze šířku svého obsahu.
-
-### Tabulky a seznamy
-
-Tabulky slouží k zobrazení dat v řádcích a sloupcích (`<table>`), zatímco seznamy (`<ul>`, `<ol>`) umožňují strukturované výpisy položek.
-
-Základní konstrukce jazyka JavaScript
--------------------------------------
-
-### DOM
-
-Document Object Model (DOM) je reprezentace HTML dokumentu jako stromu objektů, který lze manipulovat pomocí JavaScriptu.
-
-### Podmínky
-
-Podmínky v JavaScriptu se používají podobně jako v Javě, například `if`, `else if`, `else`.
-
-### Časovače
-
-Časovače jako `setTimeout()` a `setInterval()` slouží k odloženému nebo opakovanému spouštění kódu.
-
-Bootstrap
----------
-
-### Grid systém
-
-Bootstrap poskytuje systém mřížky pro rozvržení prvků na stránce, který je založen na řádcích a sloupcích.
-
-### Breakpointy
-
-Breakpointy definují body, kde se mění rozvržení stránky v závislosti na šířce obrazovky (např. mobilní, tablet, desktop).
-
-### Základní komponenty Bootstrapu
-
-Bootstrap obsahuje předpřipravené komponenty jako **reboot** (normalizace stylů), typografii, obrázky, tabulky, tlačítka a formuláře.

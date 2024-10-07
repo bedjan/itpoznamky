@@ -1,1 +1,266 @@
 
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výpisky k okruhům</title>
+</head>
+<body>
+    <h1>Okruh 1 - Základy</h1>
+
+    <h2>Základní konstrukce jazyka Java</h2>
+
+    <h3>Proměnné a datové typy</h3>
+    <p>V Javě jsou proměnné kontejnery pro ukládání hodnot, které jsou typu primitivního nebo referenčního.</p>
+    <ul>
+        <li><strong>Primitivní datové typy</strong>:
+            <ul>
+                <li><code>int</code> - celá čísla. Příklad: <code>int age = 25;</code></li>
+                <li><code>double</code> - desetinná čísla. Příklad: <code>double price = 19.99;</code></li>
+                <li><code>boolean</code> - logické hodnoty <code>true</code> nebo <code>false</code>. Příklad: <code>boolean isStudent = true;</code></li>
+                <li><code>char</code> - jeden znak. Příklad: <code>char grade = 'A';</code></li>
+            </ul>
+        </li>
+        <li><strong>Referenční datové typy</strong>: ukazují na objekty, například řetězce. Příklad: <code>String name = "John";</code></li>
+    </ul>
+
+    <h3>Parsování</h3>
+    <p>Parsování je proces, při kterém se řetězec převádí na jiný datový typ.</p>
+    <ul>
+        <li><code>Integer.parseInt("123")</code> převede řetězec na celé číslo. Příklad: <code>int num = Integer.parseInt("123");</code></li>
+        <li><code>Double.parseDouble("123.45")</code> převede řetězec na desetinné číslo. Příklad: <code>double value = Double.parseDouble("123.45");</code></li>
+    </ul>
+
+    <h3>Podmínky</h3>
+    <p>Podmínky se používají pro řízení toku programu na základě logických výroků.</p>
+    <pre>
+<code>
+if (age > 18) {
+    System.out.println("Dospělý");
+} else {
+    System.out.println("Nezletilý");
+}
+</code>
+    </pre>
+    <p>Tento příklad vypíše <em>Dospělý</em>, pokud je <code>age</code> větší než 18, jinak <em>Nezletilý</em>.</p>
+
+    <h3>Operátory</h3>
+    <ul>
+        <li><strong>Aritmetické operátory</strong>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>. Příklad: <code>int sum = 5 + 3;</code></li>
+        <li><strong>Relační operátory</strong>: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>. Příklad: <code>boolean result = (a == b);</code></li>
+        <li><strong>Logické operátory</strong>: <code>&&</code>, <code>||</code>, <code>!</code>. Příklad: <code>if (a &gt; 5 && b &lt; 10)</code></li>
+    </ul>
+
+    <h3>Cykly</h3>
+    <p>Cykly slouží k opakování bloků kódu.</p>
+    <ul>
+        <li><strong>For cyklus</strong>: Používá se k iteraci po pevném počtu kroků.
+            <pre><code>
+for (int i = 0; i &lt; 5; i++) {
+    System.out.println(i);
+}
+            </code></pre>
+            Tento cyklus vypíše čísla 0 až 4.
+        </li>
+        <li><strong>While cyklus</strong>: Opakuje kód, dokud je splněna podmínka.
+            <pre><code>
+int i = 0;
+while (i &lt; 5) {
+    System.out.println(i);
+    i++;
+}
+            </code></pre>
+        </li>
+        <li><strong>Do-while cyklus</strong>: Vykoná kód alespoň jednou, poté kontroluje podmínku.
+            <pre><code>
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i &lt; 5);
+            </code></pre>
+        </li>
+    </ul>
+
+    <h3>Pole</h3>
+    <p>Pole je struktura, která uchovává více hodnot stejného typu. Příklad deklarace: <code>int[] numbers = {1, 2, 3};</code></p>
+
+    <h3>Metody pro práci s polem</h3>
+    <ul>
+        <li><code>Arrays.sort(numbers)</code> setřídí pole. Příklad: <code>Arrays.sort(numbers);</code></li>
+        <li><code>Arrays.toString(numbers)</code> převádí pole na řetězec. Příklad: <code>System.out.println(Arrays.toString(numbers));</code></li>
+    </ul>
+
+    <h3>Metody pro práci s řetězci</h3>
+    <ul>
+        <li><code>length()</code> vrací délku řetězce. Příklad: <code>int len = name.length();</code></li>
+        <li><code>substring()</code> vrací podřetězec. Příklad: <code>String sub = name.substring(0, 3);</code></li>
+        <li><code>toUpperCase()</code> převádí znaky na velká písmena. Příklad: <code>String upper = name.toUpperCase();</code></li>
+    </ul>
+
+    <h3>Matematické funkce</h3>
+    <ul>
+        <li><code>Math.sqrt()</code> vrací druhou odmocninu. Příklad: <code>double sqrt = Math.sqrt(16);</code></li>
+        <li><code>Math.pow()</code> vrací mocninu. Příklad: <code>double pow = Math.pow(2, 3);</code></li>
+    </ul>
+
+    <h1>Okruh 2 - OOP</h1>
+
+    <h2>Objektově-orientované programování v Javě</h2>
+
+    <h3>Třídy a instance</h3>
+    <p>Třída je šablona, podle které jsou vytvářeny objekty (instance).</p>
+    <pre><code>
+class Car {
+    String brand;
+    int speed;
+    
+    void accelerate() {
+        speed += 10;
+    }
+}
+    </code></pre>
+    <p>Vytvoření instance třídy:</p>
+    <pre><code>
+Car myCar = new Car();
+myCar.brand = "Toyota";
+myCar.accelerate();
+    </code></pre>
+
+    <h3>Atributy a metody</h3>
+    <p>Atributy jsou proměnné v třídě, zatímco metody definují chování objektu. Například metoda <code>accelerate()</code> zvýší rychlost auta o 10.</p>
+
+    <h3>Zapouzdření</h3>
+    <p>Zapouzdření znamená skrytí vnitřních detailů třídy a poskytnutí přístupu přes veřejné metody (gettery a settery).</p>
+    <pre><code>
+class Person {
+    private String name;
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+    </code></pre>
+
+    <h3>Základní metody objektů</h3>
+    <ul>
+        <li><code>toString()</code>: Vrací textovou reprezentaci objektu.</li>
+        <li><code>equals()</code>: Porovnává, zda jsou dva objekty stejné.</li>
+        <li><code>hashCode()</code>: Vrací hash kód objektu.</li>
+    </ul>
+
+    <h3>Dědičnost a polymorfismus</h3>
+    <p>Dědičnost umožňuje jedné třídě zdědit vlastnosti a metody jiné třídy. Polymorfismus umožňuje používat objekty různých tříd stejným způsobem, pokud mají společného předka.</p>
+    <pre><code>
+class Animal {
+    void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+    </code></pre>
+
+    <h3>Gettery a settery</h3>
+    <p>Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.</p>
+    <pre><code>
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+    </code></pre>
+
+    <h1>Okruh 3 - MySQL a Kolekce</h1>
+
+    <h2>MySQL</h2>
+
+    <h3>CRUD operace</h3>
+    <p>CRUD operace (Create, Read, Update, Delete) jsou základní operace pro práci s databázemi.</p>
+    <ul>
+        <li><code>INSERT INTO</code>: Vkládání dat do databáze.</li>
+        <li><code>SELECT</code>: Výběr dat z databáze.</li>
+        <li><code>UPDATE</code>: Aktualizace dat v databázi.</li>
+        <li><code>DELETE</code>: Mazání dat z databáze.</li>
+    </ul>
+
+    <h3>SQL funkce</h3>
+    <p>SQL funkce jako <code>COUNT()</code>, <code>SUM()</code>, <code>AVG()</code> slouží k agregaci dat.</p>
+
+    <h3>JOIN</h3>
+    <p>JOIN slouží ke spojování dat z více tabulek na základě společných hodnot (klíčů).</p>
+
+    <h3>Databázové vazby</h3>
+    <p>Vazby mezi tabulkami určují vztahy mezi daty, například 1:N, M:N.</p>
+
+    <h3>Databázové indexy</h3>
+    <p>Indexy zrychlují vyhledávání v databázi.</p>
+
+    <h2>Kolekce a proudy v Javě</h2>
+
+    <h3>Generické vs. obecné kolekce</h3>
+    <p>Generické kolekce jako <code>ArrayList&lt;T&gt;</code> jsou typově bezpečné, což znamená, že předem určují, jaký typ dat budou uchovávat.</p>
+
+    <h3>HashMapy</h3>
+    <p>HashMapy ukládají dvojice klíč-hodnota a umožňují rychlé vyhledávání na základě klíče.</p>
+    <pre><code>
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put("Apple", 1);
+map.put("Banana", 2);
+    </code></pre>
+
+    <h3>Stream API</h3>
+    <p>Stream API umožňuje zpracování proudů dat pomocí metod jako <code>filter()</code>, <code>map()</code> a <code>reduce()</code>.</p>
+
+    <h1>Okruh 4 - Doplňkové okruhy</h1>
+
+    <h2>Moderní webdesign</h2>
+
+    <h3>Boxmodel</h3>
+    <p>Boxmodel definuje, jak jsou prvky na webové stránce rozvrženy, zahrnuje obsah, padding, border a margin.</p>
+
+    <h3>Párové a nepárové elementy</h3>
+    <p>Párové elementy mají otevírací a zavírací tag (např. <code>&lt;div&gt;&lt;/div&gt;</code>), zatímco nepárové elementy mají pouze otevírací tag (např. <code>&lt;img&gt;</code>).</p>
+
+    <h3>Blokové a řádkové elementy</h3>
+    <p>Blokové elementy jako <code>&lt;div&gt;</code> zabírají celou šířku stránky, zatímco řádkové elementy jako <code>&lt;span&gt;</code> pouze šířku svého obsahu.</p>
+
+    <h3>Tabulky a seznamy</h3>
+    <p>Tabulky slouží k zobrazení dat v řádcích a sloupcích (<code>&lt;table&gt;</code>), zatímco seznamy (<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>) umožňují strukturované výpisy položek.</p>
+
+    <h2>Základní konstrukce jazyka JavaScript</h2>
+
+    <h3>DOM</h3>
+    <p>Document Object Model (DOM) je reprezentace HTML dokumentu jako stromu objektů, který lze manipulovat pomocí JavaScriptu.</p>
+
+    <h3>Podmínky</h3>
+    <p>Podmínky v JavaScriptu se používají podobně jako v Javě, například <code>if</code>, <code>else if</code>, <code>else</code>.</p>
+
+    <h3>Časovače</h3>
+    <p>Časovače jako <code>setTimeout()</code> a <code>setInterval()</code> slouží k odloženému nebo opakovanému spouštění kódu.</p>
+
+    <h2>Bootstrap</h2>
+
+    <h3>Grid systém</h3>
+    <p>Bootstrap poskytuje systém mřížky pro rozvržení prvků na stránce, který je založen na řádcích a sloupcích.</p>
+
+    <h3>Breakpointy</h3>
+    <p>Breakpointy definují body, kde se mění rozvržení stránky v závislosti na šířce obrazovky (např. mobilní, tablet, desktop).</p>
+
+    <h3>Základní komponenty Bootstrapu</h3>
+    <p>Bootstrap obsahuje předpřipravené komponenty jako <strong>reboot</strong> (normalizace stylů), typografii, obrázky, tabulky, tlačítka a formuláře.</p>
+
+</body>
+</html>

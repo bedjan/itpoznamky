@@ -293,6 +293,7 @@ Dědičnost umožňuje jedné třídě zdědit vlastnosti a metody jiné třídy
 ### Gettery a settery
 
 Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.
+Jsou to metody používané k ochraně vašich dat a zvýšení bezpečnosti kódu.
 
     
     public String getName() {

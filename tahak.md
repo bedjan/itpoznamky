@@ -214,6 +214,60 @@ Vytvoření instance třídy:
 
 Atributy jsou proměnné v třídě, zatímco metody definují chování objektu. Například metoda `accelerate()` zvýší rychlost auta o 10.
 
+OOP v Javě - Třídy, Instance, Atributy a Metody
+===============================================
+
+Třídy a instance
+----------------
+
+Třída je šablona pro objekt. Instance je konkrétní objekt vytvořený na základě třídy.
+
+    
+    class Car {
+        String brand;  // Atribut značky
+        int speed;     // Atribut rychlosti
+        
+        void accelerate() {  // Metoda zrychlení
+            speed += 10;
+        }
+    }
+    
+    Car myCar = new Car();  // Vytvoření instance
+    myCar.brand = "Toyota";  // Nastavení hodnoty atributu
+    myCar.accelerate();      // Zavolání metody
+        
+
+Atributy (Fields)
+-----------------
+
+Atributy uchovávají data objektu. Každá instance může mít jiné hodnoty.
+
+    
+    class Car {
+        String brand;  // Atribut
+        int speed;     // Atribut
+    }
+        
+
+Metody (Methods)
+----------------
+
+Metody definují chování objektu. Mohou měnit stav objektu nebo vracet hodnoty.
+
+    
+    class Car {
+        String brand;
+        int speed;
+        
+        void accelerate() {  // Změna atributu speed
+            speed += 10;
+        }
+    }
+    
+    Car myCar = new Car();
+    myCar.accelerate();  // Zavolání metody accelerate
+        
+
 ### Zapouzdření
 
 Zapouzdření znamená skrytí vnitřních detailů třídy a poskytnutí přístupu přes veřejné metody (gettery a settery).
@@ -292,8 +346,7 @@ Dědičnost umožňuje jedné třídě zdědit vlastnosti a metody jiné třídy
 
 ### Gettery a settery
 
-Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.
-Jsou to metody používané k ochraně vašich dat a zvýšení bezpečnosti kódu.
+Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.Jsou to metody používané k ochraně vašich dat a zvýšení bezpečnosti kódu.
 
     
     public String getName() {

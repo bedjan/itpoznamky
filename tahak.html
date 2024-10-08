@@ -202,6 +202,57 @@ myCar.accelerate();
     <h3>Atributy a metody</h3>
     <p>Atributy jsou proměnné v třídě, zatímco metody definují chování objektu. Například metoda <code>accelerate()</code> zvýší rychlost auta o 10.</p>
 
+
+    <h1>OOP v Javě - Třídy, Instance, Atributy a Metody</h1>
+
+    <h2>Třídy a instance</h2>
+    <p>
+        Třída je šablona pro objekt. Instance je konkrétní objekt vytvořený na základě třídy.
+    </p>
+    <pre><code>
+class Car {
+    String brand;  // Atribut značky
+    int speed;     // Atribut rychlosti
+    
+    void accelerate() {  // Metoda zrychlení
+        speed += 10;
+    }
+}
+
+Car myCar = new Car();  // Vytvoření instance
+myCar.brand = "Toyota";  // Nastavení hodnoty atributu
+myCar.accelerate();      // Zavolání metody
+    </code></pre>
+
+    <h2>Atributy (Fields)</h2>
+    <p>
+        Atributy uchovávají data objektu. Každá instance může mít jiné hodnoty.
+    </p>
+    <pre><code>
+class Car {
+    String brand;  // Atribut
+    int speed;     // Atribut
+}
+    </code></pre>
+
+    <h2>Metody (Methods)</h2>
+    <p>
+        Metody definují chování objektu. Mohou měnit stav objektu nebo vracet hodnoty.
+    </p>
+    <pre><code>
+class Car {
+    String brand;
+    int speed;
+    
+    void accelerate() {  // Změna atributu speed
+        speed += 10;
+    }
+}
+
+Car myCar = new Car();
+myCar.accelerate();  // Zavolání metody accelerate
+    </code></pre>
+    
     <h3>Zapouzdření</h3>
     <p>Zapouzdření znamená skrytí vnitřních detailů třídy a poskytnutí přístupu přes veřejné metody (gettery a settery).</p>
     <pre><code>
@@ -273,7 +324,7 @@ animal.makeSound();  // Výstup: Bark
     </code></pre>
 
     <h3>Gettery a settery</h3>
-    <p>Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.</p>
+    <p>Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.Jsou to metody používané k ochraně vašich dat a zvýšení bezpečnosti kódu.</p>
     <pre><code>
 public String getName() {
     return name;

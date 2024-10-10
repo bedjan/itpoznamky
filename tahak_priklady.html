@@ -357,6 +357,235 @@ public void setName(String name) {
 }
     </code></pre>
 
+
+
+
+    <h1>Okruh 3 - MySQL a Kolekce</h1>
+
+    <h2>MySQL</h2>
+
+    <h3>CRUD operace</h3>
+    <p>CRUD (Create, Read, Update, Delete) jsou základní operace pro správu dat v databázi. Ukázka základních SQL příkazů:</p>
+    <ul>
+        <li><strong>INSERT:</strong> Vložení nového záznamu do tabulky.
+            <pre><code>
+-- Vložíme nového uživatele do tabulky users
+INSERT INTO users (name, email) VALUES ('Jan Novák', 'jan.novak@email.com');
+            </code></pre>
+        </li>
+        <li><strong>SELECT:</strong> Čtení dat z databáze.
+            <pre><code>
+-- Vybereme všechny uživatele
+SELECT * FROM users;
+
+-- Vybereme konkrétního uživatele podle ID
+SELECT name, email FROM users WHERE id = 1;
+            </code></pre>
+        </li>
+        <li><strong>UPDATE:</strong> Aktualizace existujícího záznamu.
+            <pre><code>
+-- Aktualizujeme email uživatele s ID 1
+UPDATE users SET email = 'novy.email@email.com' WHERE id = 1;
+            </code></pre>
+        </li>
+        <li><strong>DELETE:</strong> Smazání záznamu z databáze.
+            <pre><code>
+-- Smažeme uživatele s ID 1
+DELETE FROM users WHERE id = 1;
+            </code></pre>
+        </li>
+    </ul>
+
+    <h3>Základní SQL funkce</h3>
+    <p>SQL funkce umožňují manipulaci s daty při dotazování. Zde jsou některé základní funkce:</p>
+    <ul>
+        <li><code>COUNT()</code>: Vrátí počet řádků.
+            <pre><code>
+-- Vrátí počet uživatelů
+SELECT COUNT(*) FROM users;
+            </code></pre>
+        </li>
+        <li><code>SUM()</code>: Spočítá součet hodnot ve sloupci.
+            <pre><code>
+-- Spočítá celkový zůstatek na účtech
+SELECT SUM(balance) FROM accounts;
+            </code></pre>
+        </li>
+        <li><code>AVG()</code>: Vypočítá průměrnou hodnotu ve sloupci.
+            <pre><code>
+-- Vypočítá průměrný věk uživatelů
+SELECT AVG(age) FROM users;
+            </code></pre>
+        </li>
+    </ul>
+
+    <h3>JOIN</h3>
+    <p>Příkaz <code>JOIN</code> slouží ke spojení dvou nebo více tabulek na základě vztahu mezi nimi.</p>
+    <pre><code>
+-- Spojíme tabulky users a orders na základě uživatelského ID
+SELECT users.name, orders.order_id, orders.amount 
+FROM users 
+JOIN orders ON users.id = orders.user_id;
+    </code></pre>
+
+    <h3>Databázové vazby (relace)</h3>
+    <p>Relace v databázi představují vztahy mezi tabulkami. Existují tři základní typy relací:</p>
+    <ul>
+        <li><strong>One-to-One:</strong> Každý záznam v jedné tabulce odpovídá právě jednomu záznamu v druhé tabulce.</li>
+        <li><strong>One-to-Many:</strong> Každý záznam v jedné tabulce odpovídá více záznamům v druhé tabulce.</li>
+        <li><strong>Many-to-Many:</strong> Každý záznam v jedné tabulce může být spojen s více záznamy v druhé tabulce.</li>
+    </ul>
+
+    <h3>Databázové indexy</h3>
+    <p>Indexy se používají k urychlení dotazů na databázi. Indexy mohou být vytvořeny nad sloupci, které jsou často používány v podmínkách <code>WHERE</code>.</p>
+    <pre><code>
+-- Vytvoření indexu nad sloupcem email v tabulce users
+CREATE INDEX idx_email ON users (email);
+    </code></pre>
+
+    <h2>Kolekce a proudy v Javě</h2>
+
+    <h3>Generické vs. obecné kolekce</h3>
+    <p>Kolekce jsou datové struktury, které uchovávají skupiny objektů. Java nabízí generické kolekce, které jsou typově bezpečné. Příklad:</p>
+    <pre><code>
+// Generická kolekce ArrayList, která uchovává pouze objekty typu String
+List<String> names = new ArrayList<>();
+names.add("Jan");
+names.add("Petr");
+
+// Obecná kolekce, která může uchovávat objekty jakéhokoli typu
+List<Object> items = new ArrayList<>();
+items.add("Text");
+items.add(123);  // Integer
+    </code></pre>
+
+    <h3>Hashmapy</h3>
+    <p><code>HashMap</code> je datová struktura, která uchovává dvojice klíč-hodnota. Každý klíč je unikátní a umožňuje rychlý přístup k hodnotám.</p>
+    <pre><code>
+// Příklad použití HashMap
+Map<Integer, String> students = new HashMap<>();
+students.put(1, "Jan");
+students.put(2, "Petr");
+
+// Přístup k hodnotám pomocí klíče
+String studentName = students.get(1);  // Jan
+    </code></pre>
+
+    <h3>Základní principy StreamAPI</h3>
+    <p>Stream API umožňuje provádět operace nad kolekcemi v podobě proudů dat. Umožňuje například filtrovat, třídit nebo mapovat hodnoty.</p>
+    <pre><code>
+// Filtrování a zobrazení jmen začínajících na "J"
+names.stream()
+    .filter(name -> name.startsWith("J"))
+    .forEach(System.out::println);  // Výstup: Jan
+    </code></pre>
+
+    <h1>Okruh 4 - Doplňkové okruhy</h1>
+
+    <h2>Moderní webdesign</h2>
+
+    <h3>Boxmodel</h3>
+    <p>Box model definuje, jak je prvek zobrazen na stránce. Skládá se z obsahu (<code>content</code>), výplně (<code>padding</code>), okraje (<code>margin</code>) a rámečku (<code>border</code>).</p>
+    <pre><code>
+div {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 20px;
+}
+    </code></pre>
+
+    <h3>Párové/nepárové elementy</h3>
+    <p>Párové elementy mají otevírací a uzavírací tag (např. <code>&lt;p&gt;</code>), zatímco nepárové elementy mají pouze otevírací tag (např. <code>&lt;br&gt;</code>).</p>
+
+    <h3>Blokové/řádkové elementy</h3>
+    <p>Blokové elementy zabírají celou šířku dostupného prostoru (např. <code>&lt;div&gt;</code>), zatímco řádkové elementy zabírají pouze tolik místa, kolik potřebují (např. <code>&lt;span&gt;</code>).</p>
+
+    <h3>Tabulky a seznamy</h3>
+    <p>Tabulky slouží k uspořádání dat do řádků a sloupců, zatímco seznamy uspořádávají obsah do lineárního seznamu.</p>
+    <pre><code>
+<table>
+    <tr>
+        <th>Jméno</th>
+        <th>Věk</th>
+    </tr>
+    <tr>
+        <td>Jan</td>
+        <td>25</td>
+    </tr>
+</table>
+
+<ul>
+    <li>Položka 1</li>
+    <li>Položka 2</li>
+</ul>
+    </code></pre>
+
+    <h2>Základní konstrukce jazyka JavaScript</h2>
+
+    <h3>DOM</h3>
+    <p>DOM (Document Object Model) je rozhraní, které umožňuje přístup a manipulaci s HTML dokumenty pomocí JavaScriptu.</p>
+    <pre><code>
+// Vybrání prvku podle ID a změna jeho obsahu
+document.getElementById("mojeDiv").innerHTML = "Nový obsah";
+    </code></pre>
+
+    <h3>Podmínky</h3>
+    <p>Podmínky v JavaScriptu se používají pro vykonávání kódu na základě logických výrazů.</p>
+    <pre><code>
+let age = 18;
+if (age >= 18) {
+    console.log("Jste dospělí");
+} else {
+    console.log("Jste nezletilí");
+}
+    </code></pre>
+
+    <h3>Časovače</h3>
+    <p>JavaScript obsahuje funkce pro nastavení časovačů, které provádějí kód po uplynutí určitého času.</p>
+    <pre><code>
+// Nastaví se časovač na 2 sekundy
+setTimeout(() => {
+    console.log("Uplynuly 2 sekundy");
+}, 2000);
+    </code></pre>
+
+    <h2>Bootstrap</h2>
+
+    <h3>Grid systém</h3>
+    <p>Bootstrap používá gridový systém rozdělený na 12 sloupců pro vytváření responzivních layoutů. Například:</p>
+    <pre><code>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">Levý sloupec</div>
+        <div class="col-md-6">Pravý sloupec</div>
+    </div>
+</div>
+    </code></pre>
+
+    <h3>Breakpointy</h3>
+    <p>Breakpointy jsou body, při kterých se layout mění na základě šířky obrazovky. Bootstrap definuje tyto breakpointy:</p>
+    <ul>
+        <li><code>xs</code>: do 576px</li>
+        <li><code>sm</code>: od 576px</li>
+        <li><code>md</code>: od 768px</li>
+        <li><code>lg</code>: od 992px</li>
+        <li><code>xl</code>: od 1200px</li>
+    </ul>
+
+    <h3>Základní komponenty Bootstrapu</h3>
+    <p>Bootstrap obsahuje předem definované komponenty, které usnadňují tvorbu UI. Některé z nich jsou:</p>
+    <ul>
+        <li><strong>Reboot:</strong> Normalizace a vylepšení výchozího stylu HTML elementů.</li>
+        <li><strong>Typografie:</strong> Stylování textu.</li>
+        <li><strong>Obrázky:</strong> Responzivní obrázky, které se přizpůsobí velikosti kontejneru.</li>
+        <li><strong>Tabulky:</strong> Stylované tabulky s Bootstrap třídami.</li>
+        <li><strong>Tlačítka:</strong> Předem definované styly pro tlačítka.</li>
+        <li><strong>Formuláře:</strong> Stylované vstupní prvky formulářů.</li>
+    </ul>
+
+
+
 </body>
 </html>
 

@@ -1,5 +1,3 @@
-  Výpisky k okruhům body { font-family: Arial, sans-serif; margin: 20px; } code { background-color: #f4f4f4; padding: 5px; display: block; margin-bottom: 10px; border-left: 3px solid #ccc; } pre { background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd; margin-bottom: 20px; overflow-x: auto; } h1, h2, h3 { color: #333; } h1 { margin-top: 40px; }
-
 Okruh 1 - Základy
 =================
 

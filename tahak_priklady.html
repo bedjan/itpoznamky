@@ -1,1 +1,362 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výpisky k okruhům</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            display: block;
+            margin-bottom: 10px;
+            border-left: 3px solid #ccc;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Okruh 1 - Základy</h1>
+
+    <h2>Základní konstrukce jazyka Java</h2>
+
+    <h3>Proměnné a datové typy</h3>
+    <p>V Javě jsou proměnné kontejnery, které uchovávají různé hodnoty. Každá proměnná má svůj datový typ, který definuje, jaký typ dat v ní může být uložen.</p>
+    <ul>
+        <li><strong>Primitivní datové typy:</strong>
+            <ul>
+                <li><code>int</code>: Slouží pro ukládání celých čísel, např. 1, 2, -5. Rozsah je od -2<sup>31</sup> do 2<sup>31</sup>-1.
+                    <pre><code>int age = 25;</code></pre>
+                </li>
+                <li><code>double</code>: Slouží pro ukládání desetinných čísel, např. 3.14, -0.001. Typ <code>double</code> zabírá 64 bitů.
+                    <pre><code>double price = 19.99;</code></pre>
+                </li>
+                <li><code>boolean</code>: Uchovává logické hodnoty <code>true</code> (pravda) nebo <code>false</code> (nepravda).
+                    <pre><code>boolean isStudent = true;</code></pre>
+                </li>
+                <li><code>char</code>: Slouží k uložení jednoho znaku, např. 'A', 'b'. Tento typ zabírá 16 bitů.
+                    <pre><code>char grade = 'A';</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Referenční datové typy:</strong>
+            <ul>
+                <li><code>String</code>: Používá se k uchování textových řetězců. Typ <code>String</code> je vlastně objektem, který má své metody.
+                    <pre><code>String name = "John Doe";</code></pre>
+                </li>
+                <li><code>Array</code>: Pole je datová struktura, která uchovává více hodnot stejného typu. Příklad pole čísel:
+                    <pre><code>int[] numbers = {1, 2, 3, 4, 5};</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Parsování</h3>
+    <p>Parsování je proces převodu hodnoty z jednoho datového typu na jiný. V Javě se často používá pro převod řetězců (textů) na čísla nebo jiné datové typy.</p>
+    <ul>
+        <li><code>Integer.parseInt(String)</code>: Převede řetězec na celé číslo.
+            <pre><code>int number = Integer.parseInt("123");  // number = 123</code></pre>
+        </li>
+        <li><code>Double.parseDouble(String)</code>: Převede řetězec na desetinné číslo.
+            <pre><code>double value = Double.parseDouble("123.45");  // value = 123.45</code></pre>
+        </li>
+        <li><code>Boolean.parseBoolean(String)</code>: Převede řetězec na logickou hodnotu <code>true</code> nebo <code>false</code>.
+            <pre><code>boolean flag = Boolean.parseBoolean("true");  // flag = true</code></pre>
+        </li>
+    </ul>
+
+    <h3>Podmínky</h3>
+    <p>Podmínky v Javě umožňují vykonání určité části kódu, pokud je splněna daná logická podmínka.</p>
+    <pre><code>
+int age = 20;
+
+if (age >= 18) {
+    System.out.println("Jste dospělý.");
+} else {
+    System.out.println("Jste nezletilý.");
+}
+    </code></pre>
+
+    <h3>Operátory</h3>
+    <ul>
+        <li><strong>Aritmetické operátory:</strong> Používají se pro základní matematické operace.
+            <ul>
+                <li><code>+</code>: Sčítání (např. <code>int result = 5 + 3;</code>)</li>
+                <li><code>-</code>: Odčítání (např. <code>int result = 5 - 3;</code>)</li>
+                <li><code>*</code>: Násobení (např. <code>int result = 5 * 3;</code>)</li>
+                <li><code>/</code>: Dělení (např. <code>int result = 6 / 2;</code>)</li>
+                <li><code>%</code>: Zbytek po dělení (např. <code>int result = 5 % 2;</code>, výsledek bude 1)</li>
+            </ul>
+        </li>
+        <li><strong>Relační operátory:</strong> Slouží k porovnávání hodnot.
+            <ul>
+                <li><code>==</code>: Testuje rovnost (např. <code>a == b</code> vrací <code>true</code>, pokud jsou hodnoty <code>a</code> a <code>b</code> stejné)</li>
+                <li><code>!=</code>: Testuje nerovnost (např. <code>a != b</code>)</li>
+                <li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>: Porovnávají hodnoty.</li>
+            </ul>
+        </li>
+        <li><strong>Logické operátory:</strong> Používají se pro práci s logickými výrazy.
+            <ul>
+                <li><code>&&</code>: Logické A (vrátí <code>true</code> jen, pokud jsou oba výrazy pravdivé).</li>
+                <li><code>||</code>: Logické NEBO (vrátí <code>true</code>, pokud je alespoň jeden výraz pravdivý).</li>
+                <li><code>!</code>: Logická negace (převrací hodnotu výrazu).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Cykly</h3>
+    <p>Cykly slouží k opakovanému vykonávání určité části kódu.</p>
+    <ul>
+        <li><strong>For cyklus:</strong> Používá se, pokud předem víme, kolikrát chceme opakovat nějaký kód.
+            <pre><code>
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+            </code></pre>
+            Tento cyklus vypíše čísla od 0 do 4.
+        </li>
+        <li><strong>While cyklus:</strong> Opakuje blok kódu, dokud je podmínka splněna.
+            <pre><code>
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+            </code></pre>
+        </li>
+        <li><strong>Do-while cyklus:</strong> Tento cyklus se provede alespoň jednou, poté kontroluje podmínku.
+            <pre><code>
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i < 5);
+            </code></pre>
+        </li>
+    </ul>
+
+    <h3>Pole</h3>
+    <p>Pole je struktura, která uchovává více hodnot stejného typu. Může být deklarováno následovně:</p>
+    <pre><code>int[] numbers = {1, 2, 3, 4, 5};</code></pre>
+    <p>Přístup k jednotlivým prvkům pole se provádí pomocí indexu, přičemž indexování začíná od nuly.</p>
+    <pre><code>System.out.println(numbers[0]);  // Vypíše 1</code></pre>
+
+    <h3>Metody pro práci s polem</h3>
+    <ul>
+        <li><code>Arrays.sort()</code>: Tato metoda třídí prvky v poli.
+            <pre><code>
+int[] numbers = {5, 3, 8, 1, 2};
+Arrays.sort(numbers);  // Seřadí pole do pořadí {1, 2, 3, 5, 8}
+            </code></pre>
+        </li>
+        <li><code>Arrays.toString()</code>: Převádí pole na textovou reprezentaci.
+            <pre><code>System.out.println(Arrays.toString(numbers));  // Výstup: [1, 2, 3, 5, 8]</code></pre>
+        </li>
+    </ul>
+
+    <h3>Metody pro práci s řetězci</h3>
+    <p>Řetězce jsou objekty v Javě a mají mnoho užitečných metod.</p>
+    <ul>
+        <li><code>length()</code>: Vrací délku řetězce.
+            <pre><code>String name = "John"; System.out.println(name.length());  // Výstup: 4</code></pre>
+        </li>
+        <li><code>substring()</code>: Vrací podřetězec z řetězce.
+            <pre><code>String name = "John"; System.out.println(name.substring(0, 2));  // Výstup: Jo</code></pre>
+        </li>
+        <li><code>toUpperCase()</code>: Převede všechny znaky na velká písmena.
+            <pre><code>String name = "John"; System.out.println(name.toUpperCase());  // Výstup: JOHN</code></pre>
+        </li>
+    </ul>
+
+    <h3>Matematické funkce</h3>
+    <p>Java nabízí třídu <code>Math</code>, která obsahuje řadu užitečných matematických funkcí.</p>
+    <ul>
+        <li><code>Math.sqrt()</code>: Vrací druhou odmocninu čísla.
+            <pre><code>System.out.println(Math.sqrt(16));  // Výstup: 4.0</code></pre>
+        </li>
+        <li><code>Math.pow()</code>: Vrací mocninu čísla.
+            <pre><code>System.out.println(Math.pow(2, 3));  // Výstup: 8.0</code></pre>
+        </li>
+        <li><code>Math.random()</code>: Vrací náhodné číslo mezi 0 a 1.
+            <pre><code>System.out.println(Math.random());  // Náhodné číslo, např.: 0.3457</code></pre>
+        </li>
+    </ul>
+
+    <h1>Okruh 2 - OOP</h1>
+
+    <h2>Objektově-orientované programování v Javě</h2>
+
+    <h3>Třídy a instance</h3>
+    <p>Třída je šablona, podle které jsou vytvářeny objekty (instance). Definuje, jaké vlastnosti (atributy) a metody bude objekt mít.</p>
+    <pre><code>
+class Car {
+    String brand;
+    int speed;
+    
+    void accelerate() {
+        speed += 10;
+    }
+}
+    </code></pre>
+    <p>Vytvoření instance třídy:</p>
+    <pre><code>
+Car myCar = new Car();
+myCar.brand = "Toyota";
+myCar.accelerate();
+    </code></pre>
+
+    <h3>Atributy a metody</h3>
+    <p>Atributy jsou proměnné v třídě, zatímco metody definují chování objektu. Například metoda <code>accelerate()</code> zvýší rychlost auta o 10.</p>
+
+
+    <h1>OOP v Javě - Třídy, Instance, Atributy a Metody</h1>
+
+    <h2>Třídy a instance</h2>
+    <p>
+        Třída je šablona pro objekt. Instance je konkrétní objekt vytvořený na základě třídy.
+    </p>
+    <pre><code>
+class Car {
+    String brand;  // Atribut značky
+    int speed;     // Atribut rychlosti
+    
+    void accelerate() {  // Metoda zrychlení
+        speed += 10;
+    }
+}
+
+Car myCar = new Car();  // Vytvoření instance
+myCar.brand = "Toyota";  // Nastavení hodnoty atributu
+myCar.accelerate();      // Zavolání metody
+    </code></pre>
+
+    <h2>Atributy (Fields)</h2>
+    <p>
+        Atributy uchovávají data objektu. Každá instance může mít jiné hodnoty.
+    </p>
+    <pre><code>
+class Car {
+    String brand;  // Atribut
+    int speed;     // Atribut
+}
+    </code></pre>
+
+    <h2>Metody (Methods)</h2>
+    <p>
+        Metody definují chování objektu. Mohou měnit stav objektu nebo vracet hodnoty.
+    </p>
+    <pre><code>
+class Car {
+    String brand;
+    int speed;
+    
+    void accelerate() {  // Změna atributu speed
+        speed += 10;
+    }
+}
+
+Car myCar = new Car();
+myCar.accelerate();  // Zavolání metody accelerate
+    </code></pre>
+    
+    <h3>Zapouzdření</h3>
+    <p>Zapouzdření znamená skrytí vnitřních detailů třídy a poskytnutí přístupu přes veřejné metody (gettery a settery).</p>
+    <pre><code>
+class Person {
+    private String name;
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+    </code></pre>
+
+    <h3>Základní metody objektů</h3>
+    <ul>
+        <li><code>toString()</code>: Vrací textovou reprezentaci objektu.
+            <pre><code>
+class Car {
+    String brand;
+    int speed;
+    
+    @Override
+    public String toString() {
+        return brand + " is going " + speed + " km/h";
+    }
+}
+
+Car myCar = new Car();
+myCar.brand = "Toyota";
+myCar.speed = 100;
+System.out.println(myCar.toString());  // Výstup: Toyota is going 100 km/h
+            </code></pre>
+        </li>
+        <li><code>equals()</code>: Porovnává, zda jsou dva objekty stejné.
+            <pre><code>
+Car car1 = new Car();
+Car car2 = new Car();
+car1.brand = "Toyota";
+car2.brand = "Toyota";
+System.out.println(car1.equals(car2));  // Výstup: false, protože porovnává reference, ne obsah.
+            </code></pre>
+        </li>
+        <li><code>hashCode()</code>: Vrací hash kód objektu.
+            <pre><code>System.out.println(myCar.hashCode());</code></pre>
+        </li>
+    </ul>
+
+    <h3>Dědičnost a polymorfismus</h3>
+    <p>Dědičnost umožňuje jedné třídě zdědit vlastnosti a metody jiné třídy. Polymorfismus umožňuje používat objekty různých tříd stejným způsobem, pokud mají společného předka.</p>
+    <pre><code>
+class Animal {
+    void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+Animal animal = new Dog();
+animal.makeSound();  // Výstup: Bark
+    </code></pre>
+
+    <h3>Gettery a settery</h3>
+    <p>Gettery a settery jsou metody pro čtení a nastavování hodnot atributů.Jsou to metody používané k ochraně vašich dat a zvýšení bezpečnosti kódu.</p>
+    <pre><code>
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+    </code></pre>
+
+</body>
+</html>
 

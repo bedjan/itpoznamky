@@ -2,7 +2,7 @@
 
 
 
-[Discord channel Itnerwork](https://discord.com/channels/873147646917898271/956163210019487764)
+[Discord channel Itnetwork](https://discord.com/channels/873147646917898271/956163210019487764)
 
 
 

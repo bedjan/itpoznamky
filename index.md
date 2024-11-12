@@ -1,12 +1,10 @@
 # It poznámky
 
-[Itnetwork postup](https://www.itnetwork.cz/postup)
 
-[Itnetwork osnova](https://docs.google.com/spreadsheets/d/1d5wQRV8CgZAq5DwNVWny5UGvSOvb54ADlsRKIix4MEg/edit?pli=1&gid=0#gid=0)
 
 [Discord channel Itnerwork](https://discord.com/channels/873147646917898271/956163210019487764)
 
-[Na co si dat pozor](https://www.itnetwork.cz/prubeh-zaverecne-zkousky-rekvalifikacnich-kurzu#_na-co-si-dat-pozor-v-pripade-ze-si-kurz-hradis-pres-urad-prace)
+
 
 [Google poznamky](https://github.com/bedjan/itpoznamky/blob/main/google.md)
 
@@ -14,90 +12,6 @@
 
 [15 nejlepších zkratek IntelliJ IDEA](https://blog-jetbrains-com.translate.goog/idea/2020/03/top-15-intellij-idea-shortcuts/?_x_tr_sl=auto&_x_tr_tl=cs&_x_tr_hl=cs)
 
-<details close>
-<summary>Zkouska 15 otazek </summary>
-<p>Okruh 1 - Základy</p>
-<p>Každý účastník dostane 3 otázky.</p>
-<pre><code>Základní konstrukce jazyka Java
-    Proměnné a datové typy
-    Parsová<span class="hljs-keyword">n</span>í
-    Podmínky
-    Operátory
-    Cykly
-    Pole
-    Metody <span class="hljs-keyword">pro</span> <span class="hljs-keyword">pr</span>á<span class="hljs-keyword">ci</span> s polem
-    Metody <span class="hljs-keyword">pro</span> <span class="hljs-keyword">pr</span>á<span class="hljs-keyword">ci</span> s řetězci
-    Matematické funkce
-</code></pre><p>Okruh 2 - OOP</p>
-<p>Každý účastník dostane 3 otázky.</p>
-<pre><code>Objektově-orientované programování v Javě
-    Třídy a<span class="hljs-built_in"> instance
-</span>    Atributy a metody
-    Zapouzdření
-    Základní metody objektů
-    Dědičnost a polymorfismus
-    Gettery/settery
-</code></pre><p>Okruh 3 - MySQL a Kolekce</p>
-<p>Každý účastník dostane 3 otázky.</p>
-<pre><code>MySQL
-    CRUD (<span class="hljs-keyword">INSERT</span>, <span class="hljs-keyword">SELECT</span>, <span class="hljs-keyword">UPDATE</span>, <span class="hljs-keyword">DELETE</span>)
-    Základní <span class="hljs-keyword">SQL</span> funkce
-    <span class="hljs-keyword">JOIN</span>
-    Databázové vazby (relace)
-    Databázové indexy
-Kolekce a proudy v Javě
-    Generické vs. obecné kolekce
-    Hashmapy
-    Základní principy StreamAPI
-</code></pre><p>Okruh 4 - Doplňkové okruhy</p>
-<p>Každý účastník dostane 6 otázek.</p>
-<pre><code><span class="hljs-symbol">Modern</span>í webdesign
-    <span class="hljs-keyword">Boxmodel
-</span>    Párové/nepárové elementy
-    <span class="hljs-keyword">Blokové/řádkové </span>elementy
-    Tabulky a seznamy
-Základní konstrukce jazyka JavaScript
-    DOM
-    Podmínky
-    Časovače
-<span class="hljs-keyword">Bootstrap
-</span>    Grid systém
-    <span class="hljs-keyword">Breakpointy
-</span>    Základní komponenty <span class="hljs-keyword">Bootstrapu </span>(reboot, typografie, obrázky, tabulky, tlačítka, formuláře)
-</code></pre><p>Frameworky</p>
-<p>Frameworky Spring Boot a JEE nejsou součástí zkoušky.</p>
-</details>
-
-
-<details close>
-<summary>Termíny Praha</summary>
-<p>Moderní webdesign od A do Z v termínu * 23.6.2024 8:30:00 - 23.6.2024 18:30:00</p>
-<p>Základy programování v Javě v termínu * 13.7.2024 8:30:00 - 13.7.2024 18:30:00</p>
-<p>Objektové programování - OOP v Javě v termínu * 21.7.2024 8:30:00 - 21.7.2024 18:30:00</p>
-<p>Databáze - SQL a datové algoritmy v termínu * 3.8.2024 8:30:00 - 3.8.2024 18:30:00</p>
-<p>Základy programování v JavaScriptu v termínu * 10.8.2024 8:30:00 - 10.8.2024 18:30:00.</p>
-<p>Spring Boot v Javě v termínu * 25.8.2024 8:30:00 - 25.8.2024 18:30:00</p>
-<p>React - 8.9.2024</p>
-<p>Best practices pro vývoj softwaru - procházení projektu - 21.9.2024</p>
-<p>9.10. 18-20 hodin discord priprava ke zkousce, pošlou odkaz na email</p>
-<p>Firemní vývoj softwaru, Testování a verzování  - 19.10.2024</p>
-<p>Závěrečná zkouška - patek 25.10.2024</p>
-</details>
-
-
-<details close>
-<summary>Spoje Praha</summary>
-<h3>Odjezd</h3>
-<p>U51 (Sp 1943)  - 5:08 Duchcov - 5:38 Ústí n.L.hl.n. </p>
-<p>R20 (R 673 Labe) - 5:42 Ústí n.L.hl.n. - 7:12 Praha hl.n.</p>
-<a href="https://maps.app.goo.gl/WAjMqKT4TP1DNz1Z6"  target="_blank">Praha hl. – Budejovicka</a>&nbsp;&nbsp;<br />
-<a href="https://www.google.com/maps/dir/Bud%C4%9Bjovick%C3%A1,+Praha+4/A.+Sta%C5%A1ka+1859,+140+00+Praha+4-Kr%C4%8D/@50.0417528,14.4411055,949m/data=!3m1!1e3!4m14!4m13!1m5!1m1!1s0x470b93f295d3bd09:0x379b85482936a43e!2m2!1d14.4501543!2d50.0442485!1m5!1m1!1s0x470b93f6bfd82d89:0x851182516339a9b!2m2!1d14.4408824!2d50.0408126!3e2?entry=ttu"  target="_blank">Budejovicka - A. Staška 1859, 140 00 Praha 4-Krč ( 12 min )</a>&nbsp;&nbsp;<br />
-
-<h3>Příjezd</h3>
-<p>R20 (R 672 Labe) - 20:45 Praha hl.n. - 22:15 Ústí n.L.hl.n. </p>
-<p>U1 (Os 6846) - 22:20 Ústí n.L.hl.n. -22:48 Duchcov </p>
-<a href="https://maps.app.goo.gl/12d2YviCUiuLMmyw6"  target="_blank">Budejovicka - Praha hl.n.</a>&nbsp;&nbsp;<br />
-</details>
 
 
 

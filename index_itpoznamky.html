@@ -197,5 +197,14 @@
             });
         };
     </script>
+    
+// pridan skript na cas nataceni
+    <script>
+        window.addEventListener('load', () => {
+            const timing = window.performance.timing;
+            const pageLoadTime = timing.loadEventEnd - timing.navigationStart;
+            console.log(`Čas načítání stránky: ${pageLoadTime} ms`);
+        });
+    </script>
 </body>
 </html>
